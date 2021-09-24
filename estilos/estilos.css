@@ -879,7 +879,7 @@ transform: rotate(180deg);
 }
 
 #slider2::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px #c7c7c7;
+    box-shadow: inset 0 0 6px #c7c7c7;
 }
  
 #slider2::-webkit-scrollbar-thumb {
