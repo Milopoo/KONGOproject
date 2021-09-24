@@ -3,7 +3,6 @@
 
 </html>
 <html>
-
 <head>
     <title>KONGO</title>
     <meta charset="utf-8">
@@ -13,9 +12,10 @@
     <link rel="icon" href="Favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script data-require="jquery@3.1.1" data-semver="3.1.1" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    
 </head>
-
 <body>
     <nav>
         <div class="social-logo">
@@ -101,39 +101,82 @@
           <img class="bxl-whatsapp-square" src="img/whatsapp-logo.png">
         </a>
       </div>
-      <div class="gallery">
-        <div class="gallery__item">
-          <input type="radio" id="img-1" checked name="gallery" class="gallery__selector"/>
-          <img class="gallery__img" src="https://picsum.photos/id/1015/600/400.jpg" alt=""/>
-          <label for="img-1" class="gallery__thumb"><img src="https://picsum.photos/id/1015/150/100.jpg" alt=""/></label>
-        </div>
-        <div class="gallery__item">
-          <input type="radio" id="img-2" name="gallery" class="gallery__selector"/>
-          <img class="gallery__img" src="https://picsum.photos/id/1039/600/400.jpg" alt=""/>
-          <label for="img-2" class="gallery__thumb"><img src="https://picsum.photos/id/1039/150/100.jpg" alt=""/></label>
-        </div>
-        <div class="gallery__item">
-          <input type="radio" id="img-3" name="gallery" class="gallery__selector"/>
-          <img class="gallery__img" src="https://picsum.photos/id/1057/600/400.jpg" alt=""/>
-          <label for="img-3" class="gallery__thumb"><img src="https://picsum.photos/id/1057/150/100.jpg" alt=""/></label>
-        </div>
-        <div class="gallery__item">
-          <input type="radio" id="img-4" name="gallery" class="gallery__selector"/>
-          <img class="gallery__img" src="https://picsum.photos/id/106/600/400.jpg" alt=""/>
-          <label for="img-4" class="gallery__thumb"><img src="https://picsum.photos/id/106/150/100.jpg" alt=""/></label>
-        </div>
+      <div class="gorra-name">
+          <h1> NOMBRE GORRA</h1>
       </div>
+      <div id="content-wrapper">
+		
+        <div class="columnD">
+          <img id=featured src="img/1.jpeg">
+    
+          <div id="slide-wrapper" >
+            <img id="slideLeft" class="arrow2" src="img/arrow-left.png">
+    
+            <div id="slider2">
+              <img class="thumbnail active2" src="img/1.jpeg">
+              <img class="thumbnail" src="img/2.jpeg">
+              <img class="thumbnail" src="img/1.jpeg">
+              <img class="thumbnail" src="img/1.jpeg">
 
-<div style="margin-top: 70%; text-align: center;">
-    <img src="img/5.jpeg" width="50%">
-</div>
+            </div>
+    
+            <img id="slideRight" class="arrow2" src="img/arrow-right.png">
+          </div>
+        </div>
+    
+        <div class="columnD">
+          <h1>$60.000 COP</h1>
+          <hr class="hr">
+          <h3>Detalles</h3>
+    
+          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+    
+          <div class="quantity buttons_added">
+            <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text2" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
+          </div>
+          <a class="boton_personalizado2" href="#">Añadir a la bolsa</a>
+        </div>
+    
+      </div>
+    
+      <script type="text/javascript">
+        let thumbnails = document.getElementsByClassName('thumbnail')
+    
+        let activeImages = document.getElementsByClassName('active2')
+    
+        for (var i=0; i < thumbnails.length; i++){
+    
+          thumbnails[i].addEventListener('mouseover', function(){
+            console.log(activeImages)
+            
+            if (activeImages.length > 0){
+              activeImages[0].classList.remove('active2')
+            }
+            
+    
+            this.classList.add('active2')
+            document.getElementById('featured').src = this.src
+          })
+        }
+    
+    
+        let buttonRight = document.getElementById('slideRight');
+        let buttonLeft = document.getElementById('slideLeft');
+    
+        buttonLeft.addEventListener('click', function(){
+          document.getElementById('slider2').scrollLeft -= 180
+        })
+    
+        buttonRight.addEventListener('click', function(){
+          document.getElementById('slider2').scrollLeft += 180
+        })
+      </script>
 
-
-      <div class="separador" style="margin-top: 50%;">
+      <div class="separador">
         <img class="separador-img" src="img/Separador.png">
       </div>
       <div class="scale-in-center texts">
-        <h1 class="titles">¡RECOMENDADAS!</h1>
+        <h1 class="titles">NUESTRAS GORRAS</h1>
         <p class="tracking-in-expand parrafo">
           Sed
           ut perspiciatis unde omnis
