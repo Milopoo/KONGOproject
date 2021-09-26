@@ -119,6 +119,7 @@ body {
     transition: opacity 500ms;
     visibility: hidden;
     opacity: 0;
+    z-index: 105;
 }
 .overlay:target {
     visibility: visible;
@@ -1027,11 +1028,11 @@ transform: rotate(180deg);
   }
 }
 /*Conocenos*/
-.d-conocenos{
+.d-article{
   margin-top: 15%;
   margin-bottom: 10%;
 }
-.title-cono{
+.title-article{
   text-align: center;
   font-size: 30px;
 }
@@ -1056,9 +1057,6 @@ text-align: left;
 .tvision{
 margin: 3%;
 text-align: right;
-}
-.info{
-  margin: 1%;
 }
 @media screen and (max-width:600px) {
   .d-conocenos{
@@ -1097,13 +1095,43 @@ text-align: right;
             transform: translateY(5px);
   }
 }
-@media screen and (max-width: 600px) {
-  .parrafo-conocenos{
-    margin:5%;
-  }
-}
 /*iconos conocenos*/
-.conocenos-icons{
+.page-icons{
   position: relative;
   top: 5px;
+}
+.titulos-soporte{
+  text-align: center;
+  font-size: 25px;
+  margin-bottom: 3%;
+}
+.sub-titulos-soporte{
+  margin: 5%;
+}
+.respuesta{
+  text-align: left;
+  margin: 1%;
+}
+
+.pregunta, .pregunta-li{
+  font-size: 25px;
+  list-style: none;
+}
+.parrafo-soporte{
+  text-align: center;
+  margin: 3%;
+}
+@media screen and (max-width:600px) {
+  .d-article{
+    margin-top: 45%;
+  }
+  .sub-titulos-soporte{
+    margin-left: 10%;
+  }
+  .parrafo-conocenos, .parrafo-soporte {
+    margin: 5%;
+  }
+  .titulos-soporte{
+    font-size: 23px;
+  }
 }
