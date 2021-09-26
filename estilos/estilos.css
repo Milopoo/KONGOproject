@@ -1097,3 +1097,13 @@ text-align: right;
             transform: translateY(5px);
   }
 }
+@media screen and (max-width: 600px) {
+  .parrafo-conocenos{
+    margin:5%;
+  }
+}
+/*iconos conocenos*/
+.conocenos-icons{
+  position: relative;
+  top: 5px;
+}
