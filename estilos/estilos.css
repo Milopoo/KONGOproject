@@ -917,6 +917,11 @@ transform: rotate(180deg);
   margin-top: 5%;
   margin-bottom: 5%;
 }
+.detalles-gorra{
+  margin-left: 3%;
+  margin-top: 3%;
+}
+
 /*Caja cantidad*/
 .quantity {
   display: flex;
@@ -1009,6 +1014,9 @@ transform: rotate(180deg);
   }
   .columnD {
     width: 100%;
+  }
+  .detalles-gorra{
+    margin-left: 5%;
   }
   #featured{
     max-width: 100%;
