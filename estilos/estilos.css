@@ -85,7 +85,7 @@ body {
   font-size: 25px;
   text-decoration: none;
 }
-@media (max-width:411px){
+@media (max-width:450px){
   .logo{
     max-width: 100%;
     width: 15%;
@@ -145,7 +145,7 @@ body {
     text-decoration: none;
     color: rgb(0, 0, 0);
 }
-@media (max-width:411px) {
+@media (max-width:600px) {
   #popupBody{
     width: 100%;
   }
@@ -465,7 +465,7 @@ transform: rotate(180deg);
   .slider img {
     width: 100%;
   }
-@media (max-width: 411px){
+@media (max-width: 450px){
   .slider ul{
     padding: 35% 0% 0% 0%;
   }
