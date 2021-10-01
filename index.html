@@ -126,8 +126,6 @@
       </li>
     </ul>
   </div>
-  <div style=" margin: 5%;">
-  </div>
   <div class="text">
     <a href="" class="boton_personalizado">¡VER MÁS! </a>
   </div>
@@ -178,7 +176,7 @@
   <!-- Carrusel recomendadas-->
   <div class="slideshow-container2">
 
-    <div class="mySlides2 fade2 scale-in-center recomend-center">
+    <div class="mySlides2 first-img fade2 scale-in-center recomend-center">
       <img class="imgreco " src="img/1.jpeg">
     </div>
 
@@ -201,35 +199,7 @@
     <span class="dot2" onclick="currentSlide(2)"></span>
     <span class="dot2" onclick="currentSlide(3)"></span>
   </div>
-
-  <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides2");
-      var dots = document.getElementsByClassName("dot2");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-    }
-  </script>
+  <script src="script2.js"></script>
   <div class="text">
     <a href="" class="boton_personalizado">VER TODO </a>
   </div>

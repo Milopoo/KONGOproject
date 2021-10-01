@@ -43,6 +43,7 @@ let sopor=document.querySelector(".s");
 sopor.addEventListener("click", ()=>{
 navLinks.classList.toggle("show4");
 });
+
 //Boton aumentar cantidad
 function wcqib_refresh_quantity_increments() {
     jQuery("div.quantity:not(.buttons_added), td.quantity:not(.buttons_added)").each(function(a, b) {

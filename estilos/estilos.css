@@ -533,7 +533,9 @@ transform: rotate(180deg);
   .mySlides2 {
     display: none
   }
-
+.first-img{
+  display: block;
+}
   img {
     max-width: 100%;
     vertical-align: top;
