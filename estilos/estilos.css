@@ -701,7 +701,13 @@ transform: rotate(180deg);
     text-align:center;
     position: relative;
     top:190%; 
+    margin-top: 5%;
   }
+@media screen and (max-width:600px) {
+  .text{
+    margin-top: 10%;
+  }
+}
   .boton_personalizado{
     text-decoration: none;
     padding: 10px;
@@ -723,6 +729,7 @@ transform: rotate(180deg);
     margin-top: 10%;
     margin-bottom: 10%;
   }
+
   .subtexto{
     color: white;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
@@ -736,7 +743,16 @@ transform: rotate(180deg);
   * {
     box-sizing: border-box;
   }
-  
+  @media screen  and (max-width:850px){
+    .textofinal{
+      font-size: 23px;
+      margin-top: 5%;
+      margin-bottom: 5%;
+    }
+    .subtexto{
+      margin-top: 8%;
+    }
+  }
   /* Crea cuatro columnas iguales que floten una al lado de la otra */
   .column {
     background: #000000;
@@ -758,9 +774,10 @@ transform: rotate(180deg);
   
   /* Diseño responsive: hace que las cuatro columnas se apilen una encima de la otra 
   en lugar de una al lado de la otra. */
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 850px) {
     .column {
       width: 100%;
+      height: 50%;
     }
   }
   .footer{
