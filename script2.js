@@ -25,4 +25,10 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
-
+//Boton editar admin
+document.getElementById("myBtn").onclick = function() {myFunction()};
+          
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("showEdit");
+}
+// Ocultar boton de editar
