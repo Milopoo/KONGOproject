@@ -19,7 +19,6 @@
 
 <body class="body-admin">
     <div class="admin panel">
-        <form action="indexAdmin.html" method="POST" target="" >
         <div>
             <h2 class="text-admin"> PANEL DE ADMINISTRADOR </h2>
             <ul>
@@ -27,11 +26,18 @@
                     <a href="editIndex.html" class="boton_personalizado-admin3">Editar contenido de la página </a>
                 </li>
                 <li class="li-button">
-                    <a href="" class="boton_personalizado-admin2 ">Editar productos </a>
+                    <div class="dropdown2">
+                        <button onclick="myFunction()" class="dropbtn2">Editar Productos</button>
+                        <div id="myDropdownP" class="dropdown2-content">
+                          <a href="#home">Crear</a>
+                          <a href="#about">Eliminar</a>
+                          <a href="#about">Editar</a>
+                        </div>
+                      </div>
+                      <script src="script2.js"></script>
                 </li>
             </ul>
         </div>
-    </form>
     </div>
 </body>
 </html>

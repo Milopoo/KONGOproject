@@ -31,4 +31,23 @@ document.getElementById("myBtn").onclick = function() {myFunction()};
 function myFunction() {
   document.getElementById("myDropdown").classList.toggle("showEdit");
 }
-// Ocultar boton de editar
+
+//Boton editar productos panelAdmin.html
+
+function myFunction() {
+  document.getElementById("myDropdownP").classList.toggle("showP");
+}
+
+
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn2')) {
+    var dropdowns = document.getElementsByClassName("dropdown2-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('showP')) {
+        openDropdown.classList.remove('showP');
+      }
+    }
+  }
+}
