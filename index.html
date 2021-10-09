@@ -20,18 +20,18 @@
 <body class="body-admin">
     <div class="admin">
         <img class="logo-admin" src="./img/Logo_Empresa-modified.png">
-        <form action="PagPrincipalAdmin.html" method="POST" target="" >
         <div>
             <h2 class="text-admin"> ADMINISTRADOR</h2>
             <ul>
-                <li class="li-admin">  <input class="input" type="text" id="usuario" placeholder="Usuario"> </li>
-                <li class="li-admin">  <input class="input" type="password" id="contraseña" placeholder="Contraseña" 
-                                            pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. 
-                                            La contraseña debe empezar con una letra y contener al menor un dígito" required></li>
-                <li class="li-button"> <input class="boton_personalizado-admin" type="submit" value="Ingresar" > </li>
+                <li class="li-admin">  <input class="input" type="email" id="email" placeholder="Ingresar email"> </li>
+                <li class="li-admin">  <input class="input" type="password" id="contraseña" placeholder="Ingresar contraseña" 
+                                            pattern="[A-Za-z][A-Za-z0-9]*[0-9][A-Za-z0-9]*" 
+                                            title="Una contraseña válida es un conjuto de caracteres, donde cada uno consiste de una letra mayúscula o minúscula, o un dígito. 
+                                            La contraseña debe empezar con una letra y contener al menor un dígito" required></li> 
+                <li class="li-button"> <input class="boton_personalizado-admin" type="submit" id= "login" value= "Ingresar" > </li>
         </ul>
         </div>
-    </form>
     </div>
+    <script type = "module" src= "login.js" defer></script>
 </body>
 </html>
