@@ -1469,6 +1469,40 @@ span {
     margin-top: 5%;
   }
 }
+/*Botones añadir a la bolsa y ver detalles*/ 
+.product-btns{
+  text-align: center;
+}
+.add-to-wishlist{
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 2%;
+  cursor: pointer;
+  margin: 2%;
+  transition: 0.3s;
+  width: 90%;
+  font-size: 20px;
+}
+.add-to-wishlist:hover{
+  background-color: white;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
+.quick-view{
+  color: black;
+  background-color: white;
+  border-radius: 5px;
+  padding: 2%;
+  cursor: pointer;
+  margin: 2%;
+  transition: 0.3s;
+  width: 90%;
+  font-size: 20px;
+}
+.quick-view:hover{
+  background-color: white;
+  box-shadow: 0 3px 4px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
+}
 /*Estilo Administrador*/
 .body-admin{
   background-color: black;
