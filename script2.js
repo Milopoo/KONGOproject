@@ -34,7 +34,7 @@ function myFunction() {
 
 //Boton editar productos panelAdmin.html
 
-function myFunction() {
+function myFunction2() {
   document.getElementById("myDropdownP").classList.toggle("showP");
 }
 
