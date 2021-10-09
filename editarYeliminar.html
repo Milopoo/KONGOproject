@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+</html>
+<html>
+
+<head>
+    <title>ADMINISTRADOR</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shorcut icon" type="image/x-icon" href="./img/Logo_Empresa-modified.ico">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<!--Todo lo visual de la página-->
+
+<body class="body-admin">
+    <div class="admin">
+        <form action="PagPrincipalAdmin.html" method="POST" target="" >
+        <div>
+            <h2 class="text-admin"> EDITAR PRODUCTO</h2>
+            <ul>
+                <li class="li-admin">  <input class="input" type="text" id="EditnombreP" placeholder="Nomnre del producto"> </li>
+                <li class="li-admin">  <input class="input" type="number" id="EditcodigoP" placeholder="Código del producto"> </li>
+                <li class="li-admin">  <input class="input" type="text" id="EditpromocionP" placeholder="Promoción del producto"> </li>
+                <li class="li-admin">  <input class="input" type="number" id="EditcantidadP" placeholder="Cantidad del producto en Stock"> </li>
+                <li class="li-admin">  <input class="input" type="text" id="EditcolorP" placeholder="Color"> </li>
+                <li class="li-admin">  <input class="input" type="text" id="EdittallaP" placeholder="Tallas disponibles"> </li> 
+                <textarea class="input-text-edit-des" id="EditTextDescripcionP" name="EditDescripcionP" placeholder="Agregar Descripcióm..."
+                cols="50" rows="10"></textarea>
+                <li class="li-button-cargar-img"> <input class="boton_personalizado-admin" type="submit" value="Cargar Imágenes" >
+                                                    <input class="boton_personalizado-admin-crearP" type="file" id="imgGorras" name="files" multiple >
+                </li>
+                <li class="li-button-cargar-img"> <input class="boton_personalizado-admin" type="submit" value="Guardar" ></li>
+        </ul>
+        </div>
+    </form>
+    </div>
+</body>
+</html>
