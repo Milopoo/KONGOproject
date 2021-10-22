@@ -1,6 +1,6 @@
 //Slider de imagenes principal
 //console.log("Cargado");
-$('.visitas').click(function(event) {
+$('#visitas').click(function(event) {
     event.preventDefault();
       var redirectUrl = $(this).attr('href');
       $.ajax({
