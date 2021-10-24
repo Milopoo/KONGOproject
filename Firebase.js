@@ -1,6 +1,5 @@
  // Import the functions you need from the SDKs you need
  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
- 
  import { getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
   
 
