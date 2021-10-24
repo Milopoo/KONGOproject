@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { getFirestore, collection, addDoc, doc, setDoc}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
 
 const db = getFirestore();
@@ -16,7 +16,7 @@ let urlimage;
 document.getElementById("InsBtn").addEventListener('click', async function(){
     
     
-    const docRef = await addDoc(collection(db, "Gorras"), {
+    const docRef = await setDoc(doc(db, "Gorras", codigoP.value), {
     
         Name: nombreP.value,
         Code: codigoP.value,
@@ -28,7 +28,7 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
         url: urlimage
 
       });
-      console.log("Document written with ID: ", docRef.id);
+      console.log("Document written with ID: ", codigoP.value);
       window.location = "EyEproductos.html";
 
 
