@@ -1,5 +1,5 @@
 import { getFirestore, collection, addDoc }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
-import { getStorage, ref, uploadBytes}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
+import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
 
 const db = getFirestore();
 
@@ -10,10 +10,12 @@ let cantidadP = document.getElementById("cantidadP");
 let colorP = document.getElementById("colorP");
 let tallaP = document.getElementById("tallaP");
 let textDescripcionP = document.getElementById("textDescripcionP");
+let urlimage;
 
 
 document.getElementById("InsBtn").addEventListener('click', async function(){
-
+    
+    
     const docRef = await addDoc(collection(db, "Gorras"), {
     
         Name: nombreP.value,
@@ -22,7 +24,8 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
         Cantidad: cantidadP.value,
         Color: colorP.value,
         Size: tallaP.value,
-        Descripcion: textDescripcionP.value
+        Descripcion: textDescripcionP.value,
+        url: urlimage
 
       });
       console.log("Document written with ID: ", docRef.id);
@@ -33,14 +36,30 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
 
        //Storage-----------
 
-       document.getElementById("InsBtn").addEventListener('click', function(){
+       document.getElementById("subirimg").addEventListener('click', function(){
         const file = document.getElementById("imgGorras").files[0]
         const storage = getStorage();
-        const storageRef = ref( storage, "Images" + file.name );
+        const storageRef = ref( storage, 'images/'+ file.name );
+        var metadata = { contentType: 'image/jpeg'};
     
-        uploadBytes(storageRef, file).then((snapshot) =>{
+        /*uploadBytes(storageRef, file).then((snapshot) =>{
         console.log('Uploaded a blob or file!');
+        });*/
+
+        uploadBytesResumable(storageRef, file, metadata).then((snapshot) => {
+        console.log('Uploaded', snapshot.totalBytes, 'bytes.');
+        console.log('File metadata:', snapshot.metadata);
+         // Let's get a download URL for the file.
+        getDownloadURL(snapshot.ref).then((url) => {
+        console.log('File available at', url);
+        // ...
+        urlimage= url;
         });
-    
+        }).catch((error) => {
+         console.error('Upload failed', error);
+         // ...
+         });
+        
+        
      })
   
