@@ -1,3 +1,31 @@
+//Carrusel del archivo JSON sliderRecomend.json
+/*let cadena1 = '{"persona":[{"ustelefono":"3544432","usidrol":0,"userid":1,"usapellidos":"Perez","useremail":"andrea@gmail.com","usnombres":"Andrea"}]}';
+
+let json1 = JSON.parse(cadena1);
+console.log(json1.persona[0].ustelefono);*/
+const gorras = [
+  {
+    id : "1",
+    nombre: "Gorra 1",
+    desc : "Gorra1",
+    visitas : "2"
+  },
+  {
+    id : "2",
+    nombre: "Gorra 2",
+    desc : "Gorra2",
+    visitas : "5"
+  },
+  {
+    id : "3",
+    nombre: "Gorra 3",
+    desc : "Gorra3",
+    visitas : "10"
+  }
+];
+
+console.log(gorras[0].nombre);
+
 //Carrusel recomendadas
 var slideIndex = 1;
 showSlides(slideIndex);

@@ -1,0 +1,25 @@
+{
+    "gorras": [
+ 
+       {
+          "id": "01",
+          "nombre": "Gorra 1",
+          "desc": "Gorra1",
+          "visitas": "1"
+       },
+ 
+       {
+        "id": "02",
+        "nombre": "Gorra 2",
+        "desc": "Gorra2",
+        "visitas": "5"
+       },
+
+       {
+        "id": "03",
+        "nombre": "Gorra 3",
+        "desc": "Gorra3",
+        "visitas": "2"
+       }
+    ]
+ }
