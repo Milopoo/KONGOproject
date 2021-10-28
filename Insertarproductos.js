@@ -9,14 +9,16 @@ let promocionP = document.getElementById("promocionP");
 let cantidadP = document.getElementById("cantidadP");
 let colorP = document.getElementById("colorP");
 let tallaP = document.getElementById("tallaP");
+let PrecioP = document.getElementById("PrecioP");
+let selecCategoria = document.getElementById("selecCategoria");
 let textDescripcionP = document.getElementById("textDescripcionP");
 let urlimage;
 
 
 document.getElementById("InsBtn").addEventListener('click', async function(){
     
-    
-    const docRef = await setDoc(doc(db, "Gorras", codigoP.value), {
+    const docRef = collection (db, "productos" );
+    await setDoc(doc( docRef, selecCategoria.value, codigoP.value ), {
     
         Name: nombreP.value,
         Code: codigoP.value,
@@ -24,8 +26,12 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
         Cantidad: cantidadP.value,
         Color: colorP.value,
         Size: tallaP.value,
+        Precio: PrecioP.value,
         Descripcion: textDescripcionP.value,
+        Category: selecCategoria.value,
+        TOTAL:((promocionP.value*PrecioP.value)/100),
         url: urlimage
+       
 
       });
       console.log("Document written with ID: ", codigoP.value);
