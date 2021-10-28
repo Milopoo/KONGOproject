@@ -10,6 +10,7 @@ let cantidadP = document.getElementById("cantidadP");
 let colorP = document.getElementById("colorP");
 let tallaP = document.getElementById("tallaP");
 let PrecioP = document.getElementById("PrecioP");
+let selectGender = document.getElementById("selectGender");
 let selecCategoria = document.getElementById("selecCategoria");
 let textDescripcionP = document.getElementById("textDescripcionP");
 let urlimage;
@@ -18,7 +19,7 @@ let urlimage;
 document.getElementById("InsBtn").addEventListener('click', async function(){
     
     const docRef = collection (db, "productos" );
-    await setDoc(doc( docRef, selecCategoria.value, codigoP.value ), {
+    await setDoc(doc( docRef, selectGender.value, selecCategoria.value, codigoP.value ), {
     
         Name: nombreP.value,
         Code: codigoP.value,
@@ -28,6 +29,7 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
         Size: tallaP.value,
         Precio: PrecioP.value,
         Descripcion: textDescripcionP.value,
+        Gender: selectGender.value,
         Category: selecCategoria.value,
         TOTAL:((promocionP.value*PrecioP.value)/100),
         url: urlimage
