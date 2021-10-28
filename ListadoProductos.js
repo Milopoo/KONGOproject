@@ -1,4 +1,4 @@
-/*import { getFirestore, collection, addDoc, doc, setDoc}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { getFirestore, collection, addDoc, doc, setDoc}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 import { getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
 
 const db = getFirestore();
@@ -9,9 +9,11 @@ let promocionP = document.getElementById("promocionP");
 let cantidadP = document.getElementById("cantidadP");
 let colorP = document.getElementById("colorP");
 let tallaP = document.getElementById("tallaP");
+let PrecioP = document.getElementById("PrecioP");
+let selectGender = document.getElementById("selectGender");
+let selecCategoria = document.getElementById("selecCategoria");
 let textDescripcionP = document.getElementById("textDescripcionP");
 let urlimage;
-
 
 async function GetProduct(){
 
@@ -36,4 +38,3 @@ async function GetProduct(){
 
 window.addEventListener('DOMContentLoaded', GetProduct);
     
-   */

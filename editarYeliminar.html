@@ -19,25 +19,42 @@
 
 <body class="body-admin">
     <div class="admin">
-        <form action="EyEproductos.html" method="POST" target="" >
+       
         <div>
             <h2 class="text-admin"> EDITAR PRODUCTO</h2>
             <ul>
-                <li class="li-admin">  <input class="input" type="text" id="EditnombreP" placeholder="Nomnre del producto"> </li>
-                <li class="li-admin">  <input class="input" type="number" id="EditcodigoP" placeholder="Código del producto"> </li>
-                <li class="li-admin">  <input class="input" type="text" id="EditpromocionP" placeholder="Promoción del producto"> </li>
-                <li class="li-admin">  <input class="input" type="number" id="EditcantidadP" placeholder="Cantidad del producto en Stock"> </li>
-                <li class="li-admin">  <input class="input" type="text" id="EditcolorP" placeholder="Color"> </li>
-                <li class="li-admin">  <input class="input" type="text" id="EdittallaP" placeholder="Tallas disponibles"> </li> 
-                <textarea class="input-text-edit-des" id="EditTextDescripcionP" name="EditDescripcionP" placeholder="Agregar Descripcióm..."
-                cols="50" rows="10"></textarea>
-                <li class="li-button-cargar-img"> <input class="boton_personalizado-admin" type="submit" value="Cargar Imágenes" >
-                                                    <input class="boton_personalizado-admin-crearP" type="file" id="imgGorras" name="files" multiple >
+                <li class="li-admin">  <input class="input" type="text" id="nombreP" placeholder="Nombre del producto"> </li>
+                <li class="li-admin">  <input class="input" type="number" id="codigoP" placeholder="Código del producto"> </li>
+                <li class="li-admin">  <input class="input" type="number" id="promocionP" placeholder="Promoción del producto"> </li>
+                <li class="li-admin">  <input class="input" type="number" id="cantidadP" placeholder="Cantidad del producto en Stock"> </li>
+                <li class="li-admin">  <input class="input" type="text" id="colorP" placeholder="Color"> </li>
+                <li class="li-admin">  <input class="input" type="text" id="tallaP" placeholder="Tallas disponibles"> </li> 
+                <li class="li-button">
+                   <select name="select" id="selectGender" class="selecCat">
+                       <option value="Hombre">Hombre</option>
+                       <option value="Mujer">Mujer</option>
+                   </select>
                 </li>
-                <li class="li-button-cargar-img"> <input class="boton_personalizado-admin" type="submit" value="Guardar" ></li>
+                <li class="li-button">
+                    <select name="select" id="selecCategoria" class="selecCat">
+                        <option value="Casual">Casual</option>
+                        <option value="Lujo">Lujo</option>
+                    </select>
+                 </li>
+                <li class="li-admin">  <input class="input" type="number" min="1" step="any" id="PrecioP" placeholder="Precio"> </li> 
+                <textarea class="input-text-edit-des" id="textDescripcionP" name="tDescripcionP" placeholder="Agregar Descripción..."
+                cols="50" rows="10"></textarea>
+               <li class="li-button-cargar-img"> <input class="boton_personalizado-admin" type="submit" id= "subirimg" value="Cargar Imágenes" >
+                                                 <input class="boton_personalizado-admin-crearP" type="file" id="imgGorras" name="files" multiple >
+                </li>
+                <li class="li-button"> <input class="boton_personalizado-admin" type="submit" id="InsBtn" value="Guardar" ></li>
         </ul>
         </div>
-    </form>
+   
     </div>
+
+    <script type = "module" src= "Firebase.js" ></script>
+    <script type = "module" src= "login.js" ></script>
+    <script type = "module" src= "Insertarproductos.js" ></script>
 </body>
 </html>
