@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc, doc, setDoc}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+/*import { getFirestore, collection, addDoc, doc, setDoc}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 import { getFirestore, doc, getDoc, setDoc, collection, addDoc, updateDoc, deleteDoc, deleteField }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
 
 const db = getFirestore();
@@ -36,4 +36,4 @@ async function GetProduct(){
 
 window.addEventListener('DOMContentLoaded', GetProduct);
     
-   
+   */
