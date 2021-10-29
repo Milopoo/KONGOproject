@@ -1,4 +1,4 @@
-import { getFirestore, collection, addDoc, doc, setDoc}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { getFirestore, collection, addDoc, doc, setDoc, getDocs}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
 
 const db = getFirestore();
@@ -41,7 +41,6 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
 
 
    })
-
        //Storage-----------
 
        document.getElementById("subirimg").addEventListener('click', function(){
@@ -70,4 +69,3 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
         
         
      })
-  
