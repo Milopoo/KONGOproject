@@ -2,7 +2,7 @@ import { getAuth, signInWithEmailAndPassword,setPersistence,browserSessionPersis
 const auth = getAuth();
 
 
-document.getElementById("login").addEventListener('click', function(){
+/*document.getElementById("login").addEventListener('click', function(){
 
     const email = document.getElementById("email").value
     const contraseña = document.getElementById("contraseña").value
@@ -37,7 +37,7 @@ document.getElementById("login").addEventListener('click', function(){
     const errorMessage = error.message;
   });
  
-   })
+   })*/
 
    
 
