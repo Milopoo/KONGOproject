@@ -1,7 +1,8 @@
-import { getFirestore, collection, doc, setDoc, }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { getFirestore, collection, doc, updateDoc }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
 
 const db = getFirestore();
+
 
 let nombreP = document.getElementById("nombreP");
 let codigoP = document.getElementById("codigoP");
@@ -15,11 +16,10 @@ let selecCategoria = document.getElementById("selecCategoria");
 let textDescripcionP = document.getElementById("textDescripcionP");
 let urlimage;
 
-
-document.getElementById("InsBtn").addEventListener('click', async function(){
+document.getElementById("UpdateBtn").addEventListener('click', async function(){
     
     const docRef = collection (db, "productos" );
-    await setDoc(doc( docRef, selectGender.value, selecCategoria.value, codigoP.value ), {
+    await updateDoc(doc( docRef, selectGender.value, selecCategoria.value, codigoP.value ), {
     
         Name: nombreP.value,
         Code: codigoP.value,
@@ -68,5 +68,3 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
          });
         
      })
-
-
