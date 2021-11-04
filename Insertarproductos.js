@@ -1,7 +1,8 @@
-import { getFirestore, collection, doc, setDoc, }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { getFirestore, collection, doc, setDoc, deleteDoc }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
 
 const db = getFirestore();
+
 
 let nombreP = document.getElementById("nombreP");
 let codigoP = document.getElementById("codigoP");
@@ -17,7 +18,6 @@ let urlimage;
 
 
 document.getElementById("InsBtn").addEventListener('click', async function(){
-    
     const docRef = collection (db, "productos" );
     await setDoc(doc( docRef, selectGender.value, selecCategoria.value, codigoP.value ), {
     
@@ -49,10 +49,6 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
         const storageRef = ref( storage, 'images/'+ file.name );
         var metadata = { contentType: 'image/jpeg'};
     
-        /*uploadBytes(storageRef, file).then((snapshot) =>{
-        console.log('Uploaded a blob or file!');
-        });*/
-
         uploadBytesResumable(storageRef, file, metadata).then((snapshot) => {
         console.log('Uploaded', snapshot.totalBytes, 'bytes.');
         console.log('File metadata:', snapshot.metadata);
@@ -68,5 +64,7 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
          });
         
      })
+  
+     
 
-
+    

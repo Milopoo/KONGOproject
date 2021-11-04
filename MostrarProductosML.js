@@ -1,7 +1,7 @@
-import { getFirestore, collection, getDocs}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { getFirestore, collection, getDocs, doc, deleteDoc}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 
 const db = getFirestore();
-
+var id ='';
 const  tasksContainer = document.getElementById('tasks-container');
 
 const querySnapshot = await getDocs(collection(db, 'productos', 'Mujer', 'Lujo'));
@@ -26,19 +26,30 @@ querySnapshot.forEach((doc) => {
          </div>
          <div class="product-btns">
              <a href="editarYeliminar.html">
-                 <button class="edit-product"><i class="fa fa-pencil"></i><span
+                 <button class="btn btn-primary edit-product"><i class="fa fa-pencil"></i><span
                          class="tooltipp">Editar</span></button>
              </a>
              <a href="#">
-                 <button class="delete-product" id="DeleteBtn"><i class="fa fa-trash"></i><span
+                 <button class="btn btn-secondary delete-product" id ="DeleteBtn"><i class="fa fa-trash"></i><span
                          class="tooltipp">Eliminar</span></button>
              </a>
             </div>
          </div>
         </div>
       </div>`
-    
-
+ 
   console.log(doc.id, " => ", doc.data());
+  id = doc.id
+
 });
 
+document.getElementById("DeleteBtn").addEventListener('click', async function(){
+
+  const docRef = collection (db, "productos",  );
+  await deleteDoc(doc( docRef, "Mujer", "Lujo", id ));
+
+  
+  console.log(" Delete! ");
+  window.location = "EyEproductos.html";
+
+  })
