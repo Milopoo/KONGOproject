@@ -1927,8 +1927,7 @@ span.price {
 }
 
 .links-factura {
-  color: #5D6975;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 .body-fac {
