@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+</html>
+<html>
+
+<head>
+    <title>Bolsa de compra</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div>
+        <h1>Bolsa de compra</h1>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Item</th>
+                <th scope="col">Cantidad</th>
+                <th scope="col">Acción</th>
+                <th scope="col">Total</th>
+              </tr>
+            </thead>
+            <tbody id="items"></tbody>
+            <tfoot>
+              <tr id="footer">
+                <th scope="row" colspan="5">Tu bolsa está vacía</th>
+              </tr>
+            </tfoot>
+          </table>
+        <div class="row-bolsa" id="cards"> </div>
+    </div>
+    <template id="template-footer">
+        <th scope="row" colspan="2">Total productos</th>
+        <td>10</td>
+        <td class="td-plus-minus">
+            <button class="btn-vc btn-danger btn-sm" id="vaciar-bolsa">
+                vaciar todo
+            </button>
+            <button  class="btn-vc btn-danger2 btn-sm" id="vaciar-bolsa">
+                <a href="facturacion.html">Continuar al pago </a>
+            </button>
+        </td>
+        <td class="font-weight-bold">$ <span>5000</span></td>
+    </template>
+
+    <template id="template-bolsa">
+        <tr>
+            <th scope="row">id</th>
+            <td>Café</td>
+            <td>1</td>
+            <td class="td-plus-minus">
+                <button class="btn-bolsa-plus btn-info btn-sm">
+                    +
+                </button>
+                <button class="btn-bolsa-minus btn-danger btn-sm">
+                    -
+                </button>
+            </td>
+            <td>$ <span>500</span></td>
+        </tr>
+    </template>
+    <template id="articulo">
+        <div>
+            <div>
+                <img src="" alt="">
+                <div>
+                    <h5>Titulo</h5>
+                    <p>Precio</p>
+                    <button class="btnComprar">Comprar</button>
+                </div>
+            </div>
+        </div>
+    </template>
+    <script src="bolsaCompra.js"></script>
+</body>
+
+</html>

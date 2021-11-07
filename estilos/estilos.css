@@ -1956,7 +1956,7 @@ span.price {
   width: 90px;
 }
 
-h1 {
+.h1-fact {
   border-top: 1px solid  #5D6975;
   border-bottom: 1px solid  #5D6975;
   color: #5D6975;
@@ -1965,7 +1965,6 @@ h1 {
   font-weight: normal;
   text-align: center;
   margin: 0 0 20px 0;
-  background: url(dimension.png);
 }
 
 #datosCliente {
@@ -2045,7 +2044,7 @@ table td.grand {
   font-size: 1.2em;
 }
 
-footer {
+.footer-fact {
   color: #5D6975;
   width: 100%;
   height: 30px;
@@ -2053,5 +2052,39 @@ footer {
   bottom: 0;
   border-top: 1px solid #C1CED9;
   padding: 8px 0;
+  text-align: center;
+}
+/*Bolsa de compra*/
+.row-bolsa{
+  margin: 1%;
+  display: flex;
+  justify-content: space-between;
+}
+.btn-bolsa-plus{
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 15%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+.btn-bolsa-minus{
+  background-color: red;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 15%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+}
+.td-plus-minus{
+  text-align: center;
+}
+.btn-vc{
   text-align: center;
 }
