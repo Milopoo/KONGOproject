@@ -15,10 +15,14 @@ let selectGender = document.getElementById("selectGender");
 let selecCategoria = document.getElementById("selecCategoria");
 let textDescripcionP = document.getElementById("textDescripcionP");
 let urlimage;
+var Total = 0; 
+
+ 
 
 
 document.getElementById("InsBtn").addEventListener('click', async function(){
     const docRef = collection (db, "productos" );
+    Total = PrecioP.value - ((promocionP.value*PrecioP.value)/100);
     await setDoc(doc( docRef, selectGender.value, selecCategoria.value, codigoP.value ), {
     
         Name: nombreP.value,
@@ -31,11 +35,12 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
         Descripcion: textDescripcionP.value,
         Gender: selectGender.value,
         Category: selecCategoria.value,
-        TOTAL:((promocionP.value*PrecioP.value)/100),
+        TOTAL: Total,
         url: urlimage
        
 
       });
+
       console.log("Document written with ID: ", codigoP.value);
       window.location = "EyEproductos.html";
 
