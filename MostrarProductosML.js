@@ -4,19 +4,10 @@ const db = getFirestore();
 var id ='';
 const  tasksContainer = document.getElementById('tasks-container');
 
+let params = new URLSearchParams(location.search); //Busca todos las variables existentes y las guarda en un arraylist
+var id = params.get('id'); //Busca la variable que tenga nombre id
+console.log(id);
 
-let nombreP = document.getElementById("nombreP");
-let codigoP = document.getElementById("codigoP");
-let promocionP = document.getElementById("promocionP");
-let cantidadP = document.getElementById("cantidadP");
-let colorP = document.getElementById("colorP");
-let tallaP = document.getElementById("tallaP");
-let PrecioP = document.getElementById("PrecioP");
-let selectGender = document.getElementById("selectGender");
-let selecCategoria = document.getElementById("selecCategoria");
-let textDescripcionP = document.getElementById("textDescripcionP");
-let urlimage;
-var Total = 0; 
 
 const querySnapshot = await getDocs(collection(db, 'productos', 'Mujer', 'Lujo'));
 tasksContainer.innerHTML ='';
@@ -76,24 +67,19 @@ document.getElementById("DeleteBtn").addEventListener('click', async function(){
 
 
 document.getElementById("UpdateBtn").addEventListener('click', async function(){
-  
-  window.location = "editarYeliminar.html";
 
   const docRef = collection (db, "productos" );
-  await getDoc(doc( docRef, "Mujer", "Lujo", id ));
+  const docSnap = await getDoc(doc( docRef, "Mujer", "Lujo", id ));
+  console.log("id", id);
 
-    nombreP.value = docSnap.data().Name;
-    codigoP.value = docSnap.data().Code;
-    promocionP.value = docSnap.data().Promo;
-    cantidadP.value = docSnap.data().Cantidad; 
-    colorP.value = docSnap.data().Color;
-    tallaP.value = docSnap.data().Size;
-    PrecioP.value = docSnap.data().Precio;
-    textDescripcionP.value = docSnap.data().Descripcion; 
-    selectGender.value = docSnap.data().Gender;
-    selecCategoria.value = docSnap.data().Category;
-    Total = docSnap.data().TOTAL;
-    urlimage = docSnap.data().urlimage;
-    
+  if (docSnap.exists()) {
+
+    window.location.href = "editarYeliminar.html" + '?id=' + id;
+    return false;
+
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }  
 
   })

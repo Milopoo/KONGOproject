@@ -1,4 +1,4 @@
-import { getFirestore, collection, doc, updateDoc }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { getFirestore, collection, setDoc, doc, updateDoc }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
 
 const db = getFirestore();
@@ -15,11 +15,12 @@ let selectGender = document.getElementById("selectGender");
 let selecCategoria = document.getElementById("selecCategoria");
 let textDescripcionP = document.getElementById("textDescripcionP");
 let urlimage;
+var Total = 0; 
 
-document.getElementById("UpdateBtn").addEventListener('click', async function(){
-    
+document.getElementById("SaveBtn").addEventListener('click', async function(){
     const docRef = collection (db, "productos" );
-    await updateDoc(doc( docRef, selectGender.value, selecCategoria.value, codigoP.value ), {
+    Total = PrecioP.value - ((promocionP.value*PrecioP.value)/100);
+    await setDoc(doc( docRef, selectGender.value, selecCategoria.value, codigoP.value ), {
     
         Name: nombreP.value,
         Code: codigoP.value,
@@ -31,7 +32,7 @@ document.getElementById("UpdateBtn").addEventListener('click', async function(){
         Descripcion: textDescripcionP.value,
         Gender: selectGender.value,
         Category: selecCategoria.value,
-        TOTAL:((promocionP.value*PrecioP.value)/100),
+        TOTAL: Total,
         url: urlimage
        
 
@@ -68,6 +69,7 @@ document.getElementById("UpdateBtn").addEventListener('click', async function(){
          });
         
      })
+
 
 
 
