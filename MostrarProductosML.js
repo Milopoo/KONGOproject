@@ -3,10 +3,7 @@ import { getFirestore, collection, getDocs, getDoc, doc, deleteDoc, updateDoc}  
 const db = getFirestore();
 var id ='';
 const  tasksContainer = document.getElementById('tasks-container');
-
-let params = new URLSearchParams(location.search); //Busca todos las variables existentes y las guarda en un arraylist
-var id = params.get('id'); //Busca la variable que tenga nombre id
-console.log(id);
+ 
 
 
 const querySnapshot = await getDocs(collection(db, 'productos', 'Mujer', 'Lujo'));
@@ -19,8 +16,8 @@ querySnapshot.forEach((doc) => {
      <div class="row2">
        <div class="product">
         <h3 class="product-name"><a href="#">${ doc.data().Name }</a></h3>
-         <div class="product-img">
-             <a href="detalleGorra.html">
+         <div class="product-img" id= "image">
+             <a href="#" >
                  <img src=${ doc.data().url } >
              </a>
          </div>
@@ -41,10 +38,20 @@ querySnapshot.forEach((doc) => {
             </div>
          </div>
         </div>
-      </div>`
+      </div>
+      
+      <script> 
+      document.getElementById("${ doc.data().Code}").addEventListener('click', async function(){
+
+      
+          window.location.href = "editarYeliminar.html" + '?id=' + ${ doc.data().Code};
+          return false;
+    
+        })
+      </script>`
  
   console.log(doc.id, " => ", doc.data());
-  id = doc.id
+  id = doc.id;
 
   
 
@@ -65,7 +72,7 @@ document.getElementById("DeleteBtn").addEventListener('click', async function(){
 
 //------- Modificar datos 
 
-
+/*
 document.getElementById("UpdateBtn").addEventListener('click', async function(){
 
   const docRef = collection (db, "productos" );
@@ -82,4 +89,24 @@ document.getElementById("UpdateBtn").addEventListener('click', async function(){
     console.log("No such document!");
   }  
 
-  })
+  })*/
+
+  //----- Ir a detalle 
+
+  document.getElementById("image").addEventListener('click', async function(){
+
+    const docRef = collection (db, "productos" );
+    const docSnap = await getDoc(doc( docRef, "Mujer", "Lujo", id ));
+    console.log("id", id);
+  
+    if (docSnap.exists()) {
+  
+      window.location.href = "EditarDetalle.html" + '?id=' + id;
+      return false;
+  
+    } else {
+      // doc.data() will be undefined in this case
+      console.log("No such document!");
+    }  
+  
+    })

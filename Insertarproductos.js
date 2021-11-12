@@ -14,7 +14,7 @@ let PrecioP = document.getElementById("PrecioP");
 let selectGender = document.getElementById("selectGender");
 let selecCategoria = document.getElementById("selecCategoria");
 let textDescripcionP = document.getElementById("textDescripcionP");
-let urlimage;
+let urlimage = document.getElementById("imgGorras");
 var Total = 0; 
 
  

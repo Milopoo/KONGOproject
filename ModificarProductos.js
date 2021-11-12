@@ -14,7 +14,7 @@ let PrecioP = document.getElementById("PrecioP");
 let selectGender = document.getElementById("selectGender");
 let selecCategoria = document.getElementById("selecCategoria");
 let textDescripcionP = document.getElementById("textDescripcionP");
-let urlimage;
+let urlimage = document.getElementById("imgGorras");
 var Total = 0; 
 
 document.getElementById("SaveBtn").addEventListener('click', async function(){
@@ -33,7 +33,7 @@ document.getElementById("SaveBtn").addEventListener('click', async function(){
         Gender: selectGender.value,
         Category: selecCategoria.value,
         TOTAL: Total,
-        url: urlimage
+        url: imgGorras.value
        
 
       });

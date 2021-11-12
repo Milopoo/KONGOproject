@@ -103,7 +103,7 @@
       </div>
 
       <div class="gorra-name">
-          <h1 id= "nombreP"> </h1>
+          <h1 id= "nombreP"> Nombre gorrra </h1>
       </div>
       <div id="content-wrapper">
 		
@@ -134,17 +134,20 @@
           <hr class="hr">
           <h3>Detalles</h3>
             <ul class="detalles-gorra">
-              <li> Material:</li>
               <li> Talla:</li>
               <li> Color:</li>
-              <li> Marca:</li>
-              <li> Tipo de cierre:</li>
-              <li> Durabilidad:</li>
-              <li> Usos:</li>
             </ul>
           <div class="quantity buttons_added">
             <input type="button" value="-" class="minus"><input type="number" step="1" min="1" max="" name="quantity" value="1" title="Qty" class="input-text qty text2" size="4" pattern="" inputmode=""><input type="button" value="+" class="plus">
           </div>
+            <li class="li-button">
+              <select name="select" id="selecTalla" class="selecCat">
+                  <option value="S">S</option>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+              </select>
+           </li>
           <a class="boton_personalizado2" href="#">Añadir a la bolsa</a>
         </div>
       </div>
@@ -234,8 +237,8 @@
 
     <script type = "module" src= "Firebase.js" ></script>
     <script type = "module" src= "login.js" ></script>
+    <script type = "module" src= "Insertarproductos.js" ></script>
     <script type = "module" src= "MostrarProductosML.js" ></script>
-    <script type = "module" src= "ModificarProductos.js" ></script>
     <script type = "module" src= "FormML.js" ></script>
 
 </body>

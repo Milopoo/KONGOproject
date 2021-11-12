@@ -3,26 +3,25 @@ import { getFirestore, collection, getDoc, doc }  from "https://www.gstatic.com/
 const db = getFirestore(); 
 
 
-var params = new URLSearchParams(location.search); //Busca todos las variables existentes y las guarda en un arraylist
-var _url = params.get('ids'); //Busca la variable que tenga nombre id
-console.log(_url);
+let params = new URLSearchParams(location.search); //Busca todos las variables existentes y las guarda en un arraylist
+var id = params.get('id'); //Busca la variable que tenga nombre id
+console.log(id);
 
 
     const docRef = collection (db, "productos" );
-    const docSnap = await getDoc(doc( docRef, "Mujer", "Lujo", _url ));
+    const docSnap = await getDoc(doc( docRef, "Mujer", "Lujo", id ));
   
     if (docSnap.exists()) {
   
       nombreP.value = docSnap.data().Name;
-      codigoP.value = _url;
       promocionP.value = docSnap.data().Promo;
       cantidadP.value = docSnap.data().Cantidad; 
       colorP.value = docSnap.data().Color;
       tallaP.value = docSnap.data().Size;
       PrecioP.value = docSnap.data().Precio;
       textDescripcionP.value = docSnap.data().Descripcion; 
-      selectGender.value = docSnap.data().Gender;
-      selecCategoria.value = docSnap.data().Category;
+      Total = docSnap.data().TOTAL;
+      urlimage = docSnap.data().urlimage;
   
       console.log("Document data:", docSnap.data());
     } else {
@@ -30,4 +29,5 @@ console.log(_url);
       console.log("No such document!");
     }  
   
-    
+    console.log(urlimage);
+  
