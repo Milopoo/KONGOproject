@@ -1,3 +1,5 @@
+
+/* Del video del chileno*/
 const cards = document.getElementById('cards')
 const items = document.getElementById('items')
 const footer = document.getElementById('footer')
@@ -6,6 +8,8 @@ const templateCard = document.getElementById('articulo').content
 const templateFooter = document.getElementById('template-footer').content
 const templateBolsa = document.getElementById('template-bolsa').content
 const fragment = document.createDocumentFragment()
+var total = 0
+var totalProducto = 0
 let bolsa = {}
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -35,13 +39,14 @@ const fetchData = async () => {
 const pintarArticulos = data => {
     //console.log(data)
     data.forEach(producto => {
-      templateCard.querySelector('h5').textContent = producto.title 
-      templateCard.querySelector('p').textContent = producto.precio 
+      templateCard.querySelector('h3').textContent = producto.title 
+      templateCard.querySelector('h4').textContent = producto.precio 
+      templateCard.querySelector('h6').textContent = producto.precioDes
+      templateCard.querySelector('p').textContent = producto.categoria 
       templateCard.querySelector('img').setAttribute("src", producto.thumbnailUrl) 
       templateCard.querySelector('button').dataset.id = producto.id
       const clone  = templateCard.cloneNode(true)
       fragment.appendChild(clone) 
-
         //console.log(producto)  
     })
     cards.appendChild(fragment)
@@ -50,7 +55,7 @@ const pintarArticulos = data => {
 const addBolsa = e => {
     //console.log(e.target)
     //console.log(e.target.classList.contains('btnComprar'))
-    if(e.target.classList.contains('btnComprar')){
+    if(e.target.classList.contains('add-to-wishlist')){
         setBolsa(e.target.parentElement) 
     }
     //Detener otro cualquier evento
@@ -60,9 +65,11 @@ const addBolsa = e => {
 const setBolsa = objeto =>{
     //console.log(objeto)
     const producto = {
-        id: objeto.querySelector('.btnComprar').dataset.id,
-        title: objeto.querySelector('h5').textContent,
-        precio: objeto.querySelector('p').textContent,
+        id: objeto.querySelector('.add-to-wishlist').dataset.id,
+        title: objeto.querySelector('h3').textContent,
+        categoria: objeto.querySelector('p').textContent,
+        precio: objeto.querySelector('h4').textContent,
+        precioDes: objeto.querySelector('h6').textContent,
         cantidad: 1
     }
     if(bolsa.hasOwnProperty(producto.id)){
@@ -87,7 +94,6 @@ const pintarBolsa = () =>{
     })
     items.appendChild(fragment)
     pintarFooter()
-
     localStorage.setItem('bolsa', JSON.stringify(bolsa))
 }
 const pintarFooter = () =>{
@@ -102,6 +108,10 @@ const pintarFooter = () =>{
     const nPrecio = Object.values(bolsa).reduce((acc, {cantidad, precio}) => acc + cantidad * precio, 0)
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
+    localStorage.setItem('total',nPrecio)
+    total = localStorage.getItem('total')
+    localStorage.setItem('totalProducto',nCantidad)
+    totalProducto = localStorage.getItem('totalProducto')
     const clone = templateFooter.cloneNode(true)
     fragment.appendChild(clone)
     footer.appendChild(fragment)
@@ -109,6 +119,9 @@ const pintarFooter = () =>{
     const btnVaciar = document.getElementById('vaciar-bolsa')
     btnVaciar.addEventListener('click', () =>{
         bolsa = {}
+        localStorage.removeItem('total')
+        localStorage.removeItem('totalProducto')
+        nombreP = {}
         pintarBolsa()
     })
 }
@@ -132,3 +145,4 @@ const btnAccion = e =>{
     }
     e.stopPropagation()
 }
+/*Facturación*/

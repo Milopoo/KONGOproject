@@ -1531,7 +1531,7 @@ span {
   }
 }
 /*Botones añadir a la bolsa y ver detalles*/ 
-.product-btns{
+.btns{
   text-align: center;
 }
 .add-to-wishlist{
@@ -2055,6 +2055,9 @@ table td.grand {
   text-align: center;
 }
 /*Bolsa de compra*/
+.menu-bolsa{
+  display: block;
+}
 .row-bolsa{
   margin: 1%;
   display: flex;
@@ -2087,4 +2090,28 @@ table td.grand {
 }
 .btn-vc{
   text-align: center;
+}
+h6{
+  text-decoration: line-through;
+}
+@media (max-width: 800px){
+  table{
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+  }
+  table th{
+    padding: 0;
+  }
+  .row-bolsa{
+    display: block;
+  }
+  .btn-bolsa-minus, .btn-bolsa-plus{
+    width: 50%;
+    padding: 0;
+  }
+  table td{
+    text-align: center;
+  }
 }

@@ -78,7 +78,7 @@
             </ul>
           </li>
           <li>
-            <a href="#">CONÓCENOS</a>
+            <a href="conocenos.html">CONÓCENOS</a>
             <i class='bx bx-chevron-down arrow c'></i>
             <ul class="c-sub-menu sub-menu">
               <li> <a href="conocenos.html #mision"> MISIÓN</a></li>
@@ -87,7 +87,7 @@
             </ul>
           </li>
           <li>
-            <a href="#">SOPORTE</a>
+            <a href="soporte.html">SOPORTE</a>
             <i class='bx bx-chevron-down arrow s'></i>
             <ul class="s-sub-menu sub-menu">
               <li> <a href="#"> TELÉFONO</a></li>
@@ -122,25 +122,76 @@
       <div class="container">
         <div class="col-md-12">
           <div class="row2">
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <a href="detalleGorra.html">
-                  <img src="img/1.jpeg" alt="">
-                </a>
+            <div >
+              <h1><i class='bx bx-x'></i> Bolsa de compra</h1>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Acción</th>
+                      <th scope="col">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody id="items"></tbody>
+                  <tfoot>
+                    <tr id="footer">
+                      <th scope="row" colspan="5">Tu bolsa está vacía</th>
+                    </tr>
+                  </tfoot>
+                </table>
+              <div class="row-bolsa" id="cards"> </div>
+          </div>
+          <template id="template-footer">
+              <th scope="row" colspan="2">Total productos</th>
+              <td>10</td>
+              <td class="td-plus-minus">
+                  <button class="btn-vc btn-danger btn-sm" id="vaciar-bolsa">
+                      vaciar todo
+                  </button>
+                  <button  class="btn-vc btn-danger2 btn-sm"  onclick="Envio_Directo(this.id)">
+                    Continuar al pago
+                  </button>
+              </td>
+              <td class="font-weight-bold">$ <span>5000</span></td>
+          </template>
+      
+          <template id="template-bolsa">
+              <tr>
+                  <th scope="row">id</th>
+                  <td>Café</td>
+                  <td>1</td>
+                  <td class="td-plus-minus">
+                      <button class="btn-bolsa-plus btn-info btn-sm">
+                          +
+                      </button>
+                      <button class="btn-bolsa-minus btn-danger btn-sm">
+                          -
+                      </button>
+                  </td>
+                  <td>$ <span>500</span></td>
+              </tr>
+          </template>
+            <template id="articulo">
+              <div class="product">
+                <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
+                <div class="product-img">
+                  <a href="detalleGorra.html">
+                    <img src=" " alt="">
+                  </a>
+                </div>
+                <div class="product-body">
+                  <p class="product-category">Category</p>
+                  <h4  class="product-price">$80.00 CO <h6 class="product-old-price">$90.00 CO</h6></h4>
+                </div>
+                  <button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
+                      bolsa</span></button>
+                  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver
+                      detalles</span></button>
               </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
-            </div>
-            <div class="product">
+            </template>
+           <!--<div class="product">
               <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
               <div class="product-img">
                 <img src="./img/2.jpeg" alt="">
@@ -156,9 +207,9 @@
                 <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
               </div>
             </div>
+            -->
 
-
-            <div class="product">
+            <!--<div class="product">
               <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
               <div class="product-img">
                 <img src="./img/2.jpeg" alt="">
@@ -174,12 +225,14 @@
                 <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
               </div>
             </div>
+          -->
           </div>
         </div>
       </div>
     </div>
-   
   </article>
+  <script src="bolsaCompra.js"></script>
+  <script src="linkDinamicoFactura.js"></script>
   <div class="separador">
     <img class="separador-img" src="img/Separador.png">
   </div>
@@ -233,96 +286,69 @@
     <span class="dot2" onclick="currentSlide(3)"></span>
   </div>
 
-  <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides2");
-      var dots = document.getElementsByClassName("dot2");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-    }
-  </script>
+  <script src="script2.js"></script>
   <div class="text">
     <a href="" class="boton_personalizado">VER TODO </a>
   </div>
 
-    <!-- Pie de pagina-->
+  <!-- Pie de pagina-->
 
-    <div class="row">
-      <div class="column">
-          <h2 class="textofinal">KONGO</h2>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> QUIENES SOMOS </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> CORREO </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> TELÉFONO </a>
-          </p>
+  <div class="row">
+    <div class="column">
+      <h2 class="textofinal">KONGO</h2>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> QUIENES SOMOS </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> CORREO </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> TELÉFONO </a>
+      </p>
+    </div>
+    <div class="column">
+      <h2 class=" textofinal">PRODUCTOS</h2>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> GORRAS MUJER </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> GORRAS HOMBRE </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> LÍNEA DE LUJO</a>
+      </p>
+    </div>
+    <div class="column">
+      <h2 class="textofinal">CONTÁCTANOS</h2>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> SOPORTE </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> PREGUNTAS</a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> DEVOLUCIONES </a>
+      </p>
+    </div>
+    <div class="column">
+      <h2 class="textofinal">ENCUÉNTRANOS</h2>
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe class="gmap_iframe" width="100%"  id="gmap_canvas"
+            src="https://maps.google.com/maps?q=carrera%2021%20133-85&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          </iframe>
+          <br>
+        </div>
       </div>
-      <div class="column">
-          <h2 class=" textofinal">PRODUCTOS</h2>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> GORRAS MUJER </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> GORRAS HOMBRE </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> LÍNEA DE LUJO</a>
-          </p>
-      </div>
-      <div class="column">
-          <h2 class="textofinal">CONTÁCTANOS</h2>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> SOPORTE </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> PREGUNTAS</a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> DEVOLUCIONES </a>
-          </p>
-      </div>
-      <div class="column">
-          <h2 class="textofinal">ENCUÉNTRANOS</h2>
-          <div class="mapouter">
-              <div class="gmap_canvas">
-                  <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0"
-                      marginwidth="0"
-                      src="https://maps.google.com/maps?width=200&amp;height=180&amp;hl=en&amp;q=umng&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                  </iframe>
-                  <a href="https://www.fnfgo.com/">FNF Online</a>
-              </div>
-          </div>
-      </div>
+    </div>
   </div>
   <footer class="footer">
-      <div>
-          <p>
-              <a class="finkong"> © 2021 KONGO</a>
-          </p>
-      </div>
+    <div>
+      <p>
+        <a class="finkong"> © 2021 KONGO</a>
+      </p>
+    </div>
   </footer>
 
 

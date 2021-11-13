@@ -23,86 +23,90 @@
 <!-- Todo lo visual de la pagina web -->
 
 <body class="body-factura">
-    
+
     <div class="social-logo">
         <img class="logo-factura" src="img/Logo_Empresa-modified.png">
     </div>
     <h2 class="info-contacto"><i class="fa fa-info-circle" aria-hidden="true"></i> Información de contacto</h2>
+    <form action="factura.html">
     <div class="row3 section">
         <div class="col-75">
             <div class="container2">
-                    <div class="row3">
-                        <div class="col-50">
-                            <h3>Datos de envío</h3>
-                            <label for="fname"><i class="fa fa-user"></i> Nombre </label>
-                            <input type="text" id="fname" name="firstname" placeholder="Nombre completo" required><br>
-                            <label for="email"><i class="fa fa-envelope"></i> Correo electrónico</label>
-                            <input type="text" id="email" name="email" placeholder="Ejemplo: nicolas@gmail.com" required><br>
-                            <label>
-                                <input type="checkbox"  name="sameadr"> Enviarme novedades y ofertas por correo electrónico
-                            </label>
-                            <label for="adr"><i class="fa fa-home"></i> Dirección </label>
-                            <input type="text" id="adr" name="address" placeholder="Ejemplo: Carrera 22 #15-28" required>
-                            <label for="ciudad"><i class="fa fa-map-pin"></i> Ciudad</label>
-                            <input type="text" id="ciudad" name="ciudad" placeholder="Ejemplo: Bogotá" required>
-                            <label for="telefono"><i class="fa fa-phone"></i> Teléfono</label>
-                            <input type="text" id="telefono" name="telefono" placeholder="Ejemplo: 304 5416358" required>
+                <div class="row3">
+                    <div class="col-50">
+                        <h3>Datos de envío</h3>
+                        <label for="fname"><i class="fa fa-user"></i> Nombre </label>
+                        <input type="text" id="fname" name="firstname" placeholder="Nombre completo" required><br>
+                        <label for="email"><i class="fa fa-envelope"></i> Correo electrónico</label>
+                        <input type="text" id="email" name="email" placeholder="Ejemplo: nicolas@gmail.com"
+                            required><br>
+                        <label>
+                            <input type="checkbox" name="sameadr"> Enviarme novedades y ofertas por correo electrónico
+                        </label>
+                        <label for="adr"><i class="fa fa-home"></i> Dirección </label>
+                        <input type="text" id="adr" name="address" placeholder="Ejemplo: Carrera 22 #15-28" required>
+                        <label for="ciudad"><i class="fa fa-map-pin"></i> Ciudad</label>
+                        <input type="text" id="ciudad" name="ciudad" placeholder="Ejemplo: Bogotá" required>
+                        <label for="telefono"><i class="fa fa-phone"></i> Teléfono</label>
+                        <input type="text" id="telefono" name="telefono" placeholder="Ejemplo: 304 5416358" required>
 
-                            <div class="row3">
-                                <div class="col-50">
-                                    <label for="barrio">Barrio</label>
-                                    <input type="text" id="barrio" name="barrio" placeholder="Ejemplo: Compartir" required>
-                                </div>
-                                <div class="col-50">
-                                    <label for="postal">Código postal</label>
-                                    <input type="text" id="postal" name="postal" placeholder="Ejemplo: 10001" required>
-                                </div>
+                        <div class="row3">
+                            <div class="col-50">
+                                <label for="barrio">Barrio</label>
+                                <input type="text" id="barrio" name="barrio" placeholder="Ejemplo: Compartir" required>
+                            </div>
+                            <div class="col-50">
+                                <label for="postal">Código postal</label>
+                                <input type="text" id="postal" name="postal" placeholder="Ejemplo: 10001" required>
                             </div>
                         </div>
+                    </div>
 
-                        <div class="col-50">
-                            <h3> <i class="fa fa-money"></i> Método de pago</h3>
-                            <label for="fname">Aceptados</label>
-                            <div class="icon-container">
-                                <input type="checkbox" id="myCheckboxDavi" class="radio" value=" " name="fooby[1][]" />
-                                <label for="myCheckbox1"><img class="img-pago" src="img/DAVIPLATA.png" /></label>
-                                <input type="checkbox" id="myCheckboxNequi" class="radio" value=" " name="fooby[1][]" />
-                                <label for="myCheckbox1"><img class="img-pago" src="img/Nequi.png" /></label>
-                                <script src="facturacion.js"></script>
-                            </div>
-                            <label for="cname">Nombre titular de la cuenta</label>
-                            <input type="text" id="cname" name="cardname" placeholder="Ejemplo: Lionel Messi">
-                            <label for="ccnum">Numero de la cuenta</label>
-                            <p> NUMERO DE LA CUENTA DE KONGO</p>
+                    <div class="col-50">
+                        <h3> <i class="fa fa-money"></i> Método de pago</h3>
+                        <label for="fname">Aceptados</label>
+                        <div class="icon-container">
+                            <input type="checkbox" id="myCheckboxDavi" class="radio" value=" " name="fooby[1][]" />
+                            <label for="myCheckbox1"><img class="img-pago" src="img/DAVIPLATA.png" /></label>
+                            <input type="checkbox" id="myCheckboxNequi" class="radio" value=" " name="fooby[1][]" />
+                            <label for="myCheckbox1"><img class="img-pago" src="img/Nequi.png" /></label>
+                            <script src="facturacion.js"></script>
                         </div>
+                        <label for="cname">Nombre titular de la cuenta</label>
+                        <input type="text" id="cname" name="cardname" placeholder="Ejemplo: Lionel Messi">
+                        <label for="ccnum">Numero de la cuenta</label>
+                        <p> NUMERO DE LA CUENTA DE KONGO</p>
+                    </div>
 
-                    </div>
-                    <label>
-                        <input type="checkbox"  name="guardaDatos"> Guardar mis datos para una futura compra
-                    </label>
-                    <div >
-                        <h3><i class="fa fa-truck"></i> Costos del envío</h3>
-                        <p class="costoEnvio"> $15.000 </p>
-                        <p class="costoEnvio"> Descripción del envio, duración, condiciones, etc. </p>
-                    </div>
-                    
-                    <input type="submit" id="subirDatos" value="Finalizar compra" class="btn">
-                    
+                </div>
+                <div>
+                    <h3><i class="fa fa-truck"></i> Costos del envío</h3>
+                    <p class="costoEnvio"> $15.000 </p>
+                    <p class="costoEnvio"> Descripción del envio, duración, condiciones, etc. </p>
+                </div>
+
+                <input type="submit" id="subirDatos" value="Finalizar compra" class="btn">
+
             </div>
         </div>
         <div class="col-25">
             <div class="container2">
-                <h4>Bolsa <span class="price" style="color:black"><i class='bx bxs-shopping-bag'></i> <b>4</b></span>
+                <h4>Bolsa <span class="price" style="color:black"><i class='bx bxs-shopping-bag'></i> <b id="cantidadProductos">4</b></span>
                 </h4>
-                <p><a href="#">Producto 1</a> <span class="price"> $15.000</span></p>
-                <p><a href="#">Producto 2</a> <span class="price"> $60.000</span></p>
-                <p><a href="#">Producto 3</a> <span class="price"> $10.000</span></p>
-                <p><a href="#">Producto 4</a> <span class="price"> $20.000</span></p>
+                <p id="nombreP"> Nombre Producto <span id="precio" class="price"> $15.000</span> </p>
                 <hr>
-                <p>Total <span class="price" style="color:black"><b>$150.000</b></span></p>
+                <p>Total <span class="price" style="color:black"><b id="total">$150.000</b></span></p>
             </div>
         </div>
     </div>
+</form>
+    <script>
+        datos = JSON.parse(localStorage.getItem('bolsa') || "[]")
+        console.log(datos)
+        document.getElementById("nombreP").innerHTML = localStorage.getItem('bolsa')
+        document.getElementById("total").innerHTML = "$" + localStorage.getItem('total')
+        document.getElementById("cantidadProductos").innerHTML = localStorage.getItem('totalProducto')
+    </script>
     <script type="module" src="firebase.js"></script>
 </body>
 

@@ -41,6 +41,80 @@
           </div>
         </div>
       </div>
+      <!-- Bolsa de compra -->
+      <!--
+      <div id="bolsaCompra">
+        <a href="#" class="icon-shopping-bag">
+          <i class='bx bxs-shopping-bag'></i>
+          <div id="menuBolsa" class="menu-bolsa">
+            <h1>Bolsa de compra</h1>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Item</th>
+                  <th scope="col">Cantidad</th>
+                  <th scope="col">Acción</th>
+                  <th scope="col">Total</th>
+                </tr>
+              </thead>
+              <tbody id="items"></tbody>
+              <tfoot>
+                <tr id="footer">
+                  <th scope="row" colspan="5">Tu bolsa está vacía</th>
+                </tr>
+              </tfoot>
+            </table>
+            <div class="row-bolsa" id="cards"> </div>
+          </div>
+        </a>
+      </div>
+      <template id="template-footer">
+        <th scope="row" colspan="2">Total productos</th>
+        <td>10</td>
+        <td class="td-plus-minus">
+          <button class="btn-vc btn-danger btn-sm" id="vaciar-bolsa">
+            vaciar todo
+          </button>
+          <button class="btn-vc btn-danger2 btn-sm" id="vaciar-bolsa">
+            <a href="facturacion.html">Continuar al pago </a>
+          </button>
+        </td>
+        <td class="font-weight-bold">$ <span>5000</span></td>
+      </template>
+
+      <template id="template-bolsa">
+        <tr>
+          <th scope="row">id</th>
+          <td>Café</td>
+          <td>1</td>
+          <td class="td-plus-minus">
+            <button class="btn-bolsa-plus btn-info btn-sm">
+              +
+            </button>
+            <button class="btn-bolsa-minus btn-danger btn-sm">
+              -
+            </button>
+          </td>
+          <td>$ <span>500</span></td>
+        </tr>
+      </template>
+      <template id="articulo">
+        <div>
+          <div>
+            <img src="" alt="">
+            <div>
+              <h5>Titulo</h5>
+              <p>Precio</p>
+              <button class="btnComprar">Comprar</button>
+            </div>
+          </div>
+        </div>
+      </template>
+      <script src="bolsaCompra.js"></script>
+
+-->
+
       <a href="#popup" class="icon-shopping-bag">
         <i class='bx bxs-shopping-bag'></i>
         <div id="popup" class="overlay">
@@ -347,64 +421,64 @@
     <a href="" class="boton_personalizado">VER TODO </a>
   </div>
 
-    <!-- Pie de pagina-->
+  <!-- Pie de pagina-->
 
-    <div class="row">
-      <div class="column">
-          <h2 class="textofinal">KONGO</h2>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> QUIENES SOMOS </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> CORREO </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> TELÉFONO </a>
-          </p>
+  <div class="row">
+    <div class="column">
+      <h2 class="textofinal">KONGO</h2>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> QUIENES SOMOS </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> CORREO </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> TELÉFONO </a>
+      </p>
+    </div>
+    <div class="column">
+      <h2 class=" textofinal">PRODUCTOS</h2>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> GORRAS MUJER </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> GORRAS HOMBRE </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> LÍNEA DE LUJO</a>
+      </p>
+    </div>
+    <div class="column">
+      <h2 class="textofinal">CONTÁCTANOS</h2>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> SOPORTE </a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> PREGUNTAS</a>
+      </p>
+      <p class="subtexto">
+        <a href="#" class="subtexto"> DEVOLUCIONES </a>
+      </p>
+    </div>
+    <div class="column">
+      <h2 class="textofinal">ENCUÉNTRANOS</h2>
+      <div class="mapouter">
+        <div class="gmap_canvas">
+          <iframe class="gmap_iframe" width="100%" id="gmap_canvas"
+            src="https://maps.google.com/maps?q=carrera%2021%20133-85&t=&z=15&ie=UTF8&iwloc=&output=embed"
+            frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          </iframe>
+          <br>
+        </div>
       </div>
-      <div class="column">
-          <h2 class=" textofinal">PRODUCTOS</h2>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> GORRAS MUJER </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> GORRAS HOMBRE </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> LÍNEA DE LUJO</a>
-          </p>
-      </div>
-      <div class="column">
-          <h2 class="textofinal">CONTÁCTANOS</h2>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> SOPORTE </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> PREGUNTAS</a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> DEVOLUCIONES </a>
-          </p>
-      </div>
-      <div class="column">
-          <h2 class="textofinal">ENCUÉNTRANOS</h2>
-          <div class="mapouter">
-              <div class="gmap_canvas">
-                  <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0"
-                      marginwidth="0"
-                      src="https://maps.google.com/maps?width=200&amp;height=180&amp;hl=en&amp;q=umng&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                  </iframe>
-                  <a href="https://www.fnfgo.com/">FNF Online</a>
-              </div>
-          </div>
-      </div>
+    </div>
   </div>
   <footer class="footer">
-      <div>
-          <p>
-              <a class="finkong"> © 2021 KONGO</a>
-          </p>
-      </div>
+    <div>
+      <p>
+        <a class="finkong"> © 2021 KONGO</a>
+      </p>
+    </div>
   </footer>
 
 

@@ -24,7 +24,7 @@ const gorras = [
   }
 ];
 
-console.log(gorras[0].nombre);
+//console.log(gorras[0].nombre);
 
 //Carrusel recomendadas
 var slideIndex = 1;
