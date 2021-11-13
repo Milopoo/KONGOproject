@@ -39,16 +39,7 @@ querySnapshot.forEach((doc) => {
          </div>
         </div>
       </div>
-      
-      <script> 
-      document.getElementById("${ doc.data().Code}").addEventListener('click', async function(){
-
-      
-          window.location.href = "editarYeliminar.html" + '?id=' + ${ doc.data().Code};
-          return false;
-    
-        })
-      </script>`
+      `
  
   console.log(doc.id, " => ", doc.data());
   id = doc.id;
@@ -72,7 +63,7 @@ document.getElementById("DeleteBtn").addEventListener('click', async function(){
 
 //------- Modificar datos 
 
-/*
+
 document.getElementById("UpdateBtn").addEventListener('click', async function(){
 
   const docRef = collection (db, "productos" );
@@ -81,15 +72,15 @@ document.getElementById("UpdateBtn").addEventListener('click', async function(){
 
   if (docSnap.exists()) {
 
-    window.location.href = "editarYeliminar.html" + '?id=' + id;
-    return false;
+    //window.location.href = "editarYeliminar.html" + '?id=' + id;
+    //return false;
 
   } else {
     // doc.data() will be undefined in this case
     console.log("No such document!");
-  }  
+  } 
 
-  })*/
+  })
 
   //----- Ir a detalle 
 
