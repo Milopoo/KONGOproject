@@ -4,8 +4,8 @@ const db = getFirestore();
 
 
 var params = new URLSearchParams(location.search); //Busca todos las variables existentes y las guarda en un arraylist
-var _url = params.get('ids'); //Busca la variable que tenga nombre id
-console.log(_url);
+var _url = params.get('id'); //Busca la variable que tenga nombre id
+console.log(id);
 
 
     const docRef = collection (db, "productos" );

@@ -3,7 +3,10 @@ import { getFirestore, collection, getDocs, getDoc, doc, deleteDoc, updateDoc}  
 const db = getFirestore();
 var id ='';
 const  tasksContainer = document.getElementById('tasks-container');
- 
+
+letparams = new URLSearchParams(location.search); //Busca todos las variables existentes y las guarda en un arraylist
+var id = params.get('id'); //Busca la variable que tenga nombre id
+console.log(id); 
 
 
 const querySnapshot = await getDocs(collection(db, 'productos', 'Mujer', 'Lujo'));
@@ -38,17 +41,7 @@ querySnapshot.forEach((doc) => {
             </div>
          </div>
         </div>
-      </div>
-      
-      <script> 
-      document.getElementById("${ doc.data().Code}").addEventListener('click', async function(){
-
-      
-          window.location.href = "editarYeliminar.html" + '?id=' + ${ doc.data().Code};
-          return false;
-    
-        })
-      </script>`
+      </div>`
  
   console.log(doc.id, " => ", doc.data());
   id = doc.id;
@@ -72,7 +65,6 @@ document.getElementById("DeleteBtn").addEventListener('click', async function(){
 
 //------- Modificar datos 
 
-/*
 document.getElementById("UpdateBtn").addEventListener('click', async function(){
 
   const docRef = collection (db, "productos" );
@@ -89,7 +81,7 @@ document.getElementById("UpdateBtn").addEventListener('click', async function(){
     console.log("No such document!");
   }  
 
-  })*/
+  })
 
   //----- Ir a detalle 
 
