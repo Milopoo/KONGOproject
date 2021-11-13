@@ -101,8 +101,14 @@
     </div>
 </form>
     <script>
-        datos = JSON.parse(localStorage.getItem('bolsa') || "[]")
+        /*var datos = JSON.parse(localStorage.getItem('bolsa'))
         console.log(datos)
+        var keysArray = Object.keys(datos);
+        var valuesArray = Object.keys(datos).map(function(k){
+            return String(datos[k]);
+        });
+        var misDatos = valuesArray[keysArray.indexOf('title')]
+        console.log(misDatos)*/
         document.getElementById("nombreP").innerHTML = localStorage.getItem('bolsa')
         document.getElementById("total").innerHTML = "$" + localStorage.getItem('total')
         document.getElementById("cantidadProductos").innerHTML = localStorage.getItem('totalProducto')
