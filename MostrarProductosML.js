@@ -4,11 +4,6 @@ const db = getFirestore();
 var id ='';
 const  tasksContainer = document.getElementById('tasks-container');
 
-letparams = new URLSearchParams(location.search); //Busca todos las variables existentes y las guarda en un arraylist
-var id = params.get('id'); //Busca la variable que tenga nombre id
-console.log(id); 
-
-
 const querySnapshot = await getDocs(collection(db, 'productos', 'Mujer', 'Lujo'));
 tasksContainer.innerHTML ='';
 querySnapshot.forEach((doc) => {
@@ -19,9 +14,9 @@ querySnapshot.forEach((doc) => {
      <div class="row2">
        <div class="product">
         <h3 class="product-name"><a href="#">${ doc.data().Name }</a></h3>
-         <div class="product-img" id= "image">
+         <div class="product-img" >
              <a href="#" >
-                 <img src=${ doc.data().url } >
+                 <img src=${ doc.data().url } data-id="${doc.id}">
              </a>
          </div>
          <div class="product-body">
@@ -31,11 +26,11 @@ querySnapshot.forEach((doc) => {
          </div>
          <div class="product-btns">
              <a href="#">
-                 <button class="btn btn-primary edit-product" id ="UpdateBtn"><i class="fa fa-pencil"></i><span
+                 <button class="edit-product" data-id="${doc.id}"><i class="fa fa-pencil"></i><span
                          class="tooltipp">Editar</span></button>
              </a>
              <a href="#">
-                 <button class="btn btn-secondary delete-product" id ="DeleteBtn"><i class="fa fa-trash"></i><span
+                 <button class="delete-product" data-id="${doc.id}"><i class="fa fa-trash"></i><span
                          class="tooltipp">Eliminar</span></button>
              </a>
             </div>
@@ -44,15 +39,49 @@ querySnapshot.forEach((doc) => {
       </div>`
  
   console.log(doc.id, " => ", doc.data());
-  id = doc.id;
+  //id = doc.id; 
 
+//------- ir a detalle 
+
+  const AbrirDetalle = document.querySelectorAll('.product-img')
+  AbrirDetalle.forEach( btn =>{
+  btn.addEventListener( 'click', (e)=>{
+  console.log("id", e.target.dataset.id)
+  id = e.target.dataset.id;
+  DetalleProducto(e.target.dataset.id);
   
+  })
+  })
+
+  //----------Boton Editar
+
+  const EditarBtn = document.querySelectorAll('.edit-product')
+  EditarBtn.forEach( btn =>{
+  btn.addEventListener( 'click', (e)=>{
+  console.log("id", e.target.dataset.id)
+  id = e.target.dataset.id;
+  UpdateProduct(e.target.dataset.id);
+  
+  })
+  })
+
+  //-------- Botón eliminar
+
+  const DeleteBtn = document.querySelectorAll('.delete-product')
+  DeleteBtn.forEach( btn =>{
+  btn.addEventListener( 'click', (e)=>{
+  console.log("id", e.target.dataset.id)
+  id = e.target.dataset.id;
+  DeleteProduct(e.target.dataset.id);
+  
+  })
+  })
 
 });
 
 //----------Eliminar datos 
 
-document.getElementById("DeleteBtn").addEventListener('click', async function(){
+async function DeleteProduct(id){
 
   const docRef = collection (db, "productos" );
   await deleteDoc(doc( docRef, "Mujer", "Lujo", id ));
@@ -61,12 +90,11 @@ document.getElementById("DeleteBtn").addEventListener('click', async function(){
   console.log(" Delete! ");
   window.location = "EyEproductos.html";
 
-  })
+  }
 
 //------- Modificar datos 
 
-document.getElementById("UpdateBtn").addEventListener('click', async function(){
-
+  async function UpdateProduct(id){
   const docRef = collection (db, "productos" );
   const docSnap = await getDoc(doc( docRef, "Mujer", "Lujo", id ));
   console.log("id", id);
@@ -80,12 +108,11 @@ document.getElementById("UpdateBtn").addEventListener('click', async function(){
     // doc.data() will be undefined in this case
     console.log("No such document!");
   }  
-
-  })
+}
 
   //----- Ir a detalle 
 
-  document.getElementById("image").addEventListener('click', async function(){
+  async function DetalleProducto(id){
 
     const docRef = collection (db, "productos" );
     const docSnap = await getDoc(doc( docRef, "Mujer", "Lujo", id ));
@@ -101,4 +128,4 @@ document.getElementById("UpdateBtn").addEventListener('click', async function(){
       console.log("No such document!");
     }  
   
-    })
+  }
