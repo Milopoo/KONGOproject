@@ -2,15 +2,14 @@ import { getFirestore, collection, getDocs, getDoc, doc, deleteDoc, updateDoc}  
 
 const db = getFirestore();
 var id ='';
+const  tasksContainer3 = document.getElementById('tasks-container3');
 
-const  tasksContainer = document.getElementById('tasks-container');
-
-const querySnapshot = await getDocs(collection(db, 'productos', 'Mujer', 'Lujo'));
-tasksContainer.innerHTML ='';
+const querySnapshot = await getDocs(collection(db, 'productos', 'Mujer', 'Casual'));
+tasksContainer3.innerHTML ='';
 querySnapshot.forEach((doc) => {
   // doc.data() is never undefined for query doc snapshots
  
-    tasksContainer.innerHTML += `
+    tasksContainer3.innerHTML += `
     <div class="col-md-12">
      <div class="row2">
        <div class="product">
@@ -41,7 +40,7 @@ querySnapshot.forEach((doc) => {
  
   console.log(doc.id, " => ", doc.data());
   //id = doc.id; 
-  
+
 //------- ir a detalle 
 
   const AbrirDetalle = document.querySelectorAll('.product-img')
@@ -85,7 +84,7 @@ querySnapshot.forEach((doc) => {
 async function DeleteProduct(id){
 
   const docRef = collection (db, "productos" );
-  await deleteDoc(doc( docRef, "Mujer", "Lujo", id ));
+  await deleteDoc(doc( docRef, "Mujer", "Casual", id ));
 
   
   console.log(" Delete! ");
@@ -97,7 +96,7 @@ async function DeleteProduct(id){
 
   async function UpdateProduct(id){
   const docRef = collection (db, "productos" );
-  const docSnap = await getDoc(doc( docRef, "Mujer", "Lujo", id ));
+  const docSnap = await getDoc(doc( docRef, "Mujer", "Casual", id ));
   console.log("id", id);
 
   if (docSnap.exists()) {
@@ -116,7 +115,7 @@ async function DeleteProduct(id){
   async function DetalleProducto(id){
 
     const docRef = collection (db, "productos" );
-    const docSnap = await getDoc(doc( docRef, "Mujer", "Lujo", id ));
+    const docSnap = await getDoc(doc( docRef, "Mujer", "Casual", id ));
     console.log("id", id);
   
     if (docSnap.exists()) {
