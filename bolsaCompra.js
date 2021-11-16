@@ -10,43 +10,46 @@ const templateBolsa = document.getElementById('template-bolsa').content
 const fragment = document.createDocumentFragment()
 var total = 0
 var totalProducto = 0
+var cont = 0
 let bolsa = {}
+let listaBolsa = {}
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData()
-    if(localStorage.getItem('bolsa')){
+    if (localStorage.getItem('bolsa')) {
         bolsa = JSON.parse(localStorage.getItem('bolsa'))
+        listaBolsa = JSON.parse(localStorage.getItem('listaBolsa'))
         pintarBolsa()
     }
 })
 cards.addEventListener('click', e => {
     addBolsa(e)
 })
-items.addEventListener('click', e =>{
+items.addEventListener('click', e => {
     btnAccion(e)
 })
 
 const fetchData = async () => {
-    try{
+    try {
         const res = await fetch('carritoTemp.json')
         const data = await res.json()
         //console.log(data)
         pintarArticulos(data)
-    }catch (error){
+    } catch (error) {
         console.log(error);
     }
 }
 const pintarArticulos = data => {
     //console.log(data)
     data.forEach(producto => {
-      templateCard.querySelector('h3').textContent = producto.title 
-      templateCard.querySelector('h4').textContent = producto.precio 
-      templateCard.querySelector('h6').textContent = producto.precioDes
-      templateCard.querySelector('p').textContent = producto.categoria 
-      templateCard.querySelector('img').setAttribute("src", producto.thumbnailUrl) 
-      templateCard.querySelector('button').dataset.id = producto.id
-      const clone  = templateCard.cloneNode(true)
-      fragment.appendChild(clone) 
+        templateCard.querySelector('h3').textContent = producto.title
+        templateCard.querySelector('h4').textContent = producto.precio
+        templateCard.querySelector('h6').textContent = producto.precioDes
+        templateCard.querySelector('p').textContent = producto.categoria
+        templateCard.querySelector('img').setAttribute("src", producto.thumbnailUrl)
+        templateCard.querySelector('button').dataset.id = producto.id
+        const clone = templateCard.cloneNode(true)
+        fragment.appendChild(clone)
         //console.log(producto)  
     })
     cards.appendChild(fragment)
@@ -55,15 +58,16 @@ const pintarArticulos = data => {
 const addBolsa = e => {
     //console.log(e.target)
     //console.log(e.target.classList.contains('btnComprar'))
-    if(e.target.classList.contains('add-to-wishlist')){
-        setBolsa(e.target.parentElement) 
+    if (e.target.classList.contains('add-to-wishlist')) {
+        setBolsa(e.target.parentElement)
     }
     //Detener otro cualquier evento
     e.stopPropagation()
 
 }
-const setBolsa = objeto =>{
+const setBolsa = objeto => {
     //console.log(objeto)
+    cont = cont + 1
     const producto = {
         id: objeto.querySelector('.add-to-wishlist').dataset.id,
         title: objeto.querySelector('h3').textContent,
@@ -72,13 +76,15 @@ const setBolsa = objeto =>{
         precioDes: objeto.querySelector('h6').textContent,
         cantidad: 1
     }
-    if(bolsa.hasOwnProperty(producto.id)){
+    
+    if (bolsa.hasOwnProperty(producto.id)) {
         producto.cantidad = bolsa[producto.id].cantidad + 1
-    }
-    bolsa[producto.id] = {...producto}
+    } 
+
+    bolsa[producto.id] = { ...producto }
     pintarBolsa()
 }
-const pintarBolsa = () =>{
+const pintarBolsa = () => {
     //console.log(bolsa)
     items.innerHTML = ''
     Object.values(bolsa).forEach(producto => {
@@ -94,51 +100,58 @@ const pintarBolsa = () =>{
     })
     items.appendChild(fragment)
     pintarFooter()
+
     localStorage.setItem('bolsa', JSON.stringify(bolsa))
+    localStorage.setItem('listaBolsa', JSON.stringify(listaBolsa))
 }
-const pintarFooter = () =>{
+const pintarFooter = () => {
     footer.innerHTML = ''
-    if(Object.keys(bolsa).length === 0){
+    if (Object.keys(bolsa).length === 0) {
         footer.innerHTML = `
         <th scope="row" colspan="5">Tu bolsa está vacía</th>
         `
-        return 
+        bolsa = {}
+        localStorage.removeItem('total')
+        localStorage.removeItem('totalProducto')
+        listaBolsa = {}
+        cont = 0
+        return
     }
-    const nCantidad = Object.values(bolsa).reduce((acc, {cantidad}) => acc + cantidad, 0)
-    const nPrecio = Object.values(bolsa).reduce((acc, {cantidad, precio}) => acc + cantidad * precio, 0)
+    const nCantidad = Object.values(bolsa).reduce((acc, { cantidad }) => acc + cantidad, 0)
+    const nPrecio = Object.values(bolsa).reduce((acc, { cantidad, precio }) => acc + cantidad * precio, 0)
     templateFooter.querySelectorAll('td')[0].textContent = nCantidad
     templateFooter.querySelector('span').textContent = nPrecio
-    localStorage.setItem('total',nPrecio)
+    localStorage.setItem('total', nPrecio)
     total = localStorage.getItem('total')
-    localStorage.setItem('totalProducto',nCantidad)
+    localStorage.setItem('totalProducto', nCantidad)
     totalProducto = localStorage.getItem('totalProducto')
     const clone = templateFooter.cloneNode(true)
     fragment.appendChild(clone)
     footer.appendChild(fragment)
 
     const btnVaciar = document.getElementById('vaciar-bolsa')
-    btnVaciar.addEventListener('click', () =>{
+    btnVaciar.addEventListener('click', () => {
         bolsa = {}
         localStorage.removeItem('total')
         localStorage.removeItem('totalProducto')
-        nombreP = {}
         pintarBolsa()
     })
 }
-const btnAccion = e =>{
+const btnAccion = e => {
     //console.log(e.target)
     //Aumentar cantidad
-    if(e.target.classList.contains('btn-info')){
+    if (e.target.classList.contains('btn-info')) {
         bolsa[e.target.dataset.id]
         const producto = bolsa[e.target.dataset.id]
-        producto.cantidad ++
-        bolsa[e.target.dataset.id] = {...producto}
+        producto.cantidad++
+        bolsa[e.target.dataset.id] = { ...producto }
         pintarBolsa()
     }
-    if(e.target.classList.contains('btn-danger')){
+    if (e.target.classList.contains('btn-danger')) {
         const producto = bolsa[e.target.dataset.id]
-        producto.cantidad --
-        if(producto.cantidad === 0 ){
+        producto.cantidad--
+        if (producto.cantidad === 0) {
+            
             delete bolsa[e.target.dataset.id]
         }
         pintarBolsa()

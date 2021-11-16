@@ -5,91 +5,127 @@
 <html>
 
 <head>
-    <title>Tu Factura</title>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="estilos/estilos.css">
-    <link rel="shorcut icon" type="image/x-icon" href="/img/Favicon.ico">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <title>Tu Factura</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos/estilos.css">
+  <link rel="shorcut icon" type="image/x-icon" href="/img/Favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body class="body-fac">
   <form method="post" action="" id="myfrm">
-  <header class="clearfix header">
-    <div id="logo">
-      <img src="img/Logo_Empresa-modified.png">
-    </div>
-    <h1 class="h1-fact">FACTURA N° <p id="numeroFactura">##</p></h1>
-    <div id="empresa" class="clearfix">
-      <div>KONGO</div>
-      <div>Direccion empresa<br /></div>
-      <div>telefono empresa</div>
-      <div><a class="links-factura" >correo empresa</a></div>
-    </div>
-    <div id="datosCliente">
-      <div id="fname"><span>CLIENTE</span> Luis Suarez</div>
-      <div id="adr"><span>DIRECCIÓN</span> Direccion cliente</div>
-      <div><span>EMAIL</span> <a id="email" class="links-factura" >luis@gmail.com</a></div>
-      <div><span>FECHA</span> Fecha de la compra</div>
-    </div>
-  </header>
-  <main>
-    <table>
-      <thead>
-        <tr>
-          <th class="articulo">ARTICULO</th>
-          <th class="desc">DESCRIPCIÓN</th>
-          <th>PRECIO</th>
-          <th>CANTIDAD</th>
-          <th>TOTAL</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td class="articulo">Gorra</td>
-          <td class="desc">Descripción gorra 1</td>
-          <td class="unid">$40.000</td>
-          <td class="qty">1</td>
-          <td class="total">$40.000</td>
-        </tr>
-        <tr>
-          <td class="articulo">Gorra</td>
-          <td class="desc">Descripción gorra 2</td>
-          <td class="unid">$40.000</td>
-          <td class="qty">1</td>
-          <td class="total">$60.000</td>
-        </tr>
-        <tr>
-          <td colspan="4" class="grand total"> TOTAL</td>
-          <td class="grand total">$120.000</td>
-        </tr>
-      </tbody>
-    </table>
-    <div id="notices">
-      <div>ALGUNA RECOMENDACIÓN O ADVERTENCIA:</div>
-      <div class="notice">Advertencia o recomendacion</div>
-    </div>
-    <p><input type="button" onclick="myPrint('myfrm')" value="Imprimir"></p>
-    <script>
-      
-       function myPrint(myfrm) {
-            var printdata = document.getElementById(myfrm);
-            newwin = window.open("");
-            newwin.document.write(printdata.outerHTML);
-            newwin.print();
-            newwin.close();
+    <header class="clearfix header">
+      <div id="logo">
+        <img src="img/Logo_Empresa-modified.png">
+      </div>
+      <h1 class="h1-fact">FACTURA N° <p id="numeroFactura">##</p>
+      </h1>
+      <div id="empresa" class="clearfix">
+        <div>KONGO</div>
+        <div>Direccion empresa<br /></div>
+        <div>telefono empresa</div>
+        <div><a class="links-factura">correo empresa</a></div>
+      </div>
+      <div id="datosCliente">
+        <div id="fname"><span>CLIENTE</span> Luis Suarez</div>
+        <div id="adr"><span>DIRECCIÓN</span> Direccion cliente</div>
+        <div><span>EMAIL</span> <a id="email" class="links-factura">luis@gmail.com</a></div>
+        <div><span>FECHA</span> Fecha de la compra</div>
+      </div>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th class="articulo">ARTICULO</th>
+            <th class="desc">DESCRIPCIÓN</th>
+            <th>PRECIO</th>
+            <th>CANTIDAD</th>
+            <th>TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="idP" class="articulo"></td>
+            <td id="nombreP" class="desc"></td>
+            <td id="precioUnid" class="unid"></td>
+            <td id="cantidad" class="qty"></td>
+            <td id="totalP" class="total"></td>
+          </tr>
+          <tr>
+            <td colspan="4" class="grand total"> TOTAL</td>
+            <td id="total" class="grand total">$120.000</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="notices">
+        <div>ALGUNA RECOMENDACIÓN O ADVERTENCIA:</div>
+        <div class="notice">Advertencia o recomendacion</div>
+      </div>
+      <p><input type="button" onclick="myPrint('myfrm')" value="Imprimir"></p>
+      <script type="module">
+        //Leer base de datos
+
+
+        //Lo que agrega el cliente en la bolsa
+        var datos = localStorage.getItem('bolsa')
+        var datosBolsa = JSON.parse(datos)
+
+        //console.log(datosBolsa)
+
+        Object.values(datosBolsa).forEach(producto => {
+
+          var idS = document.createElement("p")
+          var productos = document.createElement("p")
+          var precios = document.createElement("p")
+          var cantidad = document.createElement("p")
+          var precioUnid = document.createElement("p")
+
+          var Ids = document.createTextNode(datosBolsa[producto.id].id)
+          idS.appendChild(Ids)
+          document.getElementById("idP").appendChild(idS)
+
+          var nProductos = document.createTextNode(datosBolsa[producto.id].title)
+          productos.appendChild(nProductos)
+          document.getElementById("nombreP").appendChild(productos)
+
+          var nPrecios = document.createTextNode("$" + datosBolsa[producto.id].precio * datosBolsa[producto.id].cantidad)
+          precios.appendChild(nPrecios)
+          document.getElementById("totalP").appendChild(precios)
+
+          var cantidadU = document.createTextNode(datosBolsa[producto.id].cantidad)
+          cantidad.appendChild(cantidadU)
+          document.getElementById("cantidad").appendChild(cantidad)
+
+          var precioU = document.createTextNode("$" + datosBolsa[producto.id].precio)
+          precioUnid.appendChild(precioU)
+          document.getElementById("precioUnid").appendChild(precioUnid)
+
+
+          //console.log(nProductos)
+          //console.log(nPrecios)
+        })
+        document.getElementById("total").innerHTML = "$" + localStorage.getItem('total')
+        document.getElementById("numeroFactura").innerHTML = localStorage.getItem('total')
+        function myPrint(myfrm) {
+          var printdata = document.getElementById(myfrm);
+          newwin = window.open("");
+          newwin.document.write(printdata.outerHTML);
+          newwin.print();
+          newwin.close();
         }
-    </script>
-  </main>
-</form>
+      </script>
+    </main>
+  </form>
   <footer class="footer-fact">
     Algun texto
   </footer>
- 
+
 </body>
 
 </html>
