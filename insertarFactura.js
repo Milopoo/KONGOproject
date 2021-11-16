@@ -72,14 +72,14 @@ function getValueCheckBox(name) {
       })
   
       // Datos guardados con exito
-      console.log('Datos guardados con exito');
-      window.location = "factura.html" 
+      console.log('Datos guardados con exito'); 
       //Mostrar datos factura
       //Seleccionar data
       const dbRef = ref(database);
       get(child(dbRef, 'Facturas/' + idF)).then((snapshot) => {
         if (snapshot.exists()) {
           console.log(snapshot.val());
+          window.location = "factura.html" + idF
         } else {
           console.log("No hay datos asi ")
         }
