@@ -91,7 +91,6 @@ document.getElementById('subirDatos').onclick = function ingresarDatos(idF, prod
       if (snapshot.exists()) {
         console.log(snapshot.val());
       } else {
-
         console.log("No hay datos asi ")
       }
     })
