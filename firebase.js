@@ -40,7 +40,7 @@ const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz012345678
     return result;
 }
 
-document.getElementById('subirDatos').onclick = function ingresarDatos(idF, productos, nombreUsuario, correoUsuario, direccion, ciudad, barrio, telefono, codPostal, metodoPago, metodo, tipoEnvio, estado) {
+document.getElementById('subirDatos').onclick = async function ingresarDatos(idF, productos, nombreUsuario, correoUsuario, direccion, ciudad, barrio, telefono, codPostal, metodoPago, metodo, tipoEnvio, estado) {
 
   metodo = getValueCheckBox('fooby[1][]')
   //idF = Math.floor(Math.random()*100);
@@ -60,7 +60,7 @@ document.getElementById('subirDatos').onclick = function ingresarDatos(idF, prod
   const database = getDatabase(app);
   
   //Insertar
-     set(ref(database, 'Facturas/' + idF), {
+    await set(ref(database, 'Facturas/' + idF), {
       IdFactura: idF,
       Productos: productos,
       Nombre: nombreUsuario,
