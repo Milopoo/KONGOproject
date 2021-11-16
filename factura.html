@@ -69,6 +69,7 @@
         <div class="notice"> Estado del pedido: <span id="estado">Pendiente</span></div>
       </div>
       <p><input type="button" onclick="myPrint('myfrm')" value="Imprimir"></p>
+      <script type="module" src="firebase.js"></script>
       <script type="module">
         //Leer base de datos
 
@@ -116,13 +117,25 @@
 
       </script>
       <script type="module">
-          //Mostrar datos factura
-          import { set, ref, getDatabase, update, get, child } 
-          from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
-          
-          const database = getDatabase()
-          let params = new URLSearchParams(location.search) //Busca todas las variables existentes y las guarda en un array
-          var id = params.get('id')
+        //Mostrar datos factura
+        import { set, ref, getDatabase, update, get, child } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
+
+
+        const dbRef = ref(getDatabase());
+        const q = window.location.search
+        console.log(q)
+
+
+        get(child(dbRef, `Facturas/`)).then((snapshot) => {
+          if (snapshot.exists()) {
+            console.log(snapshot.val());
+          } else {
+            console.log("No data available");
+          }
+        }).catch((error) => {
+          console.error(error);
+        });
+
 
 
       </script>
