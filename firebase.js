@@ -60,7 +60,7 @@ document.getElementById('subirDatos').onclick = function ingresarDatos(idF, prod
   const database = getDatabase(app);
   
   //Insertar
-    await set(ref(database, 'Facturas/' + idF), {
+     set(ref(database, 'Facturas/' + idF), {
       IdFactura: idF,
       Productos: productos,
       Nombre: nombreUsuario,
@@ -90,6 +90,7 @@ document.getElementById('subirDatos').onclick = function ingresarDatos(idF, prod
     get(child(dbRef, 'Facturas/' + idF)).then((snapshot) => {
       if (snapshot.exists()) {
         console.log(snapshot.val());
+        window.location = "factura.html"
       } else {
         console.log("No hay datos asi ")
       }
