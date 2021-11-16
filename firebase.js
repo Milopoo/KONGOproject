@@ -60,7 +60,7 @@ document.getElementById('subirDatos').onclick = function ingresarDatos(idF, prod
   const database = getDatabase(app);
   
   //Insertar
-    set(ref(database, 'Facturas/' + idF), {
+    await set(ref(database, 'Facturas/' + idF), {
       IdFactura: idF,
       Productos: productos,
       Nombre: nombreUsuario,
