@@ -1803,3 +1803,12 @@ margin-top: 5%;
   padding: 5px 3px 5px 3px;
   font-size: 25px;
 }
+/*Facturas admin*/
+.logo-factura{
+  width: 10%;
+  margin: 1%;
+}
+.info-contacto{
+  text-align: center;
+  margin: 1%;
+}
