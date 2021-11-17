@@ -56,6 +56,35 @@ document.getElementById('subirDatos').onclick = async function ingresarDatos(idF
 
     const database = getDatabase();
 
+    var id = '';
+
+    const querySnapshot = await get(ref(database, 'Facturas'));
+    
+
+    const dbRef = ref(database);
+    await get(child(dbRef, 'Facturas')).then((snapshot) => {
+      if (snapshot.exists()) {
+        querySnapshot.forEach(database => {
+          //console.log(database.val());
+          //console.log(database.val().IdFactura);
+          id = database.val().IdFactura  
+          //console.log(id)       
+        });
+      } else {
+        console.log("No hay datos asi")
+      }
+    })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(error.code + error.message)
+      })
+        //console.log(id)
+         id ++
+         //console.log("nuevo id  " + id)
+         idF = id
+
+
     //Insertar
     await set(ref(database, 'Facturas/' + idF), {
       IdFactura: idF,
@@ -77,10 +106,10 @@ document.getElementById('subirDatos').onclick = async function ingresarDatos(idF
 
     //Mostrar datos factura
     //Seleccionar data
-    const dbRef = ref(database);
+    //const dbRef = ref(database);
     get(child(dbRef, 'Facturas/' + idF)).then((snapshot) => {
       if (snapshot.exists()) {
-        console.log(snapshot.val());
+        //console.log(snapshot.val());
       } else {
         console.log("No hay datos asi")
       }
@@ -92,7 +121,7 @@ document.getElementById('subirDatos').onclick = async function ingresarDatos(idF
       })
 
     console.log('Datos guardados con exito');
-    //window.location.href = "factura.html" + '?idF=' + idF
+    window.location.href = "factura.html" + '?idF=' + idF
     return false;
   } else {
 
