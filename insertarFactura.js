@@ -40,7 +40,7 @@ document.getElementById('subirDatos').onclick = async function ingresarDatos(idF
   var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
   if (required()) {
     metodo = getValueCheckBox('fooby[1][]')
-    idF = generateString(5)
+    idF = 0
     productos = localStorage.getItem('bolsa')
     nombreUsuario = document.getElementById('fname').value
     correoUsuario = document.getElementById('email').value
@@ -92,7 +92,7 @@ document.getElementById('subirDatos').onclick = async function ingresarDatos(idF
       })
 
     console.log('Datos guardados con exito');
-    window.location.href = "factura.html" + '?idF=' + idF
+    //window.location.href = "factura.html" + '?idF=' + idF
     return false;
   } else {
 
