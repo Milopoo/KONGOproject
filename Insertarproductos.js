@@ -4,24 +4,16 @@ import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL}  fr
 const db = getFirestore();
 
 
-let nombreP = document.getElementById("nombreP");
+let Bienvenida = document.getElementById("nombreP");
 let codigoP = document.getElementById("codigoP");
 let promocionP = document.getElementById("promocionP");
 let cantidadP = document.getElementById("cantidadP");
-let colorP = document.getElementById("colorP");
-let tallaP = document.getElementById("tallaP");
-let PrecioP = document.getElementById("PrecioP");
-let selectGender = document.getElementById("selectGender");
-let selecCategoria = document.getElementById("selecCategoria");
-let textDescripcionP = document.getElementById("textDescripcionP");
-let urlimage = document.getElementById("imgGorras");
-var Total = 0; 
 
- 
 
+const docRef = collection (db, "productos" );
 
 document.getElementById("InsBtn").addEventListener('click', async function(){
-    const docRef = collection (db, "productos" );
+    
     Total = PrecioP.value - ((promocionP.value*PrecioP.value)/100);
     await setDoc(doc( docRef, selectGender.value, selecCategoria.value, codigoP.value ), {
     
@@ -69,6 +61,34 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
          });
         
      })
+  
+
+     document.getElementById("InsBtn").addEventListener('click', async function(){
+         
+        Total = PrecioP.value - ((promocionP.value*PrecioP.value)/100);
+        await setDoc(doc( docRef, codigoP.value ), {
+        
+            Name: nombreP.value,
+            Code: codigoP.value,
+            Promo: promocionP.value,
+            Cantidad: cantidadP.value,
+            Color: colorP.value,
+            Size: tallaP.value,
+            Precio: PrecioP.value,
+            Descripcion: textDescripcionP.value,
+            Gender: selectGender.value,
+            Category: selecCategoria.value,
+            TOTAL: Total,
+            url: urlimage
+           
+    
+          });
+    
+          console.log("Document written with ID: ", codigoP.value);
+          window.location = "EyEproductos.html";
+    
+    
+       })
   
      
 

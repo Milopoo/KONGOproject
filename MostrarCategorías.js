@@ -1,17 +1,14 @@
-import { getFirestore, collection, getDocs, doc, getDoc, query, where }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { getFirestore, collection, getDocs, getDoc, doc, deleteDoc, updateDoc}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 
-const db = getFirestore(); 
+const db = getFirestore();
 var id ='';
 const  tasksContainer = document.getElementById('tasks-container');
 
-var params = new URLSearchParams(location.search); //Busca todos las variables existentes y las guarda en un arraylist
-var index = params.get('index'); //Busca la variable que tenga nombre id
-console.log(index);
-
-const q = query(collection(db, "productos"), where("Name", "==", index));
-const querySnapshot = await getDocs(q);
+const querySnapshot = await getDocs(collection(db, 'productos'));
+tasksContainer.innerHTML ='';
 querySnapshot.forEach((doc) => {
-
+  // doc.data() is never undefined for query doc snapshots
+ 
     tasksContainer.innerHTML += `
     <div class="col-md-12">
      <div class="row2">
@@ -55,21 +52,67 @@ querySnapshot.forEach((doc) => {
   
   })
   })
- 
-})
 
+  //----------Boton Editar
 
-const q1 = query(collection(db, "productos"), where("Name", "!=", index));
-const querySnapshot2 = await getDocs(q1);
-querySnapshot2.forEach((doc) => {
+  const EditarBtn = document.querySelectorAll('.edit-product')
+  EditarBtn.forEach( btn =>{
+  btn.addEventListener( 'click', (e)=>{
+  console.log("id", e.target.dataset.id)
+  id = e.target.dataset.id;
+  UpdateProduct(e.target.dataset.id);
+  
+  })
+  })
 
-    tasksContainer.innerHTML += `
-    <h3 class="product-name"> No se encontraron resultados... </h3>
-    `
-})
+  //-------- Botón eliminar
 
+  const DeleteBtn = document.querySelectorAll('.delete-product')
+  DeleteBtn.forEach( btn =>{
+  btn.addEventListener( 'click', (e)=>{
+  console.log("id", e.target.dataset.id)
+  id = e.target.dataset.id;
+  DeleteProduct(e.target.dataset.id);
+  
+  })
+  })
 
-async function DetalleProducto(id){
+});
+
+//----------Eliminar datos 
+
+async function DeleteProduct(id){
+
+  const docRef = collection (db, "productos" );
+  await deleteDoc(doc( docRef, id ));
+
+  
+  console.log(" Delete! ");
+  window.location = "EyEproductos.html";
+
+  }
+
+//------- Modificar datos 
+
+  async function UpdateProduct(id){
+  const docRef = collection (db, "productos" );
+  const docSnap = await getDoc(doc( docRef, id ));
+  console.log("id", id);
+
+  if (docSnap.exists()) {
+
+    window.location.href = "editarYeliminar.html" + '?id=' + id;
+    return false;
+
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }  
+}
+
+  //----- Ir a detalle 
+
+  async function DetalleProducto(id){
 
     const docRef = collection (db, "productos" );
     const docSnap = await getDoc(doc( docRef, id ));
@@ -86,4 +129,3 @@ async function DetalleProducto(id){
     }  
   
   }
-

@@ -5,12 +5,12 @@
 <html>
 
 <head>
-    <title>EDITAR PAGINA</title>
+    <title>ADMINISTAR PRODUCTOS</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="estilos/estilos.css">
-    <link rel="shorcut icon" type="image/x-icon" href="./img/Logo_Empresa-modified.ico">
+    <link rel="icon" href="Favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
@@ -37,7 +37,7 @@
                 <div class="search-box">
                     <i class='bx bx-search'></i>
                     <div class="input-box">
-                        <input type="text" id="Buscar" placeholder="Buscar...">
+                        <input type="text" placeholder="Buscar...">
                     </div>
                 </div>
             </div>
@@ -62,7 +62,7 @@
                 </div>
                 <ul class="links">
                     <li>
-                        <a href="#">QUIERO COMPRAR</a>
+                        <a href="EyEproductos.html">QUIERO COMPRAR</a>
                         <i class='bx bx-chevron-down arrow qc'></i>
                         <ul class="qc-sub-menu sub-menu">
                             <li> <a href="#"> MUJER</a></li>
@@ -78,16 +78,16 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="editConocenos.html">CONÓCENOS</a>
+                        <a href="#">CONÓCENOS</a>
                         <i class='bx bx-chevron-down arrow c'></i>
                         <ul class="c-sub-menu sub-menu">
-                            <li> <a href="editConocenos.html"> MISIÓN</a></li>
-                            <li> <a href="editConocenos.html"> VISIÓN</a></li>
-                            <li> <a href="editConocenos.html"> HISTORIA</a></li>
+                            <li> <a href="conocenos.html #mision"> MISIÓN</a></li>
+                            <li> <a href="conocenos.html #vision"> VISIÓN</a></li>
+                            <li> <a href="conocenos.html #historia"> HISTORIA</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="editSoporte.html">SOPORTE</a>
+                        <a href="#">SOPORTE</a>
                         <i class='bx bx-chevron-down arrow s'></i>
                         <ul class="s-sub-menu sub-menu">
                             <li> <a href="#"> TELÉFONO</a></li>
@@ -99,7 +99,6 @@
             </div>
         </div>
     </nav>
-
     <script src="script.js"> </script>
     <div>
         <a href="panelAdmin.html">
@@ -109,10 +108,27 @@
 
     <article class="d-categorias">
         <h1 class="title-categorias">
-            Resultados
-            <i class="material-icons"> search </i>
-           
+            <i class="material-icons"> woman </i>
+            GORRAS MUJER DE LUJO
         </h1>
+
+        <div class="menu">
+            <div class="label">Categorías</div>
+            <div class="spacer"></div>
+            <a href="CasualMujer.html">
+                <div class="item"><span>Casual Mujer</span></div>
+            </a>
+            <a href="CasualHombre.html">
+                <div class="item"><span>Casual Hombre</span></div>
+            </a>
+            <a href="LujoMujer.html">
+                <div class="item"><span>Lujo Mujer</span></div>
+            </a>
+            <a href="LujoHombre.html">
+                <div class="item"><span>Lujo Hombre</span></div>
+            </a>
+
+        </div>
 
         <div class="separador">
             <img class="separador-img" src="img/Separador.png">
@@ -122,9 +138,104 @@
             <!-- container -->
    
             <div id="tasks-container"></div>
-            
+
         </div>
 
+           <!-- Segunda fila de productos-->
+
+                     
+    
+    </article>
+    <div class="separador">
+        <img class="separador-img" src="img/Separador.png">
+    </div>
+    <!--RECOMENDADAS-->
+    <div class="scale-in-center texts">
+        <h1 class="titles">¡RECOMENDADAS!</h1>
+        <p class="tracking-in-expand parrafo">
+            Sed
+            ut perspiciatis unde omnis
+            iste natus error sit voluptatem accusantium doloremque
+            laudantium,
+            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+            explicabo.
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+            dolores
+            eos qui ratione voluptatem sequi nesciunt.
+            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+            numquam
+            eius modi tempora incidunt
+            ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
+            ullam
+            corporis suscipit laboriosam,
+            nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+            esse
+            quam nihil molestiae consequatur,
+            vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+        </p>
+
+
+    </div>
+    <!-- Carrusel recomendadas-->
+    <div class="slideshow-container2">
+
+        <div class="mySlides2 fade2 scale-in-center recomend-center">
+            <img class="imgreco " src="img/1.jpeg">
+        </div>
+
+        <div class="mySlides2 fade2 scale-in-center recomend-center">
+            <img class="imgreco" src="img/2.jpeg">
+        </div>
+
+        <div class="mySlides2 fade2 scale-in-center recomend-center">
+            <img class="imgreco" src="img/5.jpeg">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div class="recomend-center">
+        <span class="dot2" onclick="currentSlide(1)"></span>
+        <span class="dot2" onclick="currentSlide(2)"></span>
+        <span class="dot2" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides2");
+            var dots = document.getElementsByClassName("dot2");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    <div class="text">
+        <a href="" class="boton_personalizado">VER TODO </a>
+    </div>
+
+    <!-- Pie de pagina-->
 
     <div class="row">
         <div class="column">
@@ -186,10 +297,8 @@
 
     <script type = "module" src= "Firebase.js" ></script>
     <script type = "module" src= "login.js" ></script>
-    <script type = "module" src= "Busqueda.js" ></script>
-    <script type = "module" src= "Buscar.js" ></script>
-
-    
+    <script type = "module" src= "MostrarProductosML.js" ></script>
+   
 </body>
 
 </html>
