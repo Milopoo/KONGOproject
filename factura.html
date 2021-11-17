@@ -23,19 +23,20 @@
       <div id="logo">
         <img src="img/Logo_Empresa-modified.png">
       </div>
-      <h1 class="h1-fact">FACTURA N° <p id="numeroFactura">##</p>
+      <h1 class="h1-fact">FACTURA <p id="numeroFactura">##</p>
       </h1>
       <div id="empresa" class="clearfix">
         <div>KONGO</div>
-        <div>Direccion empresa<br /></div>
-        <div>telefono empresa</div>
-        <div><a class="links-factura">correo empresa</a></div>
+        <div>Carrera 21# 133-85<br /></div>
+        <div>315 4324254</div>
+        <div><a class="links-factura">kongo_kn@kongo.com</a></div>
       </div>
       <div id="datosCliente">
         <div id="fname"><span>CLIENTE</span> Luis Suarez</div>
         <div id="adr"><span>DIRECCIÓN</span> Direccion cliente</div>
-        <div><span>EMAIL</span> <a id="email" class="links-factura">luis@gmail.com</a></div>
-        <div><span>FECHA</span> Fecha de la compra</div>
+        <div> <a id="email" class="links-factura">luis@gmail.com</a></div>
+        <div id="fechaCompra"><span>FECHA</span> Fecha de la compra</div>
+        <div id="medEnvio"><span>METODO DE ENVIO</span> Rappi </div>
       </div>
     </header>
     <main>
@@ -119,16 +120,26 @@
       <script type="module">
         //Mostrar datos factura
         import { set, ref, getDatabase, update, get, child } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
-
+        
+        let params = new URLSearchParams(location.search); //Busca todos las variables existentes y las guarda en un arraylist
+        var idF = params.get('idF'); //Busca la variable que tenga nombre id
+        //console.log(idF)
 
         const dbRef = ref(getDatabase());
-        const q = window.location.search
-        console.log(q)
+       
 
+        //console.log(idF)
 
-        get(child(dbRef, `Facturas/`)).then((snapshot) => {
+        get(child(dbRef, `Facturas/${idF}`)).then((snapshot) => {
           if (snapshot.exists()) {
-            console.log(snapshot.val());
+            //console.log(snapshot.val());
+            document.getElementById("numeroFactura").innerHTML = snapshot.val().IdFactura
+            document.getElementById("fname").innerHTML = "CLIENTE: " + " " + snapshot.val().Nombre
+            document.getElementById("adr").innerHTML = "DIRECCION: " + " " + snapshot.val().Direccion
+            document.getElementById("email").innerHTML = "EMAIL: " + " " + snapshot.val().Email
+            document.getElementById("fechaCompra").innerHTML = "FECHA DE COMPRA (AAAA/MM/DD):  " + " " + snapshot.val().FechaCompra
+            document.getElementById("estado").innerHTML = snapshot.val().Estado
+            document.getElementById("medEnvio").innerHTML = "METODO DE ENVIO: " + " " + snapshot.val().Envio
           } else {
             console.log("No data available");
           }
@@ -137,7 +148,7 @@
         });
 
 
-
+        //localStorage.clear()
       </script>
       <script>
         function myPrint(myfrm) {
