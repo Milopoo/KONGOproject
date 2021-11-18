@@ -37,7 +37,7 @@
                 <div class="search-box">
                     <i class='bx bx-search'></i>
                     <div class="input-box">
-                        <input type="text" placeholder="Buscar...">
+                        <input type="text" id="Buscar" placeholder="Buscar...">
                     </div>
                 </div>
             </div>
@@ -62,17 +62,17 @@
                 </div>
                 <ul class="links">
                     <li>
-                        <a href="#">QUIERO COMPRAR</a>
+                        <a href="EyEproductos.html">QUIERO COMPRAR</a>
                         <i class='bx bx-chevron-down arrow qc'></i>
                         <ul class="qc-sub-menu sub-menu">
-                            <li> <a href="#"> MUJER</a></li>
-                            <li> <a href="#"> HOMBRE</a></li>
+                            <li> <a href="MujerCasual.html"> MUJER</a></li>
+                            <li> <a href="HombreCasual.html"> HOMBRE</a></li>
                             <li class="more">
                                 <a href="#"> LINEA DE LUJO</a>
                                 <i class='bx bx-chevron-right arrow lujo'></i>
                                 <ul class="more-sub-menu sub-menu">
-                                    <li> <a href="#"> MUJER</a></li>
-                                    <li> <a href="#"> HOMBRE</a></li>
+                                    <li> <a href="MujerLujo.html"> MUJER</a></li>
+                                    <li> <a href="HombreLujo.html"> HOMBRE</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -148,7 +148,7 @@
                 placeholder="Editar contenido..." cols="50" rows="10"></textarea>
         </div>
         <input class="boton_personalizado-admin" type="submit" id="Guardar" value="Guardar">
-        <input class="boton_personalizado-admin-cerrarSesion" type="submit" value="Cerrar Sesión">
+        <input class="boton_personalizado-admin-cerrarSesion" type="submit" id= "logout" value="Cerrar Sesión">
     
     <!-- Carrusel recomendadas-->
     <div class="slideshow-container2">
@@ -240,6 +240,7 @@
 
     <script type = "module" src= "Firebase.js"></script>
     <script type = "module" src= "login.js"></script>
+    <script type = "module" src= "logout.js" ></script>
     <script type = "module" src= "EditarContenido.js"></script>
     <script type = "module" src= "Busqueda.js" ></script>
     <script type = "module" src= "Buscar.js" ></script>

@@ -10,8 +10,8 @@ const db = getFirestore();
        
       console.log("Document data:", docSnap.data());
 
-      document.getElementById("Bienvenida").innerHTML = docSnap.data().TextBienvenida;
       document.getElementById("Recomendadas").innerHTML = docSnap.data().TextRecomendadas;
+      document.getElementById("Bienvenida").innerHTML = docSnap.data().TextBienvenida;
       
     } 
     else 

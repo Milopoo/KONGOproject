@@ -32,7 +32,7 @@
             <div class="search-box">
               <i class='bx bx-search'></i>
               <div class="input-box">
-                <input type="text" placeholder="Buscar...">
+                <input type="text" id="Buscar" placeholder="Buscar...">
               </div>
             </div>
           </div>
@@ -57,28 +57,28 @@
             </div>
             <ul class="links">
               <li>
-                <a href="#">QUIERO COMPRAR</a>
+                <a href="EyEproductos.html">QUIERO COMPRAR</a>
                 <i class='bx bx-chevron-down arrow qc'></i>
                 <ul class="qc-sub-menu sub-menu">
-                  <li> <a href="CasualMujer.html"> MUJER</a></li>
-              <li> <a href="CasualHombre.html"> HOMBRE</a></li>
-              <li class="more">
-                <a href="#"> LINEA DE LUJO</a>
-                <i class='bx bx-chevron-right arrow lujo'></i>
-                <ul class="more-sub-menu sub-menu">
-                  <li> <a href="LujoMujer.html"> MUJER</a></li>
-                  <li> <a href="LujoHombre.html"> HOMBRE</a></li>
-                    </ul>
-                  </li>
+                    <li> <a href="MujerCasual.html"> MUJER</a></li>
+                    <li> <a href="HombreCasual.html"> HOMBRE</a></li>
+                    <li class="more">
+                        <a href="#"> LINEA DE LUJO</a>
+                        <i class='bx bx-chevron-right arrow lujo'></i>
+                        <ul class="more-sub-menu sub-menu">
+                            <li> <a href="MujerLujo.html"> MUJER</a></li>
+                            <li> <a href="HombreLujo.html"> HOMBRE</a></li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
+            </li>
               <li>
                 <a href="conocenos.html">CONÓCENOS</a>
                 <i class='bx bx-chevron-down arrow c'></i>
                 <ul class="c-sub-menu sub-menu">
-                  <li> <a href="conocenos.html #mision"> MISIÓN</a></li>
-                  <li> <a href="conocenos.html #vision"> VISIÓN</a></li>
-                  <li> <a href="conocenos.html #historia"> HISTORIA</a></li>
+                  <li> <a href="editConocenos.html"> MISIÓN</a></li>
+                  <li> <a href="editConocenos.html #vision"> VISIÓN</a></li>
+                  <li> <a href="editConocenos.html #historia"> HISTORIA</a></li>
                 </ul>
               </li>
               <li>
@@ -152,24 +152,12 @@
       </div>
       <div class="scale-in-center texts">
         <h1 class="titles">NUESTRAS GORRAS</h1>
-        <p class="tracking-in-expand parrafo">
-          Sed
-          ut perspiciatis unde omnis
-          iste natus error sit voluptatem accusantium doloremque
-          laudantium,
-          totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-          explicabo.
-          Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-          eos qui ratione voluptatem sequi nesciunt.
-          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-          eius modi tempora incidunt
-          ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
-          corporis suscipit laboriosam,
-          nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-          quam nihil molestiae consequatur,
-          vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-        </p>
+        <textarea class="input-text-edit" id="textGorras" name="tRecomendadas"
+                placeholder="Editar contenido..." cols="50" rows="10"></textarea>
       </div>
+        <input class="boton_personalizado-admin" type="submit" id="Guardar" value="Guardar">
+        <input class="boton_personalizado-admin-cerrarSesion" type="submit" id="logout" value="Cerrar Sesión">
+  
       <!-- Pie de pagina-->
       <div class="row">
         <div class="column">
@@ -230,9 +218,11 @@
 
     <script type = "module" src= "Firebase.js" ></script>
     <script type = "module" src= "login.js" ></script>
+    <script type = "module" src= "logout.js" ></script>
     <script type = "module" src= "MostrarDetalle.js" ></script>
-    <script type = "module" src= "Busqueda.js" ></script>
     <script type = "module" src= "Buscar.js" ></script>
+    <script type = "module" src= "EditarContenido3.js" ></script>
+
 
     
 </body>
