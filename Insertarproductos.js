@@ -3,11 +3,18 @@ import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL}  fr
 
 const db = getFirestore();
 
-
-let Bienvenida = document.getElementById("nombreP");
+let nombreP = document.getElementById("nombreP");
 let codigoP = document.getElementById("codigoP");
 let promocionP = document.getElementById("promocionP");
 let cantidadP = document.getElementById("cantidadP");
+let colorP = document.getElementById("colorP");
+let tallaP = document.getElementById("tallaP");
+let PrecioP = document.getElementById("PrecioP");
+let selectGender = document.getElementById("selectGender");
+let selecCategoria = document.getElementById("selecCategoria");
+let textDescripcionP = document.getElementById("textDescripcionP");
+let urlimage = document.getElementById("imgGorras");
+var Total = 0; 
 
 
 const docRef = collection (db, "productos" );

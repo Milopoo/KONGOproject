@@ -70,6 +70,33 @@ document.getElementById("SaveBtn").addEventListener('click', async function(){
         
      })
 
+     
+     document.getElementById("SaveBtn").addEventListener('click', async function(){
+         
+        Total = PrecioP.value - ((promocionP.value*PrecioP.value)/100);
+        await setDoc(doc( docRef, codigoP.value ), {
+        
+            Name: nombreP.value,
+            Code: codigoP.value,
+            Promo: promocionP.value,
+            Cantidad: cantidadP.value,
+            Color: colorP.value,
+            Size: tallaP.value,
+            Precio: PrecioP.value,
+            Descripcion: textDescripcionP.value,
+            Gender: selectGender.value,
+            Category: selecCategoria.value,
+            TOTAL: Total,
+            url: imgGorras.value
+    
+          });
+    
+          console.log("Document written with ID: ", codigoP.value);
+          window.location = "EyEproductos.html";
+    
+    
+       })
+  
 
 
 

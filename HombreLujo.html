@@ -5,7 +5,7 @@
 <html>
 
 <head>
-    <title>EDITAR PAGINA - SOPORTE</title>
+    <title>ADMINISTAR PRODUCTOS</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +13,13 @@
     <link rel="icon" href="Favicon.ico">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script data-require="jquery@3.1.1" data-semver="3.1.1"
-        src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-
 </head>
+<!-- Link inferior para boostrap-->
+<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+-->
+
+<!-- Todo lo visual de la pagina web -->
 
 <body>
     <nav>
@@ -28,7 +30,7 @@
             <a href="# " class="icon-fb">
                 <i class='bx bxl-facebook-square'></i>
             </a>
-            <a href="editPagPrincipal.html" class="logo">
+            <a href="#" class="logo">
                 <img src="img/Logo_Empresa-modified.png">
             </a>
             <div class="icon-search">
@@ -60,7 +62,7 @@
                 </div>
                 <ul class="links">
                     <li>
-                        <a href="#">QUIERO COMPRAR</a>
+                        <a href="EyEproductos.html">QUIERO COMPRAR</a>
                         <i class='bx bx-chevron-down arrow qc'></i>
                         <ul class="qc-sub-menu sub-menu">
                             <li> <a href="#"> MUJER</a></li>
@@ -76,12 +78,12 @@
                         </ul>
                     </li>
                     <li>
-                        <a href="editConocenos.html">CONÓCENOS</a>
+                        <a href="#">CONÓCENOS</a>
                         <i class='bx bx-chevron-down arrow c'></i>
                         <ul class="c-sub-menu sub-menu">
-                            <li> <a href="editConocenos.html #mision"> MISIÓN</a></li>
-                            <li> <a href="editConocenos.html #vision"> VISIÓN</a></li>
-                            <li> <a href="editConocenos.html #historia"> HISTORIA</a></li>
+                            <li> <a href="conocenos.html #mision"> MISIÓN</a></li>
+                            <li> <a href="conocenos.html #vision"> VISIÓN</a></li>
+                            <li> <a href="conocenos.html #historia"> HISTORIA</a></li>
                         </ul>
                     </li>
                     <li>
@@ -98,110 +100,140 @@
         </div>
     </nav>
     <script src="script.js"> </script>
-    <!--Boton Editar-->
     <div>
         <a href="panelAdmin.html">
             <img class="bxl-whatsapp-square" src="img/edit.png">
         </a>
     </div>
-    <!-- Contenido pagina -->
 
-    <article class="d-article">
-        <h1 class="title-article">
-            <i class="material-icons"> support_agent </i>
-            SOPORTE
+    <article class="d-categorias">
+        <h1 class="title-categorias">
+            <i class="material-icons"> man </i>
+            GORRAS HOMBRE DE LUJO
         </h1>
-        <div class="separador">
-            <img class="separador-img" src="img/Separador.png">
+
+        <div class="menu">
+            <div class="label">Categorías</div>
+            <div class="spacer"></div>
+            <a href="CasualMujer.html">
+                <div class="item"><span>Casual Mujer</span></div>
+            </a>
+            <a href="CasualHombre.html">
+                <div class="item"><span>Casual Hombre</span></div>
+            </a>
+            <a href="LujoMujer.html">
+                <div class="item"><span>Lujo Mujer</span></div>
+            </a>
+            <a href="LujoHombre.html">
+                <div class="item"><span>Lujo Hombre</span></div>
+            </a>
+
         </div>
-        <div id="pqr" class="slide-bottom">
-            <h3 class="titulos-soporte">
-                PREGUNTAS FRECUENTES
-                <i class="material-icons page-icons"> help_outline </i>
-            </h3>
-            <textarea class="input-text-edit-c" id="textRespuesta" name="tRespuesta" placeholder="Editar contenido..."
-            cols="50" rows="10"></textarea>
-            <div class="separador">
-                <img class="separador-img" src="img/Separador.png"> 
-            </div>
-            <ul class="sub-titulos-soporte">
-                <li class="pregunta-li">
-                    <label for="pregunta1"> Pregunta 1 :</label>
-                    <input class="input-preg" type="text" id="pregunta1" placeholder="Pregunta...">
-                </li>
-                <li class="respuesta">
-                    <label for="textRespuesta"> Respuesta</label>
-                    <textarea class="input-text-edit-r" id="textRespuesta1" name="tRespuesta" placeholder="Editar contenido..."
-                    cols="50" rows="10"></textarea>
-                </li>
-                <li class="pregunta-li">
-                    <label for="pregunta2"> Pregunta 2 :</label>
-                    <input class="input-preg" type="text" id="pregunta2" placeholder="Pregunta...">
-                </li>
-                <li class="respuesta">
-                    <label for="textRespuesta"> Respuesta</label>
-                    <textarea class="input-text-edit-r" id="textRespuesta2" name="tRespuesta" placeholder="Editar contenido..."
-                    cols="50" rows="10"></textarea>
-                </li>
-                <li class="pregunta-li">
-                        <label for="pregunta3"> Pregunta 3 :</label>
-                        <input class="input-preg" type="text" id="pregunta3" placeholder="Pregunta...">
-                </li>
-                <li class="respuesta">
-                    <label for="textRespuesta"> Respuesta</label>
-                    <textarea class="input-text-edit-r" id="textRespuesta3" name="tRespuesta" placeholder="Editar contenido..."
-                    cols="50" rows="10"></textarea>
-                </li>
-                <li class="pregunta-li">
-                    <label for="pregunta4"> Pregunta 4 :</label>
-                        <input class="input-preg" type="text" id="pregunta4" placeholder="Pregunta...">
-                </li>
-                <li class="respuesta">
-                    <label for="textRespuesta"> Respuesta</label>
-                    <textarea class="input-text-edit-r" id="textRespuesta4" name="tRespuesta" placeholder="Editar contenido..."
-                    cols="50" rows="10"></textarea>
-                </li>
-                <li class="pregunta-li">
-                    <label for="pregunta5"> Pregunta 5 :</label>
-                    <input class="input-preg" type="text" id="pregunta5" placeholder="Pregunta...">
-                </li>
-                <li class="respuesta">
-                    <label for="textRespuesta"> Respuesta</label>
-                    <textarea class="input-text-edit-r" id="textRespuesta5" name="tRespuesta" placeholder="Editar contenido..."
-                    cols="50" rows="10"></textarea>
-                </li>
-            </ul>
-        </div>
-        <div class="separador">
-            <img class="separador-img" src="img/Separador.png">
-        </div>
-        <div id="telefono" class="slide-bottom">
-            <h3 class="titulos-soporte">
-                TELÉFONO
-                <i class="material-icons page-icons"> phone </i>
-            </h3>
-            <textarea class="input-text-edit-c" id="textTelefono" name="tTelefono" placeholder="Editar contenido..."
-                    cols="50" rows="10"></textarea>
-        </div>
+
         <div class="separador">
             <img class="separador-img" src="img/Separador.png">
         </div>
 
-        <div id="mail" class="slide-bottom">
-            <h3 class="titulos-soporte">
-                CORREO ELECTRÓNICO
-                <i class="material-icons page-icons"> email </i>
-            </h3>
-            <textarea class="input-text-edit-c" id="textCorreo" name="tCorreo" placeholder="Editar contenido..."
-                    cols="50" rows="10"></textarea>
+        <div class="section">
+            <!-- container -->
+   
+            <div id="tasks-container2"></div>
+
         </div>
-        <div class="separador">
-            <img class="separador-img" src="img/Separador.png">
-        </div>
+
+           <!-- Segunda fila de productos-->
+
+                     
+    
     </article>
-    <input class="boton_personalizado-admin" type="submit" id="Guardar2" value="Guardar">
-    <input class="boton_personalizado-admin-cerrarSesion"  type="submit" id="logout" value="Cerrar Sesión">
+    <div class="separador">
+        <img class="separador-img" src="img/Separador.png">
+    </div>
+    <!--RECOMENDADAS-->
+    <div class="scale-in-center texts">
+        <h1 class="titles">¡RECOMENDADAS!</h1>
+        <p class="tracking-in-expand parrafo">
+            Sed
+            ut perspiciatis unde omnis
+            iste natus error sit voluptatem accusantium doloremque
+            laudantium,
+            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+            explicabo.
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+            dolores
+            eos qui ratione voluptatem sequi nesciunt.
+            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+            numquam
+            eius modi tempora incidunt
+            ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
+            ullam
+            corporis suscipit laboriosam,
+            nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+            esse
+            quam nihil molestiae consequatur,
+            vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+        </p>
 
+
+    </div>
+    <!-- Carrusel recomendadas-->
+    <div class="slideshow-container2">
+
+        <div class="mySlides2 fade2 scale-in-center recomend-center">
+            <img class="imgreco " src="img/1.jpeg">
+        </div>
+
+        <div class="mySlides2 fade2 scale-in-center recomend-center">
+            <img class="imgreco" src="img/2.jpeg">
+        </div>
+
+        <div class="mySlides2 fade2 scale-in-center recomend-center">
+            <img class="imgreco" src="img/5.jpeg">
+        </div>
+
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+    </div>
+    <br>
+
+    <div class="recomend-center">
+        <span class="dot2" onclick="currentSlide(1)"></span>
+        <span class="dot2" onclick="currentSlide(2)"></span>
+        <span class="dot2" onclick="currentSlide(3)"></span>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            var i;
+            var slides = document.getElementsByClassName("mySlides2");
+            var dots = document.getElementsByClassName("dot2");
+            if (n > slides.length) { slideIndex = 1 }
+            if (n < 1) { slideIndex = slides.length }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+    <div class="text">
+        <a href="" class="boton_personalizado">VER TODO </a>
+    </div>
 
     <!-- Pie de pagina-->
 
@@ -262,14 +294,13 @@
             </p>
         </div>
     </footer>
-    
+
     <script type = "module" src= "Firebase.js" ></script>
-    <script type = "module" src= "logout.js" ></script>
-    <script type = "module" src= "EditarContenido2.js"></script>
+    <script type = "module" src= "login.js" ></script>
+    <script type = "module" src= "MostrarProductosHL.js" ></script>
     <script type = "module" src= "Busqueda.js" ></script>
     <script type = "module" src= "Buscar.js" ></script>
-
-
+   
 </body>
 
 </html>
