@@ -35,13 +35,14 @@ function required() {
     return true
   }
 }
-document.getElementById('subirDatos').onclick = async function ingresarDatos(idF, productos, nombreUsuario, correoUsuario, direccion, ciudad, barrio, telefono, codPostal, metodoPago, metodo, tipoEnvio, estado, fecha) {
+document.getElementById('subirDatos').onclick = async function ingresarDatos(idF, productos, total, nombreUsuario, correoUsuario, direccion, ciudad, barrio, telefono, codPostal, metodoPago, metodo, tipoEnvio, estado, fecha) {
   var today = new Date()
   var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
   if (required()) {
     metodo = getValueCheckBox('fooby[1][]')
     idF = 0
     productos = localStorage.getItem('bolsa')
+    total = localStorage.getItem('total')
     nombreUsuario = document.getElementById('fname').value
     correoUsuario = document.getElementById('email').value
     direccion = document.getElementById('adr').value
@@ -89,6 +90,7 @@ document.getElementById('subirDatos').onclick = async function ingresarDatos(idF
     await set(ref(database, 'Facturas/' + idF), {
       IdFactura: idF,
       Productos: productos,
+      Total: total,
       Nombre: nombreUsuario,
       Email: correoUsuario,
       Direccion: direccion,
