@@ -68,18 +68,7 @@
         <option value="enviado">Pedido enviado</option>
         <option value="entregado">Pedido entregado</option>
     </select>-->
-    <template id="template-facturas" style="text-align: center;">
-        <h2>Factura</h2>
-        <div>
-            <p> Factura</p>
-        </div>
-        <select name="" id="">
-            <option value="pendiente">Factura pendiente</option>
-            <option value="pagada">Factura pagada</option>
-            <option value="enviado">Pedido enviado</option>
-            <option value="entregado">Pedido entregado</option>
-        </select>
-    </template>
+
 
     <script type="module" src="firebaseFact.js"> </script>
     <script type="module">
@@ -102,12 +91,12 @@
                         // y la fila con el template
                         var t = document.querySelector('#productrow'),
                         td = t.content.querySelectorAll("td");
-                        td[0].textContent = "#";
+                        td[0].textContent = "#FACTURA";
                         td[1].textContent = "CLIENTE";
-                        td[2].textContent = "TELEFONO";
-                        td[3].textContent = "METODO DE ENVIO";
+                        td[2].textContent = "TELÉFONO";
+                        td[3].textContent = "MÉTODO DE ENVIO";
                         td[4].textContent = "FECHA DE COMPRA";
-                        td[5].textContent = "METODO DE PAGO";
+                        td[5].textContent = "MÉTODO DE PAGO";
                         td[6].textContent = "ESTADO PEDIDO";
                         td[7].textContent = "TOTAL DE COMPRA";
 
@@ -131,10 +120,7 @@
                         var clone2 = document.importNode(t.content, true);
                         tb.appendChild(clone2);
 
-                    } else {
-                        // Buscar otra manera de añadir filas a la tabla porque el
-                        // elemento template no está soportado.
-                    }
+                    } 
                 });
             } else {
                 console.log("No hay datos asi")
