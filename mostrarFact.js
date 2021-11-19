@@ -4,6 +4,7 @@ import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs
         const fact = document.getElementById('fact');
 
         var idF = '';
+        let x = '';
 
         const querySnapshot = await get(ref(database, 'Facturas'));
         fact.innerHTML = '';
@@ -77,6 +78,8 @@ import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs
             const errorMessage = error.message;
             console.log(error.code + error.message)
         })
+
+
         //Mostrar factura
 
         async function actualizarEsta(idF) {
@@ -87,7 +90,6 @@ import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs
 
             if (docSnap.exists()) {
                 console.log(idF);
-
                 window.location.href = "actuaFact.html" + '?idF=' + idF;
                 return false;
 
