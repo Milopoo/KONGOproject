@@ -54,6 +54,7 @@ get(child(dbRef, `Facturas/${idF}`)).then((snapshot) => {
       precioUnid.appendChild(precioU)
       document.getElementById("precioUnid").appendChild(precioUnid)
     })
+    
   } else {
     console.log("No data available");
   }
@@ -69,7 +70,7 @@ const database = getDatabase();
 let estados = document.getElementById('estados');
 const btnG = document.getElementById('guardar');
 btnG.addEventListener('click',  function () {
-   update(ref(database, 'Facturas/' + idF), {
+    update(ref(database, 'Facturas/' + idF), {
     Estado: estados.value
   })
     .then(() => {
@@ -82,6 +83,7 @@ btnG.addEventListener('click',  function () {
       const errorMessage = error.message;
       console.log(error.code + error.message)
     });
-  window.location.href = "facturasAdim.hmtl";
-  return false;
+    window.location.href = "facturasAdmin.html";
+    return false;
 })
+
