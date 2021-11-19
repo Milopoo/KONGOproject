@@ -1,35 +1,3 @@
-//Slider de imagenes principal
-//console.log("Cargado");
-/*$('#visitas').click(function(event) {
-    event.preventDefault();
-      var redirectUrl = $(this).attr('href');
-      $.ajax({
-          url: "click_visitas.php",
-          success: function(response) {
-              if (response = 'success') {
-                  
-                  var count = $('#count').html();
-                  $('#count').html(parseFloat(count) + 1);
-                  
-                  
-                  window.location.href = redirectUrl;
-              }
-          }
-      });
-      return true;
-  });
-  
-
-  $.ajax({
-      url: "get_visitas.php",
-      success: function(data) {
-          var data = JSON.stringify(data, null, 4);
-          var data = $.parseJSON(data);
-  
-          $('#count').html(data.count);
-      }
-  });
-*/
 //Slider principal
 var imagenes = new Array("imgProductos/2.jpeg", "imgProductos/4.jpeg", "imgProductos/5.jpeg", "imgProductos/1.jpeg");
 var animacion = new Array("animaLateralDer", "animaLateralDer2", "animaLateralDer3", "animaLateralDer4" );
