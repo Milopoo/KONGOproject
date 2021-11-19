@@ -1,4 +1,4 @@
-import { getFirestore, collection, doc, setDoc, deleteDoc }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+import { getFirestore, collection, doc, setDoc, deleteDoc,serverTimestamp }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 import { getStorage, ref, uploadBytes, uploadBytesResumable, getDownloadURL}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-storage.js";
 
 const db = getFirestore();
@@ -35,7 +35,8 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
         Gender: selectGender.value,
         Category: selecCategoria.value,
         TOTAL: Total,
-        url: urlimage
+        url: urlimage,
+        timestamp: serverTimestamp()
        
 
       });
@@ -86,7 +87,8 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
             Gender: selectGender.value,
             Category: selecCategoria.value,
             TOTAL: Total,
-            url: urlimage
+            url: urlimage,
+            timestamp: serverTimestamp()
            
     
           });
