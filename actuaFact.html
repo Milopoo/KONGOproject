@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+
+</html>
+<html>
+
+<head>
+  <title>Tu Factura</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="estilos/estilos.css">
+  <link rel="shorcut icon" type="image/x-icon" href="/img/Favicon.ico">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body class="body-fac">
+  <form method="post" action="" id="myfrm">
+    <header class="clearfix header">
+      <div id="logo">
+        <img src="img/Logo_Empresa-modified.png">
+      </div>
+      <h1 class="h1-fact">FACTURA <p id="numeroFactura">##</p>
+      </h1>
+      <div id="empresa" class="clearfix">
+        <div>KONGO</div>
+        <div>Carrera 21# 133-85<br /></div>
+        <div>315 4324254</div>
+        <div><a class="links-factura">kongo_kn@kongo.com</a></div>
+      </div>
+      <div id="datosCliente">
+        <div id="fname"><span>CLIENTE</span> Luis Suarez</div>
+        <div id="adr"><span>DIRECCIÓN</span> Direccion cliente</div>
+        <div> <a id="email" class="links-factura">luis@gmail.com</a></div>
+        <div id="fechaCompra"><span>FECHA</span> Fecha de la compra</div>
+        <div id="medEnvio"><span>METODO DE ENVIO</span> Rappi </div>
+      </div>
+    </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <th class="articulo">ARTICULO</th>
+            <th class="desc">DESCRIPCIÓN</th>
+            <th>PRECIO</th>
+            <th>CANTIDAD</th>
+            <th>TOTAL</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td id="idP" class="articulo"></td>
+            <td id="nombreP" class="desc"></td>
+            <td id="precioUnid" class="unid"></td>
+            <td id="cantidad" class="qty"></td>
+            <td id="totalP" class="total"></td>
+          </tr>
+          <tr>
+            <td colspan="4" class="grand total"> TOTAL</td>
+            <td id="total" class="grand total">$120.000</td>
+          </tr>
+        </tbody>
+      </table>
+      <div id="notices">
+        <div>ALGUNA RECOMENDACIÓN O ADVERTENCIA:</div>
+        <div class="notice">Advertencia o recomendacion</div>
+        <div class="notice"> Estado del pedido: <span id="estado">Pendiente</span></div>
+      </div>
+     <!-- <p><input type="button" onclick="myPrint('myfrm')" value="Imprimir"></p>-->
+      <script type="module" src="firebaseFact.js"></script>
+      <script type="module" src="genFactAdm.js"></script>
+      <!--<script src="print.js"></script>-->
+    </main>
+  </form>
+  <footer class="footer-fact">
+    © 2021 KONGO
+  </footer>
+
+</body>
+
+</html>

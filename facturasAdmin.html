@@ -66,7 +66,7 @@
         const database = getDatabase();
         const fact = document.getElementById('fact')
 
-        var id = '';
+        var idF = '';
         const querySnapshot = await get(ref(database, 'Facturas'));
         fact.innerHTML = ''
         const dbRef = ref(database);
@@ -129,7 +129,7 @@
             verFact.forEach(btn => {
                 btn.addEventListener('click', (e) => {
                     //console.log("id", e.target.dataset.id)
-                    id = e.target.dataset.id;
+                    idF = e.target.dataset.id;
                     actualizarEsta(e.target.dataset.id);
                 })
             })
@@ -141,12 +141,12 @@
         //Mostrar factura
         async function actualizarEsta(id) {
             const docRef = ref(database, "Facturas");
-            const docSnap = await get(child(docRef, id));
+            const docSnap = await get(child(docRef, idF));
             //console.log("id", id);
 
             if (docSnap.exists()) {
                 console.log("Lo que sea ")
-                //window.location.href = "editarYeliminar.html" + '?id=' + id;
+                window.location.href = "actuaFact.html" + '?id=' + idF;
                 return false;
 
             } else {
