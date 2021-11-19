@@ -208,134 +208,153 @@
     <div class="separador">
       <img class="separador-img" src="img/Separador.png">
     </div>
-
-    <div class="section">
-      <!-- container -->
-      <div class="container">
-        <div class="col-md-12">
-          <div class="row2">
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <a href="detalleGorra.html">
-                  <img src="img/1.jpeg" alt="">
-                </a>
-              </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
-            </div>
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <img src="./img/2.jpeg" alt="">
-              </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
-            </div>
+<!--Productos-->
+<div class="section">
+  <!-- container -->
+  <div id="template-bolsa"></div>
+  <div class="tasks-container" id="tasks-container"></div>
+  
+</div>
 
 
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <img src="./img/2.jpeg" alt="">
-              </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- Segunda fila de productos-->
-    <div class="section">
-      <!-- container -->
-      <div class="container">
-        <div class="col-md-12">
-          <div class="row2">
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <img src="./img/4.jpeg" alt="">
-              </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
-            </div>
-
-
-
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <img src="./img/5.jpeg" alt="">
-              </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
-            </div>
-
-
-
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <img src="./img/4.jpeg" alt="">
-              </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
+    
   </article>
+  <script src="bolsaCompra.js"></script>
+  <script type="module" src="firebaseProd.js"></script>
+  <script type="module">
+  import { getFirestore, collection, getDocs, getDoc, doc, deleteDoc, updateDoc}  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+
+const db = getFirestore();
+var id ='';
+const tasksBolsa = document.getElementById('template-bolsa')
+const tasksContainer = document.getElementById('tasks-container');
+
+const querySnapshot = await getDocs(collection(db, 'productos'));
+tasksContainer.innerHTML ='';
+querySnapshot.forEach((doc) => {
+  // doc.data() is never undefined for query doc snapshots
+    tasksBolsa.innerHTML = `
+    <div >
+              <h1><i class='bx bx-x'></i> Bolsa de compra</h1>
+              <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">Item</th>
+                      <th scope="col">Cantidad</th>
+                      <th scope="col">Acción</th>
+                      <th scope="col">Total</th>
+                    </tr>
+                  </thead>
+                  <tbody id="items"></tbody>
+                  <tfoot>
+                    <tr id="footer">
+                      <th scope="row" colspan="5">Tu bolsa está vacía</th>
+                    </tr>
+                  </tfoot>
+                </table>
+              <div class="row-bolsa" id="cards"> </div>
+          </div>`
+    tasksContainer.innerHTML += `
+    <div class="section">
+      <!-- container -->
+      <div class="container">
+        <div class="col-md-12">
+          <div class="row2">
+          <template id="template-footer">
+              <th scope="row" colspan="2">Total productos</th>
+              <td>10</td>
+              <td class="td-plus-minus">
+                  <button class="btn-vc btn-danger btn-sm" id="vaciar-bolsa">
+                      vaciar todo
+                  </button>
+                  <button  class="btn-vc btn-danger2 btn-sm"  onclick="Envio_Directo(this.id)">
+                    Continuar al pago
+                  </button>
+              </td>
+              <td class="font-weight-bold">$ <span>5000</span></td>
+          </template>
+      
+          <template id="template-bolsa">
+              <tr>
+                  <th scope="row">id</th>
+                  <td>Café</td>
+                  <td>1</td>
+                  <td class="td-plus-minus">
+                      <button class="btn-bolsa-plus btn-info btn-sm">
+                          +
+                      </button>
+                      <button class="btn-bolsa-minus btn-danger btn-sm">
+                          -
+                      </button>
+                  </td>
+                  <td>$ <span>500</span></td>
+              </tr>
+          </template>
+            <template id="articulo">
+              <div class="product">
+                <h3 class="product-name"><a href="#">${ doc.data().Name }</a></h3>
+                <div class="product-img">
+                  <a href="detalleGorra.html">
+                    <img src= ${ doc.data().url } data-id="${doc.id}">
+                  </a>
+                </div>
+                <div class="product-body">
+                  <p class="product-category">${ doc.data().Category }</p>
+                  <h4  class="product-price">${ doc.data().TOTAL }<h6 class="product-old-price">${ doc.data().Precio }</h6></h4>
+                </div>
+                  <button  class="add-to-wishlist" data-id="${doc.id}"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
+                      bolsa</span></button>
+                  <button class="quick-view" data-id="${doc.id}"><i class="fa fa-eye"></i><span class="tooltipp">Ver
+                      detalles</span></button>
+              </div>
+            </template>
+          </div>
+        </div>
+      </div>
+    </div>`
+ 
+  console.log(doc.id, " => ", doc.data());
+  //id = doc.id; 
+
+//------- ir a detalle 
+
+  /*const AbrirDetalle = document.querySelectorAll('.product-img')
+  AbrirDetalle.forEach( btn =>{
+  btn.addEventListener( 'click', (e)=>{
+  console.log("id", e.target.dataset.id)
+  id = e.target.dataset.id;
+  DetalleProducto(e.target.dataset.id);
+  
+  })
+  })
+
+  //----------Boton Editar
+
+  const EditarBtn = document.querySelectorAll('.edit-product')
+  EditarBtn.forEach( btn =>{
+  btn.addEventListener( 'click', (e)=>{
+  console.log("id", e.target.dataset.id)
+  id = e.target.dataset.id;
+  UpdateProduct(e.target.dataset.id);
+  
+  })
+  })
+
+  //-------- Botón eliminar
+
+  const DeleteBtn = document.querySelectorAll('.delete-product')
+  DeleteBtn.forEach( btn =>{
+  btn.addEventListener( 'click', (e)=>{
+  console.log("id", e.target.dataset.id)
+  id = e.target.dataset.id;
+  DeleteProduct(e.target.dataset.id);
+  
+  })
+  })
+*/
+});
+  </script>
   <div class="separador">
     <img class="separador-img" src="img/Separador.png">
   </div>
