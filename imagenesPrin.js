@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 import { getFirestore, collection, getDocs, doc, getDoc, query, orderBy, limit }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 
 const db = getFirestore(); 
@@ -38,7 +38,7 @@ const db = getFirestore();
 
 var img = new Array ();
 
-const q = query(collection(db, "productos"), orderBy("Code", "desc"), limit(4));
+const q = query(collection(db, "productos"), orderBy("timestamp", "desc"), limit(4));
 const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
 
@@ -48,8 +48,6 @@ querySnapshot.forEach((doc) => {
 
 console.log(img); 
 
-=======
->>>>>>> fcd15b51e5f1491829672401a5477ca48df0ea01
 //Slider principal
 var imagenes = new Array("imgProductos/2.jpeg", "imgProductos/4.jpeg", "imgProductos/5.jpeg", "imgProductos/1.jpeg");
 imagenes = img; 
