@@ -211,7 +211,7 @@
 <!--Productos-->
 <div class="section">
   <!-- container -->
-  <div id="tasks-bolsa"></div>
+  <div id="template-bolsa"></div>
   <div class="tasks-container" id="tasks-container"></div>
   
 </div>
@@ -226,7 +226,7 @@
 
 const db = getFirestore();
 var id ='';
-const tasksBolsa = document.getElementById('tasks-bolsa')
+const tasksBolsa = document.getElementById('template-bolsa')
 const tasksContainer = document.getElementById('tasks-container');
 
 const querySnapshot = await getDocs(collection(db, 'productos'));
@@ -293,19 +293,19 @@ querySnapshot.forEach((doc) => {
           </template>
             <template id="articulo">
               <div class="product">
-                <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
+                <h3 class="product-name"><a href="#">${ doc.data().Name }</a></h3>
                 <div class="product-img">
                   <a href="detalleGorra.html">
-                    <img src=" " alt="">
+                    <img src= ${ doc.data().url } data-id="${doc.id}">
                   </a>
                 </div>
                 <div class="product-body">
-                  <p class="product-category">Category</p>
-                  <h4  class="product-price">$80.00 CO <h6 class="product-old-price">$90.00 CO</h6></h4>
+                  <p class="product-category">${ doc.data().Category }</p>
+                  <h4  class="product-price">${ doc.data().TOTAL }<h6 class="product-old-price">${ doc.data().Precio }</h6></h4>
                 </div>
-                  <button  class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
+                  <button  class="add-to-wishlist" data-id="${doc.id}"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
                       bolsa</span></button>
-                  <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver
+                  <button class="quick-view" data-id="${doc.id}"><i class="fa fa-eye"></i><span class="tooltipp">Ver
                       detalles</span></button>
               </div>
             </template>
