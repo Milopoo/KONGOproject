@@ -89,13 +89,3 @@ btnG.addEventListener('click',  function () {
     return false;
 })
 
-
-/*const cerrar = document.querySelectorAll('.cerrar')
-        cerrar.forEach(btnC =>{
-            btnC.addEventListener('click', (e) =>{
-                localStorage.getItem('cerrar')
-                console.log(localStorage.getItem('cerrar'))
-                localStorage.getItem('cerrar').close();
-            })
-        })*/
-
