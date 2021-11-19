@@ -28,35 +28,28 @@
     <!--<p>Presione el botón para desplegar todas las facturas</p>-->
 
     <!--<button onclick="showContent()">Show hidden content</button>-->
-    <table id="producttable">
-        <thead>
-            <tr>
-                <td>FACTURAS GENERADAS</td>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- datos opcionales pueden incluirse aquí opcionalmente -->
-        </tbody>
-    </table>
 
-    <template id="productrow">
-        <tr>
-            <td class="record"></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td >
-                    <button class="btnVer">
-                        ver factura
-                    </button> 
-            </td>
-        </tr>
-  
-    </template>
+    <div id="fact">
+
+
+
+    </div>
+
+
+    <!--<template id="productrow">
+            <tr>
+                <td class="record"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </template>
+    -->
 
     <!--<select name="estados" id="estados">
         <option value="pendiente">Factura pendiente</option>
@@ -71,74 +64,96 @@
         import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
 
         const database = getDatabase();
-        
-        var id = '';
-        const vFac = document.getElementById("vFact");
-        const querySnapshot = await get(ref(database, 'Facturas'));
+        const fact = document.getElementById('fact')
 
+        var id = '';
+        const querySnapshot = await get(ref(database, 'Facturas'));
+        fact.innerHTML = ''
         const dbRef = ref(database);
         get(child(dbRef, 'Facturas')).then((snapshot) => {
             if (snapshot.exists()) {
                 querySnapshot.forEach(database => {
                     console.log(database.val());
+                    fact.innerHTML += ` 
+                    <table id="producttable">
+        <thead>
+            <tr>
+                <td>FACTURAS GENERADAS</td>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    <table id="producttable"56>
+        <tr>
+          <th>#FACTURA</th>
+          <th>CLIENTE</th>
+          <th>TELÉFONO</th>
+          <th>MÉTODO DE ENVIO</th>
+          <th>FECHA DE COMPRA</th>
+          <th>MÉTODO DE PAGO</th>
+          <th>ESTADO PEDIDO</th>
+          <th>TOTAL DE COMPRA</th>
+        </tr>
+        <tr>
+          <td>${database.val().IdFactura}</td>
+          <td>${database.val().Nombre}</td>
+          <td>${database.val().Tel}</td>
+          <td>${database.val().Envio}</td>
+          <td>${database.val().FechaCompra}</td>
+          <td>${database.val().Metodo}</td>
+          <td>${database.val().Estado}</td>
+          <td>${"$ " + database.val().Total}</td>
+        </tr>
+        <table id="producttable">
+            <thead>
+                <tr>
+                    <td>
+                        <button class="verFact" data-id="${database.val().IdFactura}">
+                            ver factura
+                        </button>
+                    </td>
+                </tr>
+            </thead>
+            <tbody>
+            </tbody>
+        </table>
+      </table>`
                     //console.log(database.val().IdFactura);
-                    if ('content' in document.createElement('template')) {
-
-                        // Instanciar la tabla con el tbody existente
-                        // y la fila con el template
-                        var t = document.querySelector('#productrow'),
-                        td = t.content.querySelectorAll("td");
-                        td[0].textContent = "#FACTURA";
-                        td[1].textContent = "CLIENTE";
-                        td[2].textContent = "TELÉFONO";
-                        td[3].textContent = "MÉTODO DE ENVIO";
-                        td[4].textContent = "FECHA DE COMPRA";
-                        td[5].textContent = "MÉTODO DE PAGO";
-                        td[6].textContent = "ESTADO PEDIDO";
-                        td[7].textContent = "TOTAL DE COMPRA";
-
-
-                        // Clonar la nueva fila e insertarla en la tabla
-                        var tb = document.querySelector("tbody");
-                        var clone = document.importNode(t.content, true);
-                        tb.appendChild(clone);
-
-                        // Crear una nueva fila
-                        td[0].textContent = database.val().IdFactura;
-                        td[1].textContent = database.val().Nombre;
-                        td[2].textContent = database.val().Tel;
-                        td[3].textContent = database.val().Envio;
-                        td[4].textContent = database.val().FechaCompra;
-                        td[5].textContent = database.val().Metodo;
-                        td[6].textContent = database.val().Estado;
-                        td[7].textContent = "$ " +  database.val().Total;
-                                                
-                        // Clonar la nueva fila e insertarla en la tabla
-                        var clone2 = document.importNode(t.content, true);
-                        tb.appendChild(clone2);
-                        
-                    } 
-
-                    //boton ver factura
-            
-
-
                 });
-
             } else {
                 console.log("No hay datos asi")
             }
-        })
-            .catch((error) => {
-                const errorCode = error.code;
-                const errorMessage = error.message;
-                console.log(error.code + error.message)
+            const verFact = document.querySelectorAll('.verFact')
+            verFact.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    //console.log("id", e.target.dataset.id)
+                    id = e.target.dataset.id;
+                    actualizarEsta(e.target.dataset.id);
+                })
             })
-//Mostrar factura
+        }).catch((error) => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            console.log(error.code + error.message)
+        })
+        //Mostrar factura
+        async function actualizarEsta(id) {
+            const docRef = ref(database, "Facturas");
+            const docSnap = await get(child(docRef, id));
+            //console.log("id", id);
 
+            if (docSnap.exists()) {
+                console.log("Lo que sea ")
+                //window.location.href = "editarYeliminar.html" + '?id=' + id;
+                return false;
 
-
-
+            } else {
+                // doc.data() will be undefined in this case
+                console.log("No such document!");
+            }
+        }
 
     </script>
 
