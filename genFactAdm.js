@@ -5,7 +5,7 @@
         var idF = params.get('idF'); //Busca la variable que tenga nombre id
         var prod = ''
         var comprados = ''
-        //console.log(idF)
+        console.log(idF);
 
         const dbRef = ref(getDatabase());
 
@@ -20,7 +20,7 @@
             document.getElementById("adr").innerHTML = "DIRECCION: " + " " + snapshot.val().Direccion
             document.getElementById("email").innerHTML = "EMAIL: " + " " + snapshot.val().Email
             document.getElementById("fechaCompra").innerHTML = "FECHA DE COMPRA (AAAA/MM/DD):  " + " " + snapshot.val().FechaCompra
-            document.getElementById("estado").innerHTML = snapshot.val().Estado
+            //document.getElementById("estado").innerHTML = snapshot.val().Estado
             document.getElementById("medEnvio").innerHTML = "METODO DE ENVIO: " + " " + snapshot.val().Envio
             document.getElementById("total").innerHTML = "$" + snapshot.val().Total
             prod = snapshot.val().Productos
@@ -61,4 +61,15 @@
           console.error(error);
         });
 
-        localStorage.clear()
+        //Actualizar estado
+        let estados = document.getElementById('estados');
+        const btnG = document.getElementById('guardar');
+        btnG.addEventListener('click', async function () {
+        
+          const database = getDatabase();
+          //Actualizando
+          await set(ref(database, 'Facturas/' + idF),{
+            Estado: estados.value
+          })
+          window.location = "facturasAdim.hmtl";
+        })
