@@ -75,6 +75,7 @@ btnG.addEventListener('click',  function () {
   })
     .then(() => {
       // Datos guardados con exito
+      //window.location.href = "facturasAdmin.html";
       console.log('Datos guardados con exito');
     })
     .catch((error) => {
@@ -82,8 +83,19 @@ btnG.addEventListener('click',  function () {
       const errorCode = error.code;
       const errorMessage = error.message;
       console.log(error.code + error.message)
+      //window.location.href = "facturasAdmin.html";
     });
     window.location.href = "facturasAdmin.html";
     return false;
 })
+
+
+/*const cerrar = document.querySelectorAll('.cerrar')
+        cerrar.forEach(btnC =>{
+            btnC.addEventListener('click', (e) =>{
+                localStorage.getItem('cerrar')
+                console.log(localStorage.getItem('cerrar'))
+                localStorage.getItem('cerrar').close();
+            })
+        })*/
 
