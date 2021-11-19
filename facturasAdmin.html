@@ -49,10 +49,10 @@
             <td></td>
             <td></td>
             <td></td>
-            <td>
-                <button>
-                    ver factura
-                </button>
+            <td >
+                    <button class="btnVer">
+                        ver factura
+                    </button> 
             </td>
         </tr>
   
@@ -71,8 +71,9 @@
         import { getDatabase, ref, child, get } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
 
         const database = getDatabase();
+        
         var id = '';
-
+        const vFac = document.getElementById("vFact");
         const querySnapshot = await get(ref(database, 'Facturas'));
 
         const dbRef = ref(database);
@@ -111,13 +112,19 @@
                         td[5].textContent = database.val().Metodo;
                         td[6].textContent = database.val().Estado;
                         td[7].textContent = "$ " +  database.val().Total;
-                        
+                                                
                         // Clonar la nueva fila e insertarla en la tabla
                         var clone2 = document.importNode(t.content, true);
                         tb.appendChild(clone2);
-
+                        
                     } 
+
+                    //boton ver factura
+            
+
+
                 });
+
             } else {
                 console.log("No hay datos asi")
             }
@@ -127,6 +134,11 @@
                 const errorMessage = error.message;
                 console.log(error.code + error.message)
             })
+//Mostrar factura
+
+
+
+
 
     </script>
 
