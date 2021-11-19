@@ -1,3 +1,7 @@
+import { getFirestore, collection, getDocs, doc, getDoc, query, orderBy, limit }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+
+const db = getFirestore(); 
+
 //Slider de imagenes principal
 //console.log("Cargado");
 /*$('#visitas').click(function(event) {
@@ -30,8 +34,22 @@
       }
   });
 */
+
+var img = new Array ();
+
+const q = query(collection(db, "productos"), orderBy("Code", "desc"), limit(4));
+const querySnapshot = await getDocs(q);
+querySnapshot.forEach((doc) => {
+
+    img.push(doc.data().url)  
+
+})
+
+console.log(img); 
+
 //Slider principal
 var imagenes = new Array("imgProductos/2.jpeg", "imgProductos/4.jpeg", "imgProductos/5.jpeg", "imgProductos/1.jpeg");
+imagenes = img; 
 var animacion = new Array("animaLateralDer", "animaLateralDer2", "animaLateralDer3", "animaLateralDer4" );
 var slider = document.getElementById("slider");
 var sliderAnima = document.getElementById("slider-anima");
@@ -63,5 +81,3 @@ function cambio(){
 
         sliderAnima.style.animationName = animacion[i];
 }
-
-

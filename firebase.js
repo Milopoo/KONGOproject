@@ -1,7 +1,6 @@
 //Aprendiendo
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-app.js";
-import { set, ref, getDatabase, update, get, child } from "https://www.gstatic.com/firebasejs/9.1.3/firebase-database.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -21,3 +20,4 @@ const app = initializeApp(firebaseConfig);
 
 //Variables lectura de de datos usuario
 //var nombreUsuario, correoUsuario, direccion, ciudad, barrio, telefono, codPostal, metodoDavi, metodoNequi;
+
