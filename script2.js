@@ -1,40 +1,18 @@
-//Carrusel del archivo JSON sliderRecomend.json
-/*let cadena1 = '{"persona":[{"ustelefono":"3544432","usidrol":0,"userid":1,"usapellidos":"Perez","useremail":"andrea@gmail.com","usnombres":"Andrea"}]}';
+import { getFirestore, collection, getDocs, doc, getDoc, query, orderBy, limit }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 
-let json1 = JSON.parse(cadena1);
-console.log(json1.persona[0].ustelefono);*/
-const gorras = [
-  {
-    id : "1",
-    nombre: "Gorra 1",
-    desc : "Gorra1",
-    visitas : "2"
-  },
-  {
-    id : "2",
-    nombre: "Gorra 2",
-    desc : "Gorra2",
-    visitas : "5"
-  },
-  {
-    id : "3",
-    nombre: "Gorra 3",
-    desc : "Gorra3",
-    visitas : "10"
-  }
-];
-
-//console.log(gorras[0].nombre);
+const db = getFirestore(); 
 
 //Carrusel recomendadas
 var slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
+
   showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
+  
   showSlides(slideIndex = n);
 }
 
@@ -53,6 +31,17 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].className += " active";
 }
+
+const q = query(collection(db, "productos"), orderBy("contVisitas", "desc"), limit(3));
+const querySnapshot = await getDocs(q);
+querySnapshot.forEach((doc) => {
+
+  document.getElementById("imgCarrusel").src = doc.data().url;
+
+})
+
+
+
 //Boton editar admin
 document.getElementById("myBtn").onclick = function() {myFunction()};
           
