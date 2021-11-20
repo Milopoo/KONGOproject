@@ -81,7 +81,7 @@ const pintarArticulos = data => {
 }
 const addBolsa = e => {
     //console.log(e.target)
-    //console.log(e.target.classList.contains('btnComprar'))
+    //console.log(e.target.classList.contains('add-to-wishlist'))
     if (e.target.classList.contains('add-to-wishlist')) {
         setBolsa(e.target.parentElement)
     }
