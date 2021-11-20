@@ -34,7 +34,9 @@ document.getElementById("SaveBtn").addEventListener('click', async function(){
         Category: selecCategoria.value,
         TOTAL: Total,
         url: imgGorras.value,
-        timestamp: serverTimestamp()
+        timestamp: serverTimestamp(),
+        contVisitas
+    
        
 
       });
@@ -89,7 +91,8 @@ document.getElementById("SaveBtn").addEventListener('click', async function(){
             Category: selecCategoria.value,
             TOTAL: Total,
             url: imgGorras.value,
-            timestamp: serverTimestamp()
+            timestamp: serverTimestamp(),
+            contVisitas
     
           });
     

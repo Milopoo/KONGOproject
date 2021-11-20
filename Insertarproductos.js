@@ -36,7 +36,8 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
         Category: selecCategoria.value,
         TOTAL: Total,
         url: urlimage,
-        timestamp: serverTimestamp()
+        timestamp: serverTimestamp(),
+        contVisitas:''
        
 
       });
@@ -88,7 +89,8 @@ document.getElementById("InsBtn").addEventListener('click', async function(){
             Category: selecCategoria.value,
             TOTAL: Total,
             url: urlimage,
-            timestamp: serverTimestamp()
+            timestamp: serverTimestamp(),
+            contVisitas:''
            
     
           });

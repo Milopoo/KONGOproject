@@ -1,4 +1,5 @@
-import { getFirestore, collection, getDoc, doc }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
+
+import { getFirestore, collection, getDoc, doc, updateDoc }  from "https://www.gstatic.com/firebasejs/9.1.3/firebase-firestore.js";
 
 const db = getFirestore(); 
 
@@ -6,6 +7,8 @@ let params = new URLSearchParams(location.search); //Busca todos las variables e
 var id = params.get('id'); //Busca la variable que tenga nombre id
 console.log(id);
 var docSnap ; 
+let visitas =''; 
+
     
    
   
@@ -21,14 +24,72 @@ var docSnap ;
       document.getElementById("PrecioP").innerHTML = docSnap.data().Precio + " COP";
       document.getElementById("imgGorras").src = docSnap.data().url ;
 
+      
+      
+
+
     }
 
-    const docRef = collection (db, "productos" );
+    async function Visitas(){
+
+      const docRef_ = doc(db, "productos", id );
+      await updateDoc(docRef_ ,{ contVisitas: visitas
+      });
+
+    } 
+
+    async function VisitasML(){
+
+      visitas = Number(docSnap.data().contVisitas);
+      visitas++;
+      console.log(visitas);
+     
+      await updateDoc(doc(docRef, "Mujer", "Lujo", id) ,{ "contVisitas": visitas });
+
+    } 
+
+    
+    async function VisitasMC(){
+
+      visitas = Number(docSnap.data().contVisitas);
+      visitas++;
+      console.log(visitas);
+     
+      await updateDoc(doc(docRef, "Mujer", "Lujo", id) ,{ "contVisitas": visitas });
+
+    } 
+
+    
+    async function VisitasHL(){
+
+      visitas = Number(docSnap.data().contVisitas);
+      visitas++;
+      console.log(visitas);
+     
+      await updateDoc(doc(docRef, "Mujer", "Lujo", id) ,{ "contVisitas": visitas });
+
+    } 
+
+    
+    async function VisitasHC(){
+
+      visitas = Number(docSnap.data().contVisitas);
+      visitas++;
+      console.log(visitas);
+     
+      await updateDoc(doc(docRef, "Mujer", "Lujo", id) ,{ "contVisitas": visitas });
+
+    } 
+
+    var docRef = collection (db, "productos" );
     docSnap = await getDoc(doc( docRef, "Mujer", "Lujo", id ));
     
     if (docSnap.exists()) {
        
       MostrarData();
+      VisitasML();
+      Visitas();
+    
 
     } 
     else 
@@ -38,6 +99,8 @@ var docSnap ;
           if (docSnap.exists()) {
             
             MostrarData();
+            VisitasHL();
+            Visitas();
 
           } 
           else 
@@ -47,6 +110,8 @@ var docSnap ;
             if (docSnap.exists()) {
             
               MostrarData();
+              VisitasMC();
+              Visitas();
   
             } 
             else 
@@ -56,6 +121,8 @@ var docSnap ;
               if (docSnap.exists()) {
             
                 MostrarData();
+                VisitasHC();
+                Visitas();
     
               } 
               else 
