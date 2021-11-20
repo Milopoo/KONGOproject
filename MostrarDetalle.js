@@ -14,7 +14,7 @@ let visitas ='';
   
     function MostrarData(){
      
-      console.log("Document data:", docSnap.data());
+      //console.log("Document data:", docSnap.data());
 
       document.getElementById("nombreP").innerHTML = docSnap.data().Name;
       document.getElementById("colorP").innerHTML = "Color: " + docSnap.data().Color;
@@ -42,7 +42,7 @@ let visitas ='';
 
       visitas = Number(docSnap.data().contVisitas);
       visitas++;
-      console.log(visitas);
+      //console.log(visitas);
      
       await updateDoc(doc(docRef, "Mujer", "Lujo", id) ,{ "contVisitas": visitas });
 

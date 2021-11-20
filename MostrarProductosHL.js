@@ -34,7 +34,7 @@ querySnapshot.forEach((doc) => {
        </div>
      </div>`
 
- console.log(doc.id, " => ", doc.data());
+ //console.log(doc.id, " => ", doc.data());
  //id = doc.id; 
 
 //------- ir a detalle 

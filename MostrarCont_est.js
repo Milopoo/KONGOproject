@@ -8,7 +8,7 @@ const db = getFirestore();
     
     if (docSnap.exists()) {
        
-      console.log("Document data:", docSnap.data());
+      //console.log("Document data:", docSnap.data());
 
       document.getElementById("Recomendadas").innerHTML = docSnap.data().TextRecomendadas;
       document.getElementById("Bienvenida").innerHTML = docSnap.data().TextBienvenida;

@@ -14,7 +14,7 @@ querySnapshot.forEach((doc) => {
 
 })
 
-console.log(img); 
+//console.log(img); 
 
 
 
