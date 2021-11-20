@@ -1820,22 +1820,28 @@ margin-top: 5%;
   font-size: 25px;
 }
 .tasks-container{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 .tasks-container3{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr)
 }
 #tasks-container{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr)
 }
 #tasks-container2{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr)
 }
 #tasks-container3{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr)
 }
 #tasks-container4{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr)
 }
 @media screen and (max-width:600px){
   .tasks-container, .tasks-container3{
