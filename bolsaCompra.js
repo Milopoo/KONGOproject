@@ -1,5 +1,3 @@
-
-/* Del video del chileno*/
 const cards = document.getElementById('cards')
 const items = document.getElementById('items')
 const footer = document.getElementById('footer')
@@ -10,9 +8,34 @@ const templateBolsa = document.getElementById('template-bolsa').content
 const fragment = document.createDocumentFragment()
 var total = 0
 var totalProducto = 0
+var dataF = []
+var dataJson = []
 var cont = 0
 let bolsa = {}
 let listaBolsa = {}
+var datos = []
+
+//const fs = require('fs')
+//localStorage.clear()
+//dataF = localStorage.getItem('productos')
+//dataJson = JSON.parse(dataF)
+//console.log(dataF)
+//console.log(dataF)
+//const fs = require('fs')
+
+/*const saveData = (data, file) =>{
+    const finished = (error) =>{
+        if(error){
+            console.log(error)
+            return;
+        }
+    }
+
+    const jsonData = JSON.stringify(data, null, 2)
+    fs.writeFile(file, jsonData, finished) 
+}
+saveData(dataJson, 'productos.json')
+*/
 
 document.addEventListener('DOMContentLoaded', () => {
     fetchData()
@@ -33,7 +56,7 @@ const fetchData = async () => {
     try {
         const res = await fetch('carritoTemp.json')
         const data = await res.json()
-        //console.log(data)
+        console.log(data)
         pintarArticulos(data)
     } catch (error) {
         console.log(error);
@@ -158,4 +181,3 @@ const btnAccion = e => {
     }
     e.stopPropagation()
 }
-/*Facturación*/
