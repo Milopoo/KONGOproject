@@ -1822,8 +1822,35 @@ margin-top: 5%;
 .tasks-container{
   display: flex;
 }
+.tasks-container3{
+  display: flex;
+}
+#tasks-container{
+  display: flex;
+}
+#tasks-container2{
+  display: flex;
+}
+#tasks-container3{
+  display: flex;
+}
+#tasks-container4{
+  display: flex;
+}
 @media screen and (max-width:600px){
-  .tasks-container{
+  .tasks-container, .tasks-container3{
+    display: block;
+  }
+  #tasks-container1{
+    display: block;
+  }
+  #tasks-container2{
+    display: block;
+  }
+  #tasks-container3{
+    display: block;
+  }
+  #tasks-container4{
     display: block;
   }
 }
