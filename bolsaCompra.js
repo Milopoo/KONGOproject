@@ -105,6 +105,7 @@ const setBolsa = objeto => {
     } 
 
     bolsa[producto.id] = { ...producto }
+    console.log("Esta es la super bolsa " + bolsa)
     pintarBolsa()
 }
 const pintarBolsa = () => {

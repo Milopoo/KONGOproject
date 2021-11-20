@@ -303,7 +303,7 @@ querySnapshot.forEach((doc) => {
                   <p class="product-category">${ doc.data().Category }</p>
                   <h4  class="product-price">${ doc.data().TOTAL }<h6 class="product-old-price">${ doc.data().Precio }</h6></h4>
                 </div>
-                  <button  class="add-to-wishlist" data-id="${doc.id}"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
+                  <button data-id="${doc.id}"  class="add-to-wishlist" ><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
                       bolsa</span></button>
                   <button class="quick-view" data-id="${doc.id}"><i class="fa fa-eye"></i><span class="tooltipp">Ver
                       detalles</span></button>
