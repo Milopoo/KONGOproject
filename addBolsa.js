@@ -21,7 +21,7 @@ function intoBolsa(producto){
       }
   
       bolsa[producto.id] = { ...producto }
-      console.log(bolsa)
+      //console.log(bolsa)
       pintarBolsa()
 }
 const pintarBolsa = () => {

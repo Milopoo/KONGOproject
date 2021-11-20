@@ -87,7 +87,7 @@ async function setBolsa(id) {
 
   const docRef = collection(db, "productos");
   const docSnap = await getDoc(doc(docRef, id));
-  console.log("id", id);
+  //console.log("id", id);
 
   if (docSnap.exists()) {
     const producto = {
