@@ -26,7 +26,7 @@
 <body>
   <nav>
     <div class="social-logo">
-      <a href="#" class="icon-ig">
+      <a href="https://www.instagram.com/kongo_kn/" target="_blank" class="icon-ig">
         <i class='bx bxl-instagram'></i>
       </a>
       <a href="# " class="icon-fb">
@@ -39,7 +39,7 @@
         <div class="search-box">
           <i class='bx bx-search'></i>
           <div class="input-box">
-            <input type="text" placeholder="Buscar...">
+            <input type="text" id= "Buscar" placeholder="Buscar...">
           </div>
         </div>
       </div>
@@ -92,9 +92,9 @@
             <a href="soporte.html">SOPORTE</a>
             <i class='bx bx-chevron-down arrow s'></i>
             <ul class="s-sub-menu sub-menu">
-              <li> <a href="#"> TELÉFONO</a></li>
-              <li> <a href="#"> PREGUNTAS FRECUENTES</a></li>
-              <li> <a href="#"> CORREO</a></li>
+              <li> <a href="soporte.html"> TELÉFONO</a></li>
+              <li> <a href="soporte.html"> PREGUNTAS FRECUENTES</a></li>
+              <li> <a href="soporte.html"> CORREO</a></li>
             </ul>
           </li>
         </ul>
@@ -142,14 +142,14 @@
     </ul>
   </div>-->
   <div class="text">
-    <a id="visitas" href="" class="boton_personalizado">¡VER MÁS! </a>
+    <a id="visitas" href="Categorías.html" class="boton_personalizado">¡VER MÁS! </a>
   </div>
   <div class="separador">
     <img class="separador-img" src="img/Separador.png">
   </div>
   <div class="scale-in-center texts">
     <h1 class="titles">¡BIENVENIDO!</h1>
-    <p class="tracking-in-expand parrafo"> Sed ut perspiciatis unde omnis iste natus error
+    <p class="tracking-in-expand parrafo" id= "Bienvenida"> Sed ut perspiciatis unde omnis iste natus error
       sit voluptatem accusantium doloremque
       laudantium,
       totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
@@ -170,7 +170,7 @@
   </div>
   <div class="scale-in-center texts">
     <h1 class="titles">¡RECOMENDADAS!</h1>
-    <p class="tracking-in-expand parrafo">
+    <p class="tracking-in-expand parrafo" id= "Recomendadas">
       Sed
       ut perspiciatis unde omnis
       iste natus error sit voluptatem accusantium doloremque
@@ -189,48 +189,30 @@
     </p>
   </div>
   <!-- Carrusel recomendadas-->
-  <div class="slideshow-container2">
-
-    <div class="mySlides2 first-img fade2 scale-in-center recomend-center">
-      <img class="imgreco " id= "imgCarrusel" src="img/load.gif">
-    </div> 
-
-    <div class="mySlides2 fade2 scale-in-center recomend-center">
-      <img class="imgreco" id= "imgCarrusel" src="img/load.gif">
-    </div>
-
-    <div class="mySlides2 fade2 scale-in-center recomend-center">
-      <img class="imgreco" id= "imgCarrusel" src="img/load.gif">
-    </div>
 
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+  <figure class="figure-reco">
+    <a href="Categorías.html">
+      <img id="slider2" src="" alt="">
+      <img id="slider-anima2" src="">
+    </a>
+  </figure>
 
-  </div>
-  <br>
-
-  <div class="recomend-center">
-    <span class="dot2" onclick="currentSlide(1)"></span>
-    <span class="dot2" onclick="currentSlide(2)"></span>
-    <span class="dot2" onclick="currentSlide(3)"></span>
-  </div>
-  <script src="sliderRecomend.json"></script>
  
   <div class="text">
-    <a href="" class="boton_personalizado">VER TODO </a>
+    <a href="Categorías.html" class="boton_personalizado"> VER TODO </a>
   </div>
   <div class="row">
     <div class="column">
       <h2 class="textofinal">KONGO</h2>
       <p class="subtexto">
-        <a href="#" class="subtexto"> QUIENES SOMOS </a>
+        <a href="conocenos.html" class="subtexto"> QUIENES SOMOS </a>
       </p>
       <p class="subtexto">
-        <a href="#" class="subtexto"> CORREO </a>
+        <a href="soporte.html" class="subtexto"> CORREO </a>
       </p>
       <p class="subtexto">
-        <a href="#" class="subtexto"> TELÉFONO </a>
+        <a href="soporte.html" class="subtexto"> TELÉFONO </a>
       </p>
     </div>
     <div class="column">
@@ -248,13 +230,13 @@
     <div class="column">
       <h2 class="textofinal">CONTÁCTANOS</h2>
       <p class="subtexto">
-        <a href="#" class="subtexto"> SOPORTE </a>
+        <a href="soporte.html" class="subtexto"> SOPORTE </a>
       </p>
       <p class="subtexto">
-        <a href="#" class="subtexto"> PREGUNTAS</a>
+        <a href="soporte.html" class="subtexto"> PREGUNTAS</a>
       </p>
       <p class="subtexto">
-        <a href="#" class="subtexto"> DEVOLUCIONES </a>
+        <a href="soporte.html" class="subtexto"> DEVOLUCIONES </a>
       </p>
     </div>
     <div class="column">
@@ -279,7 +261,10 @@
   </footer>
   <script type ="module" src= "firebase.js"></script>
   <script type="module" src="imagenesPrin.js"></script>
+  <script type="module" src="imagenesPrin2.js"></script>
   <script type="module" src="script2.js"></script>
+  <script type="module" src="MostrarCont_est.js"></script>
+  <script type="module" src="Buscar.js"></script>
  
 </body>
 

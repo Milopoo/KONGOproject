@@ -5,15 +5,15 @@
 <html>
 
 <head>
-  <title>KONGO</title>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="estilos/estilos.css">
-  <link rel="icon" href="Favicon.ico">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+    <title>HOMBRE LUJO</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="icon" href="Favicon.ico">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <!-- Link inferior para boostrap-->
 <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
@@ -22,312 +22,241 @@
 <!-- Todo lo visual de la pagina web -->
 
 <body>
-  <nav>
-    <div class="social-logo">
-      <a href="#" class="icon-ig">
-        <i class='bx bxl-instagram'></i>
-      </a>
-      <a href="# " class="icon-fb">
-        <i class='bx bxl-facebook-square'></i>
-      </a>
-      <a href="#" class="logo">
-        <img src="img/Logo_Empresa-modified.png">
-      </a>
-      <div class="icon-search">
-        <div class="search-box">
-          <i class='bx bx-search'></i>
-          <div class="input-box">
-            <input type="text" placeholder="Buscar...">
-          </div>
-        </div>
-      </div>
-      <a href="#popup" class="icon-shopping-bag">
-        <i class='bx bxs-shopping-bag'></i>
-        <div id="popup" class="overlay">
-          <div id="popupBody">
-            <a id="cerrar" href="#">&times;</a>
-            <div class="popupContent">
-              <p>Tu bolsa se encuentra vacía</p>
+    <nav>
+        <div class="social-logo">
+            <a href="https://www.instagram.com/kongo_kn/" target="_blank" class="icon-ig">
+                <i class='bx bxl-instagram'></i>
+            </a>
+            <a href="# " class="icon-fb">
+                <i class='bx bxl-facebook-square'></i>
+            </a>
+            <a href="#" class="logo">
+                <img src="img/Logo_Empresa-modified.png">
+            </a>
+            <div class="icon-search">
+                <div class="search-box">
+                    <i class='bx bx-search'></i>
+                    <div class="input-box">
+                        <input type="text" id="Buscar" placeholder="Buscar...">
+                    </div>
+                </div>
             </div>
-          </div>
+            <a href="#popup" class="icon-shopping-bag">
+                <i class='bx bxs-shopping-bag'></i>
+                <div id="popup" class="overlay">
+                    <div id="popupBody">
+                        <a id="cerrar" href="#">&times;</a>
+                        <div class="popupContent">
+                            <p>Tu bolsa se encuentra vacía</p>
+                        </div>
+                    </div>
+                </div>
+            </a>
         </div>
-      </a>
-    </div>
-    <div class="navbar">
-      <i class='bx bx-menu'></i>
-      <div class="nav-links">
-        <div class="slidebar-logo">
-          <span class="logo_name">MENÚ</span>
-          <i class="bx bx-x"></i>
-        </div>
-        <ul class="links">
-          <li>
-            <a href="Categorías.html">QUIERO COMPRAR</a>
-            <i class='bx bx-chevron-down arrow qc'></i>
-            <ul class="qc-sub-menu sub-menu">
-              <li> <a href="CasualMujer.html"> MUJER</a></li>
-              <li> <a href="CasualHombre.html"> HOMBRE</a></li>
-              <li class="more">
-                <a href="#"> LINEA DE LUJO</a>
-                <i class='bx bx-chevron-right arrow lujo'></i>
-                <ul class="more-sub-menu sub-menu">
-                  <li> <a href="LujoMujer.html"> MUJER</a></li>
-                  <li> <a href="LujoHombre.html"> HOMBRE</a></li>
+        <div class="navbar">
+            <i class='bx bx-menu'></i>
+            <div class="nav-links">
+                <div class="slidebar-logo">
+                    <span class="logo_name">MENÚ</span>
+                    <i class="bx bx-x"></i>
+                </div>
+                <ul class="links">
+                    <li>
+                        <a href="Categorías.html">QUIERO COMPRAR</a>
+                        <i class='bx bx-chevron-down arrow qc'></i>
+                        <ul class="qc-sub-menu sub-menu">
+                            <li> <a href="CasualMujer.html"> MUJER</a></li>
+                            <li> <a href="CasualHombre.html"> HOMBRE</a></li>
+                            <li class="more">
+                                <a href="#"> LINEA DE LUJO</a>
+                                <i class='bx bx-chevron-right arrow lujo'></i>
+                                <ul class="more-sub-menu sub-menu">
+                                    <li> <a href="LujoMujer.html"> MUJER</a></li>
+                                    <li> <a href="LujoHombre.html"> HOMBRE</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="editConocenos.html">CONÓCENOS</a>
+                        <i class='bx bx-chevron-down arrow c'></i>
+                        <ul class="c-sub-menu sub-menu">
+                            <li> <a href="conocenos.html #mision"> MISIÓN</a></li>
+                            <li> <a href="conocenos.html #vision"> VISIÓN</a></li>
+                            <li> <a href="conocenos.html #historia"> HISTORIA</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="editSoporte.html">SOPORTE</a>
+                        <i class='bx bx-chevron-down arrow s'></i>
+                        <ul class="s-sub-menu sub-menu">
+                            <li> <a href="#"> TELÉFONO</a></li>
+                            <li> <a href="#"> PREGUNTAS FRECUENTES</a></li>
+                            <li> <a href="#"> CORREO</a></li>
+                        </ul>
+                    </li>
                 </ul>
-              </li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">CONÓCENOS</a>
-            <i class='bx bx-chevron-down arrow c'></i>
-            <ul class="c-sub-menu sub-menu">
-              <li> <a href="conocenos.html #mision"> MISIÓN</a></li>
-              <li> <a href="conocenos.html #vision"> VISIÓN</a></li>
-              <li> <a href="conocenos.html #historia"> HISTORIA</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="#">SOPORTE</a>
-            <i class='bx bx-chevron-down arrow s'></i>
-            <ul class="s-sub-menu sub-menu">
-              <li> <a href="#"> TELÉFONO</a></li>
-              <li> <a href="#"> PREGUNTAS FRECUENTES</a></li>
-              <li> <a href="#"> CORREO</a></li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <script src="script.js"> </script>
-  <!--Boton WhatsApp-->
-  <div>
-    <a href="https://wa.me/573154324254/?text=tu%20texto%20personalizado" target="_blank">Anchor text
-      <img class="bxl-whatsapp-square" src="img/whatsapp-logo.png">
-    </a>
-  </div>
-
-  <article class="d-categorias">
-    <h1 class="title-categorias">
-      <i class="material-icons"> man </i>
-      LÍNEA DE LUJO HOMBRE
-    </h1>
-
-    <div class="separador">
-      <img class="separador-img" src="img/Separador.png">
-    </div>
-
-    <div class="section">
-      <!-- container -->
-      <div class="container">
-        <div class="col-md-12">
-          <div class="row2">
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <img src="./img/4.jpeg" alt="">
-              </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
             </div>
-
-
-
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <img src="./img/5.jpeg" alt="">
-              </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
-            </div>
-
-
-
-            <div class="product">
-              <h3 class="product-name"><a href="#">Nombre gorra</a></h3>
-              <div class="product-img">
-                <img src="./img/4.jpeg" alt="">
-              </div>
-              <div class="product-body">
-                <p class="product-category">Category</p>
-                <h4 class="product-price">$80.00 CO <del class="product-old-price">$90.00 CO</del></h4>
-
-              </div>
-              <div class="product-btns">
-                <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
-                    bolsa</span></button>
-                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">Ver detalles</span></button>
-              </div>
-            </div>
-
-          </div>
         </div>
-      </div>
-    </div>
-  </article>
-  <div class="separador">
-    <img class="separador-img" src="img/Separador.png">
-  </div>
-  <!--RECOMENDADAS-->
-  <div class="scale-in-center texts">
-    <h1 class="titles">¡RECOMENDADAS!</h1>
-    <p class="tracking-in-expand parrafo">
-      Sed
-      ut perspiciatis unde omnis
-      iste natus error sit voluptatem accusantium doloremque
-      laudantium,
-      totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-      explicabo.
-      Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores
-      eos qui ratione voluptatem sequi nesciunt.
-      Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam
-      eius modi tempora incidunt
-      ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam
-      corporis suscipit laboriosam,
-      nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse
-      quam nihil molestiae consequatur,
-      vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
-    </p>
-
-
-  </div>
-  <!-- Carrusel recomendadas-->
-  <div class="slideshow-container2">
-
-    <div class="mySlides2 fade2 scale-in-center recomend-center">
-      <img class="imgreco " src="img/1.jpeg">
+    </nav>
+    <script src="script.js"> </script>
+    <div>
+        <a href="panelAdmin.html">
+            <img class="bxl-whatsapp-square" src="img/whatsapp-logo.png">
+        </a>
     </div>
 
-    <div class="mySlides2 fade2 scale-in-center recomend-center">
-      <img class="imgreco" src="img/2.jpeg">
+    <article class="d-categorias">
+        <h1 class="title-categorias">
+            <i class="material-icons"> man </i>
+            GORRAS DE LUJO HOMBRE
+        </h1>
+
+        <div class="menu">
+            <div class="label">Categorías</div>
+            <div class="spacer"></div>
+            <a href="CasualMujer.html">
+                <div class="item"><span>Casual Mujer</span></div>
+            </a>
+            <a href="CasualHombre.html">
+                <div class="item"><span>Casual Hombre</span></div>
+            </a>
+            <a href="LujoHombre.html">
+                <div class="item"><span>Lujo Mujer</span></div>
+            </a>
+            <a href="LujoHombre.html">
+                <div class="item"><span>Lujo Hombre</span></div>
+            </a>
+
+        </div>
+
+        <div class="separador">
+            <img class="separador-img" src="img/Separador.png">
+        </div>
+
+        <div class="section">
+            <!-- container -->
+ 
+            <div class="tasks-container" id="tasks-container2"></div>
+            
+        </div>
+
+           <!-- Segunda fila de productos-->
+
+                     
+    
+    </article>
+    <div class="separador">
+        <img class="separador-img" src="img/Separador.png">
     </div>
+    <!--RECOMENDADAS-->
+    <div class="scale-in-center texts">
+        <h1 class="titles">¡RECOMENDADAS!</h1>
+        <p class="tracking-in-expand parrafo" id = "Recomendadas">
+            Sed
+            ut perspiciatis unde omnis
+            iste natus error sit voluptatem accusantium doloremque
+            laudantium,
+            totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+            explicabo.
+            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni
+            dolores
+            eos qui ratione voluptatem sequi nesciunt.
+            Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non
+            numquam
+            eius modi tempora incidunt
+            ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem
+            ullam
+            corporis suscipit laboriosam,
+            nisi ut aliquid ex ea commodi consequatur? Quis autem vel eum iure reprehenderit qui in ea voluptate velit
+            esse
+            quam nihil molestiae consequatur,
+            vel illum qui dolorem eum fugiat quo voluptas nulla pariatur?
+        </p>
 
-    <div class="mySlides2 fade2 scale-in-center recomend-center">
-      <img class="imgreco" src="img/5.jpeg">
+
     </div>
+    <!-- Carrusel recomendadas-->
 
-    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-    <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-  </div>
-  <br>
-
-  <div class="recomend-center">
-    <span class="dot2" onclick="currentSlide(1)"></span>
-    <span class="dot2" onclick="currentSlide(2)"></span>
-    <span class="dot2" onclick="currentSlide(3)"></span>
-  </div>
-
-  <script>
-    var slideIndex = 1;
-    showSlides(slideIndex);
-
-    function plusSlides(n) {
-      showSlides(slideIndex += n);
-    }
-
-    function currentSlide(n) {
-      showSlides(slideIndex = n);
-    }
-
-    function showSlides(n) {
-      var i;
-      var slides = document.getElementsByClassName("mySlides2");
-      var dots = document.getElementsByClassName("dot2");
-      if (n > slides.length) { slideIndex = 1 }
-      if (n < 1) { slideIndex = slides.length }
-      for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
-      }
-      for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
-      }
-      slides[slideIndex - 1].style.display = "block";
-      dots[slideIndex - 1].className += " active";
-    }
-  </script>
-  <div class="text">
-    <a href="" class="boton_personalizado">VER TODO </a>
-  </div>
+    <figure class="figure-reco">
+      <a href="Categorías.html">
+        <img id="slider2" src="" alt="">
+        <img id="slider-anima2" src="">
+      </a>
+    </figure>
+   
+    </script>
+    <div class="text">
+        <a href="Categorías.html" class="boton_personalizado">VER TODO </a>
+    </div>
 
     <!-- Pie de pagina-->
 
     <div class="row">
-      <div class="column">
-          <h2 class="textofinal">KONGO</h2>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> QUIENES SOMOS </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> CORREO </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> TELÉFONO </a>
-          </p>
-      </div>
-      <div class="column">
-          <h2 class=" textofinal">PRODUCTOS</h2>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> GORRAS MUJER </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> GORRAS HOMBRE </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> LÍNEA DE LUJO</a>
-          </p>
-      </div>
-      <div class="column">
-          <h2 class="textofinal">CONTÁCTANOS</h2>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> SOPORTE </a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> PREGUNTAS</a>
-          </p>
-          <p class="subtexto">
-              <a href="#" class="subtexto"> DEVOLUCIONES </a>
-          </p>
-      </div>
-      <div class="column">
-          <h2 class="textofinal">ENCUÉNTRANOS</h2>
-          <div class="mapouter">
-              <div class="gmap_canvas">
-                  <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0"
-                      marginwidth="0"
-                      src="https://maps.google.com/maps?width=200&amp;height=180&amp;hl=en&amp;q=umng&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
-                  </iframe>
-                  <a href="https://www.fnfgo.com/">FNF Online</a>
-              </div>
-          </div>
-      </div>
-  </div>
-  <footer class="footer">
-      <div>
-          <p>
-              <a class="finkong"> © 2021 KONGO</a>
-          </p>
-      </div>
-  </footer>
+        <div class="column">
+            <h2 class="textofinal">KONGO</h2>
+            <p class="subtexto">
+                <a href="conocenos.html" class="subtexto"> QUIENES SOMOS </a>
+            </p>
+            <p class="subtexto">
+                <a href="soporte.html" class="subtexto"> CORREO </a>
+            </p>
+            <p class="subtexto">
+                <a href="soporte.html" class="subtexto"> TELÉFONO </a>
+            </p>
+        </div>
+        <div class="column">
+            <h2 class=" textofinal">PRODUCTOS</h2>
+            <p class="subtexto">
+                <a href="#" class="subtexto"> GORRAS MUJER </a>
+            </p>
+            <p class="subtexto">
+                <a href="#" class="subtexto"> GORRAS HOMBRE </a>
+            </p>
+            <p class="subtexto">
+                <a href="#" class="subtexto"> LÍNEA DE LUJO</a>
+            </p>
+        </div>
+        <div class="column">
+            <h2 class="textofinal">CONTÁCTANOS</h2>
+            <p class="subtexto">
+                <a href="soporte.html" class="subtexto"> SOPORTE </a>
+            </p>
+            <p class="subtexto">
+                <a href="soporte.html" class="subtexto"> PREGUNTAS</a>
+            </p>
+            <p class="subtexto">
+                <a href="soporte.html" class="subtexto"> DEVOLUCIONES </a>
+            </p>
+        </div>
+        <div class="column">
+            <h2 class="textofinal">ENCUÉNTRANOS</h2>
+            <div class="mapouter">
+                <div class="gmap_canvas">
+                    <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0"
+                        marginwidth="0"
+                        src="https://maps.google.com/maps?q=carrera%2021%20133-85&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                    <a href="https://www.fnfgo.com/">FNF Online</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer">
+        <div>
+            <p>
+                <a class="finkong"> © 2021 KONGO</a>
+            </p>
+        </div>
+    </footer>
 
+    <script type = "module" src= "firebase.js" ></script>
+    <script type = "module" src= "imagenesPrin2.js" ></script>
+    <script type = "module" src= "MostrarProductosHL.js" ></script>
+    <script type = "module" src= "Buscar.js" ></script>
+    <script type = "module" src= "MostrarCont_est.js" ></script>
 
+   
 </body>
 
 </html>

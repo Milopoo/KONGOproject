@@ -18,8 +18,9 @@ var datos = []
 //const fs = require('fs')
 //localStorage.clear()
 //dataF = localStorage.getItem('productos')
-//dataJson = JSON.parse(dataF)
 //console.log(dataF)
+//dataJson = JSON.parse(dataF)
+//console.log(dataJson)
 //console.log(dataF)
 //const fs = require('fs')
 
