@@ -528,7 +528,7 @@ figure{
 }
 @media (max-width: 450px){
   figure{
-    margin-top: 35%;
+    margin-top: 30%;
   }
 }
   @keyframes cambio {
@@ -564,6 +564,130 @@ figure{
       margin-left: -300%;
     }
   }
+
+  /*Segundo Carrusel*/
+ .slider2 {
+  width: 50%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.slider2 ul {
+  display: flex;
+  padding: 10% 0% 0% 0%;
+  margin: 0;
+  width: 200%;
+
+  animation: cambio 20s infinite alternate linear;
+}
+
+.slider2 li {
+  width: 50%;
+  list-style: none;
+}
+
+.slider2 img {
+  width: 50%;
+}
+@media (max-width: 450px){
+.slider2 ul{
+  padding: 35% 0% 0% 0%;
+}
+}
+@keyframes animaLateralDer {
+0% {
+  opacity: 0;
+  transform: translateX(200px);
+}
+
+100% {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+@keyframes animaLateralDer2 {
+0% {
+  opacity: 0;
+  transform: translateX(200px);
+}
+
+100% {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+@keyframes animaLateralDer3 {
+0% {
+  opacity: 0;
+  transform: translateX(200px);
+}
+
+100% {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+@keyframes animaLateralDer4 {
+0% {
+  opacity: 0;
+  transform: translateX(200px);
+}
+
+100% {
+  opacity: 1;
+  transform: translateX(0);
+}
+}
+.figure-reco{
+width: 40%;
+height: 50%;
+margin: 0px auto;
+overflow: hidden;
+position: relative;
+}
+#slider-anima2{
+position: absolute;
+top: 0px;
+left: 0px;
+}
+@media (max-width: 450px){
+.figure-reco{
+  width: 100%;
+}
+}
+@keyframes cambio {
+  0% {
+    margin-left: 0;
+  }
+
+  20% {
+    margin-left: 0;
+  }
+
+  25% {
+    margin-left: -50%;
+  }
+
+  45% {
+    margin-left: -50%;
+  }
+
+  50% {
+    margin-left: -100%;
+  }
+
+  70% {
+    margin-left: -100%;
+  }
+
+  75% {
+    margin-left: -150%;
+  }
+
+  100% {
+    margin-left: -150%;
+  }
+}
 /*Separador*/
 .separador{
   text-align:center ; 
@@ -1815,12 +1939,21 @@ margin-top: 5%;
   margin: 5px 16px;
 }
 .tasks-container{
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+#tasks-container{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
 }
 @media screen and (max-width:600px){
   .tasks-container{
     display: block;
   }
+  #tasks-container{
+    display: block;
+  }
+  
 }
 /*Estilo seccion facturacion*/
 .body-factura{

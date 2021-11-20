@@ -6,7 +6,7 @@ const db = getFirestore();
 
 var img = new Array ();
 
-const q = query(collection(db, "productos"), orderBy("timestamp", "desc"), limit(4));
+const q = query(collection(db, "productos"), orderBy("contVisitas", "desc"), limit(3));
 const querySnapshot = await getDocs(q);
 querySnapshot.forEach((doc) => {
 
@@ -22,8 +22,8 @@ console.log(img);
 var imagenes = new Array("imgProductos/2.jpeg", "imgProductos/4.jpeg", "imgProductos/5.jpeg", "imgProductos/1.jpeg");
 imagenes = img; 
 var animacion = new Array("animaLateralDer", "animaLateralDer2", "animaLateralDer3", "animaLateralDer4" );
-var slider = document.getElementById("slider");
-var sliderAnima = document.getElementById("slider-anima");
+var slider = document.getElementById("slider2");
+var sliderAnima = document.getElementById("slider-anima2");
 var i = 0;
 var tiempoAnimacion = " 1s";
 

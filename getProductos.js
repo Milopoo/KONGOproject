@@ -15,9 +15,10 @@ querySnapshot.forEach((doc) => {
     datos = doc.data();
     produc = JSON.stringify(datos)
     datAux = JSON.parse(produc)
-    console.log(datAux)
+    //console.log(datAux)
     dAux.push(datAux)
     console.log(dAux)
+    //localStorage.setItem('productos', dAux)
     //datAux = JSON.parse(produc)
     //console.log(datos)
    // console.log(produc)
