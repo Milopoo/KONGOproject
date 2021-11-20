@@ -64,6 +64,7 @@ const pintarFooter = () => {
     total = localStorage.getItem('total')
     localStorage.setItem('totalProducto', nCantidad)
     totalProducto = localStorage.getItem('totalProducto')
+
     const clone = templateFooter.cloneNode(true)
     fragment.appendChild(clone)
     footer.appendChild(fragment)

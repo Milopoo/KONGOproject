@@ -54,6 +54,37 @@ body {
   font-size: 25px;
   text-decoration: none;
 }
+
+.badge:after {
+  content: attr(data-count);
+  position: absolute;
+  background: #ff6600;
+  height: 1rem;
+  top: 0rem;
+  right: -0.5rem;
+  width: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  color: white;
+  border: 1px solid #ff6600;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+#contP{
+  position: absolute;
+  height: 1rem;
+  top: 0rem;
+  right: -0.5rem;
+  width: 1rem;
+  text-align: center;
+  z-index: 9999;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
 .icon-search{
   display: flex;
   color: white;

@@ -54,7 +54,7 @@ querySnapshot.forEach((doc) => {
   var totalProducto = 0
   anadir.forEach(btn => {
     btn.addEventListener('click', (e) => {
-      console.log("id", e.target.dataset.id)
+      //console.log("id", e.target.dataset.id)
       id = e.target.dataset.id;
         setBolsa(e.target.dataset.id);
     })
@@ -68,7 +68,7 @@ async function DetalleProducto(id) {
 
   const docRef = collection(db, "productos");
   const docSnap = await getDoc(doc(docRef, id));
-  console.log("id", id);
+  //console.log("id", id);
 
   if (docSnap.exists()) {
 
