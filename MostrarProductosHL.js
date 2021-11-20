@@ -27,7 +27,7 @@ querySnapshot.forEach((doc) => {
         </div>
         <div class="product-btns">
         
-        <button class="add-to-wishlist data-id="${doc.id}"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
+        <button class="add-to-wishlist" data-id="${doc.id}"><i class="fa fa-heart-o"></i><span class="tooltipp">Añadir a la
         bolsa</span></button>
            </div>
         </div>
@@ -48,7 +48,17 @@ querySnapshot.forEach((doc) => {
  
  })
  })
-
+    //--------Carrito de compra 
+    const anadir = document.querySelectorAll('.add-to-wishlist')
+    var total = 0
+    var totalProducto = 0
+    anadir.forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        console.log("id", e.target.dataset.id)
+        id = e.target.dataset.id;
+          setBolsa(e.target.dataset.id);
+      })
+    })
 
 });
 
@@ -71,3 +81,25 @@ querySnapshot.forEach((doc) => {
    }  
  
  }
+    // Bolsa de compra :)
+async function setBolsa(id) {
+
+  const docRef = collection(db, "productos");
+  const docSnap = await getDoc(doc(docRef, id));
+  console.log("id", id);
+
+  if (docSnap.exists()) {
+    const producto = {
+      id: id,
+      title: docSnap.data().Name,
+      categoria: docSnap.data().Category,
+      precio: docSnap.data().TOTAL,
+      precioDes: docSnap.data().Precio,
+      cantidad: 1
+    }
+    intoBolsa(producto)
+  } else {
+    // doc.data() will be undefined in this case
+    console.log("No such document!");
+  }
+}
