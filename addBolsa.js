@@ -1,88 +1,28 @@
-//Bolsa funcionando
-
-const cards = document.getElementById('cards')
-const items = document.getElementById('items')
-const footer = document.getElementById('footer')
-//content acceder a los elementos en los template
-const templateCard = document.getElementById('articulo').content
 const templateFooter = document.getElementById('template-footer').content
 const templateBolsa = document.getElementById('template-bolsa').content
 const fragment = document.createDocumentFragment()
+let bolsa = {}
 var total = 0
 var totalProducto = 0
-var cont = 0
-let bolsa = {}
-let listaBolsa = {}
-
 document.addEventListener('DOMContentLoaded', () => {
-    fetchData()
     if (localStorage.getItem('bolsa')) {
         bolsa = JSON.parse(localStorage.getItem('bolsa'))
-        listaBolsa = JSON.parse(localStorage.getItem('listaBolsa'))
         pintarBolsa()
     }
 })
-cards.addEventListener('click', e => {
-    addBolsa(e)
-})
+
 items.addEventListener('click', e => {
     btnAccion(e)
 })
 
-const fetchData = async () => {
-    try {
-        const res = await fetch('carritoTemp.json')
-        const data = await res.json()
-        //console.log(data)
-        pintarArticulos(data)
-    } catch (error) {
-        console.log(error);
-    }
-}
-const pintarArticulos = data => {
-    //console.log(data)
-    data.forEach(producto => {
-        templateCard.querySelector('h3').textContent = producto.title
-        templateCard.querySelector('h4').textContent = producto.precio
-        templateCard.querySelector('h6').textContent = producto.precioDes
-        templateCard.querySelector('p').textContent = producto.categoria
-        templateCard.querySelector('img').setAttribute("src", producto.thumbnailUrl)
-        templateCard.querySelector('button').dataset.id = producto.id
-        const clone = templateCard.cloneNode(true)
-        fragment.appendChild(clone)
-        //console.log(producto)  
-    })
-    cards.appendChild(fragment)
-    //console.log(data)
-}
-const addBolsa = e => {
-    //console.log(e.target)
-    //console.log(e.target.classList.contains('btnComprar'))
-    if (e.target.classList.contains('add-to-wishlist')) {
-        setBolsa(e.target.parentElement)
-    }
-    //Detener otro cualquier evento
-    e.stopPropagation()
-
-}
-const setBolsa = objeto => {
-    console.log(objeto)
-    cont = cont + 1
-    const producto = {
-        id: objeto.querySelector('.add-to-wishlist').dataset.id,
-        title: objeto.querySelector('h3').textContent,
-        categoria: objeto.querySelector('p').textContent,
-        precio: objeto.querySelector('h4').textContent,
-        precioDes: objeto.querySelector('h6').textContent,
-        cantidad: 1
-    }
-    
+function intoBolsa(producto){
     if (bolsa.hasOwnProperty(producto.id)) {
         producto.cantidad = bolsa[producto.id].cantidad + 1
-    } 
-
-    bolsa[producto.id] = { ...producto }
-    pintarBolsa()
+      }
+  
+      bolsa[producto.id] = { ...producto }
+      console.log(bolsa)
+      pintarBolsa()
 }
 const pintarBolsa = () => {
     //console.log(bolsa)
@@ -102,7 +42,6 @@ const pintarBolsa = () => {
     pintarFooter()
 
     localStorage.setItem('bolsa', JSON.stringify(bolsa))
-    localStorage.setItem('listaBolsa', JSON.stringify(listaBolsa))
 }
 const pintarFooter = () => {
     footer.innerHTML = ''
@@ -113,7 +52,7 @@ const pintarFooter = () => {
         bolsa = {}
         localStorage.removeItem('total')
         localStorage.removeItem('totalProducto')
-        listaBolsa = {}
+
         cont = 0
         return
     }
@@ -125,6 +64,7 @@ const pintarFooter = () => {
     total = localStorage.getItem('total')
     localStorage.setItem('totalProducto', nCantidad)
     totalProducto = localStorage.getItem('totalProducto')
+
     const clone = templateFooter.cloneNode(true)
     fragment.appendChild(clone)
     footer.appendChild(fragment)
@@ -157,4 +97,34 @@ const btnAccion = e => {
         pintarBolsa()
     }
     e.stopPropagation()
+}
+function Envio_Directo(name) { //envio directo
+    window.location.href = "facturacion.html" + '?id=' + name; //Redireccionar la pagina al link con el id
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function nose(id){
+    console.log("no se")
 }

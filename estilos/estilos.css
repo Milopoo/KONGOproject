@@ -54,6 +54,37 @@ body {
   font-size: 25px;
   text-decoration: none;
 }
+
+.badge:after {
+  content: attr(data-count);
+  position: absolute;
+  background: #ff6600;
+  height: 1rem;
+  top: 0rem;
+  right: -0.5rem;
+  width: 1rem;
+  text-align: center;
+  line-height: 1rem;
+  font-size: 1rem;
+  border-radius: 50%;
+  color: white;
+  border: 1px solid #ff6600;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+#contP{
+  position: absolute;
+  height: 1rem;
+  top: 0rem;
+  right: -0.5rem;
+  width: 1rem;
+  text-align: center;
+  z-index: 9999;
+  line-height: 1rem;
+  font-size: 1rem;
+  font-family: sans-serif;
+  font-weight: bold;
+}
 .icon-search{
   display: flex;
   color: white;
@@ -2156,6 +2187,13 @@ table {
 
 table tr:nth-child(2n-1) td {
   background: #F5F5F5;
+  padding: 3px;
+  text-align: center;
+}
+table tr:nth-child(2n) td {
+  background: #F5F5F5;
+  padding: 3px;
+  text-align: center;
 }
 
 table th,
@@ -2178,7 +2216,7 @@ table .desc {
 
 table td {
   padding: 20px;
-  text-align: right;
+  text-align: center;
 }
 
 table td.articulo,
@@ -2223,30 +2261,50 @@ table td.grand {
 .btn-bolsa-plus{
   background-color: #04AA6D;
   color: white;
-  padding: 12px;
+  padding: 2px;
   margin: 10px 0;
   border: none;
   width: 15%;
   border-radius: 3px;
   cursor: pointer;
   font-size: 17px;
+  transition-duration: 0.4s;
+}
+.btn-bolsa-plus:hover{
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .btn-bolsa-minus{
   background-color: red;
   color: white;
-  padding: 12px;
+  padding: 2px;
   margin: 10px 0;
   border: none;
   width: 15%;
   border-radius: 3px;
   cursor: pointer;
   font-size: 17px;
+  transition-duration: 0.4s;
+}
+.btn-bolsa-minus:hover{
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .td-plus-minus{
   text-align: center;
 }
 .btn-vc{
   text-align: center;
+  background-color: #04AA6D;
+  color: white;
+  padding: 4px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 17px;
+  transition-duration: 0.4s;
+}
+.btn-vc:hover{
+  box-shadow: 0 6px 8px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
 }
 h6{
   text-decoration: line-through;
