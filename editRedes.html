@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+</html>
+<html>
+
+<head>
+    <title>ADMINISTRADOR LINKS</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shorcut icon" type="image/x-icon" href="./img/Logo_Empresa-modified.ico">
+    <link rel="stylesheet" href="estilos/estilos.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<!--Todo lo visual de la página-->
+
+<body class="body-admin">
+    <div class="admin">
+        
+        <div>
+            <h2 class="text-admin"> LINKS REDES Y MAPA</h2>
+            <ul>
+                <li class="li-admin">  <input class="input" type="text" id="ws" placeholder="WhatsApp"> </li>
+                <li class="li-admin">  <input class="input" type="text" id="insta" placeholder="Link Instagram"> </li>
+                <li class="li-admin">  <input class="input" type="text" id="face" placeholder="Link Facebook"> </li>
+                <p class="instruc">
+                    Para cambiar el mapa de la tienda:
+                </p>
+                <p class="instruc"> 
+                    1. Ingrese al siguiente link: <a class="link-mapa" href="https://www.embedmymap.com/" target="blank">Mapa</a>
+                </p>
+                <p class="instruc">
+                    2. Luego ingrese la dirección que deseé, Width y Height no se modifican.
+                </p>
+                <p class="instruc">
+                    3. Marque la opción "Make Map Responsive" y pulse el botón de "Generate Code".
+                </p>
+                <p class="instruc">
+                    4. Copie el contenido con el botón "Copy code to clipboar" y péguelo en un documento de word, hoja de textio según su comodidad.
+                </p>
+                <p class="instruc">
+                    5. Busque en el texto la parte src=" " y copie lo que está dentro de las comillas hasta donde diga embed.
+                </p>
+                <li class="li-admin">  <input class="input" type="text" id="mapa" placeholder="Mapa de la tienda"> </li> 
+                <li class="li-button"> <input class="boton_personalizado-admin" type="submit" id="InsBtn" value="Guardar" ></li>
+        </ul>
+        </div>
+    </div>
+    <script type = "module" src= "Firebase.js" ></script>
+    <script type = "module" src= "login.js" ></script>
+</body>
+</html>

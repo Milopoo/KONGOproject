@@ -1650,7 +1650,7 @@ margin-top: 5%;
 /*panel admin*/
 .panel{
   margin: 5%;
-  margin-top: 15%;
+  margin-top: 10%;
 }
 .boton_personalizado-admin3{
   text-decoration: none;
@@ -1686,7 +1686,7 @@ margin-top: 5%;
 .dropbtn2 {
   background-color: #3ba77d;
   color: white;
-  padding: 10px 149px;
+  padding: 10px 60px;
   font-weight: 600;
   font-size: 20px;
   border-radius: 6px;
@@ -1938,4 +1938,12 @@ tr:nth-child(even) {
   background-color: black;
   padding: 3px;
   border-radius: 8px;
+}
+.instruc{
+  color: white;
+  text-align: justify;
+  margin-left: 170px;
+}
+.link-mapa{
+  color: yellow;
 }
