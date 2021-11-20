@@ -8,16 +8,18 @@ const templateBolsa = document.getElementById('template-bolsa').content
 const fragment = document.createDocumentFragment()
 var total = 0
 var totalProducto = 0
-var dataF = ''
-var dataJson = ''
+var dataF = []
+var dataJson = []
 var cont = 0
 let bolsa = {}
 let listaBolsa = {}
 var datos = []
 
 //const fs = require('fs')
-dataF = localStorage.getItem('productos')
-dataJson = JSON.parse(dataF)
+//localStorage.clear()
+//dataF = localStorage.getItem('productos')
+//dataJson = JSON.parse(dataF)
+//console.log(dataF)
 //console.log(dataF)
 //const fs = require('fs')
 
@@ -52,16 +54,14 @@ items.addEventListener('click', e => {
 
 const fetchData = async () => {
     try {
-        const res = await fetch(dataJson)
+        const res = await fetch('carritoTemp.json')
         const data = await res.json()
-        //console.log(data)
+        console.log(data)
         pintarArticulos(data)
     } catch (error) {
         console.log(error);
     }
 }
-console.log(dataJson)
-console.log(dataJson.Name)
 const pintarArticulos = data => {
     //console.log(data)
     data.forEach(producto => {

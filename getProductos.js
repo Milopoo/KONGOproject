@@ -3,16 +3,31 @@ import { getFirestore, collection, getDocs, getDoc, doc, deleteDoc, updateDoc }
 
 const db = getFirestore();
 var id = '';
-var datos = '';
-var produc = '';
-var dAux = '';
+var datos = {};
+var datAux = '';
+var produc = {};
+var dAux = [];
+
 
 
 const querySnapshot = await getDocs(collection(db, 'productos'));
 querySnapshot.forEach((doc) => {
+    datos = doc.data();
+    produc = JSON.stringify(datos)
+    datAux = JSON.parse(produc)
+    console.log(datAux)
+    dAux.push(datAux)
+    console.log(dAux)
+    //datAux = JSON.parse(produc)
+    //console.log(datos)
+   // console.log(produc)
+    //localStorage.setItem('productos', produc)
+    //console.log(datAux)
+    //dAux = datAux
+    //console.log(dAux)
+    //localStorage.setItem('productos', produc)
+    //console.log(localStorage.getItem('productos'))
 
-    localStorage.setItem('productos', JSON.stringify(doc.data()))
-    localStorage.getItem('productos')
 
     //id = doc.id; 
 
@@ -28,3 +43,5 @@ querySnapshot.forEach((doc) => {
     })
     })*/
 });
+
+
