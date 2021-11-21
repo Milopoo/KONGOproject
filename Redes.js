@@ -22,15 +22,16 @@ document.getElementById("RedBtn").addEventListener('click', async function(){
 
       });
 
-      console.log("Document written with ID: ", codigoP.value);
+      console.log("Document written with ID: ", "Links");
       window.location = "PagPrincipalAdmin.html";
 
 
    })
 
-    const docRef = collection (db, "Redes" );
-    docSnap = await getDoc(doc( docRef, "Links" ));
-      
+   const docSnap = await getDoc(doc( docRef, "Links" ));
+
+   if(docSnap.exists()){
+
     ws.value = docSnap.data().Whatsapp;
     insta.value = docSnap.data().Instagram;
     face.value = docSnap.data().Facebook;
@@ -38,8 +39,15 @@ document.getElementById("RedBtn").addEventListener('click', async function(){
     
 
     console.log("Document data:", docSnap.data());
+   }
+   else{
 
-    document.getElementById("ws").href =
+    console.log("No existe :(");
+   }
+      
+   
+
+    
 
 
        

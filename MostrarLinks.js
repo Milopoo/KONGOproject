@@ -5,14 +5,14 @@ const db = getFirestore();
 
 
     const docRef = collection (db, "Redes" );
-    docSnap = await getDoc(doc( docRef, "Links" ));
+    const docSnap = await getDoc(doc( docRef, "Links" ));
 
     console.log("Document data:", docSnap.data());
 
     document.getElementById("ws").href = docSnap.data().Whatsapp;
-    document.getElementsByClassName("icon-ig").href = docSnap.data().Instagram;
+    document.getElementById("insta").href = docSnap.data().Instagram;
     document.getElementById("face").href = docSnap.data().Facebook;
-    document.getElementsByClassName("gmap_iframe").scr = docSnap.data().Mapa;  
+    document.getElementsByTagName("iframe").scr = docSnap.data().Mapa;  
 
 
 
