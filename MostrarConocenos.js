@@ -4,7 +4,7 @@ const db = getFirestore();
 
 
     const docRef = collection (db, "Contenido" );
-    const docSnap = await getDoc(doc( docRef, "Principal" ));
+    const docSnap = await getDoc(doc( docRef, "Conocenos" ));
     
     if (docSnap.exists()) {
        
