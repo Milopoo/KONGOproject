@@ -9,10 +9,10 @@ const db = getFirestore();
 
     console.log("Document data:", docSnap.data());
 
-    document.getElementById("ws").href = docSnap.data().Whatsapp;
     document.getElementById("insta").href = docSnap.data().Instagram;
     document.getElementById("face").href = docSnap.data().Facebook;
-    document.getElementsByTagName("iframe").scr = docSnap.data().Mapa;  
+    document.getElementById("ws").href = docSnap.data().Whatsapp;
+    document.getElementsByTagName("iframe").src = docSnap.data().Mapa;  
 
 
 

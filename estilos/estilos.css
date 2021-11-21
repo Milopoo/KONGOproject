@@ -1844,7 +1844,7 @@ margin-top: 5%;
   grid-template-columns: repeat(4, 1fr)
 }
 @media screen and (max-width:600px){
-  .tasks-container, .tasks-container3{
+  #tasks-container, .tasks-container3{
     display: block;
   }
   #tasks-container1{
