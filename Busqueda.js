@@ -59,16 +59,6 @@ querySnapshot.forEach((doc) => {
 })
 
 
-const q1 = query(collection(db, "productos"), where("Name", "!=", index));
-const querySnapshot2 = await getDocs(q1);
-querySnapshot2.forEach((doc) => {
-
-    tasksContainer.innerHTML += `
-    <h3 class="product-name"> No se encontraron resultados... </h3>
-    `
-})
-
-
 async function DetalleProducto(id){
 
     const docRef = collection (db, "productos" );
