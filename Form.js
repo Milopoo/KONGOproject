@@ -17,10 +17,10 @@ var docSnap ;
       promocionP.value = docSnap.data().Promo;
       cantidadP.value = docSnap.data().Cantidad; 
       colorP.value = docSnap.data().Color;
-      tallaP.value = docSnap.data().Size;
-      PrecioP.value = docSnap.data().Precio;
-      textDescripcionP.value = docSnap.data().Descripcion; 
+      tallaP.value = docSnap.data().Size;ipcion; 
       selectGender.value = docSnap.data().Gender;
+      PrecioP.value = docSnap.data().Precio;
+      textDescripcionP.value = docSnap.data().Descr
       selecCategoria.value = docSnap.data().Category;
   
       console.log("Document data:", docSnap.data());
