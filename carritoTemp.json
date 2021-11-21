@@ -1,0 +1,26 @@
+[
+    {
+      "precio": 20000,
+      "precioDes":25000,
+      "id": 1,
+      "title": "Gorra 1",
+      "categoria" : "Mujer Lujo",
+      "thumbnailUrl": "img/1.jpeg"
+    },
+    {
+      "precio": 30000,
+      "precioDes":45000,
+      "id": 2,
+      "title": "Gorra2",
+      "categoria" : "Mujer Lujo",
+      "thumbnailUrl": "img/2.jpeg"
+    },
+    {
+      "precio": 30000,
+      "precioDes":35000,
+      "id": 3,
+      "title": "Gorra3",
+      "categoria" : "Mujer Lujo",
+      "thumbnailUrl": "img/5.jpeg"
+    }
+  ]
